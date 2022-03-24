@@ -1,0 +1,42 @@
+@import url(common.css);
+
+body{
+  background-image: url(../image/section-bg.png);  /* 이건 html을 기준으로 하는게 아니라 login.css를 기준으로 위치경로 조절 */
+  color:#999;
+}
+
+#form{
+  width: 900px;
+  margin: 50px auto;
+}
+
+h1 span{ /* 로고텍스트 */
+  color:white;
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-left: 10px;
+  /* margin-top:30px
+  line-height: 10px; 둘다 적용 안됨*/
+  vertical-align: bottom;
+}
+
+.formBox{
+  width: inherit; /* 부모의 속성값을 상속받음 900px */
+  height: 450px;
+  background: url(../image/login-bg.jpg) no-repeat;
+  margin-top: 20px;
+  box-shadow: 1px 2px 4px #884a28;
+}
+
+
+.formContent{
+  width:400px;
+  height: 370px;
+  /* background: #fff;  
+  opacity: 0.8;이렇게하면 글자까지 불투명해지때문에 rgba사용*/
+  background: rgba(255,255,255,0.8);
+  float:right;  /* 아이거 어렵게 생각했는데 float한줄로 해결되네 */
+  margin:10px 10px 0 0; /* 상,우,하,좌 */
+  padding:50px 20px 10px;
+   
+}

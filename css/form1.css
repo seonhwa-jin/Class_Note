@@ -55,18 +55,20 @@
 
 
 /* 로그인버튼 */
-  .login .login_btn{
+  input[type=submit]{
     width: 122px;
     height: 22px;
     background: rgb(106, 93, 194);
     color:whitesmoke;
     border:none;
+    margin-left: 63px;
   }
 
-  .login .login_btn:hover{
+  input[type=submit]:hover{
     cursor: pointer;
     background: rgb(65, 65, 65);
     color:yellow;
+    
   }
 
 

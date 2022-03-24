@@ -1,0 +1,96 @@
+@import url(common.css); 
+
+body{border-top: 15px solid #333;}
+.login{border-top:50px solid skyblue;}
+
+
+.login h1{
+  font-family: arial;
+  font-size: 60px;
+  color:darkblue;
+  letter-spacing:-3px; /* 글자 간격 */
+  text-align: center;
+  margin-top: 50px;
+}
+
+.login fieldset{
+  width: 330px;
+  border:5px solid #efefef;
+  border-radius: 15px;
+  padding: 50px;
+  margin:20px auto;
+}
+
+
+/* a.왼쪽 아이디/비번 */
+.login2{float:left;}
+.login .labelstyle{
+  display: inline-block;
+  width: 60px;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.login2 input {
+  width: 150px;
+  border: 1px solid #999;
+  margin-bottom:5px;
+}
+/* input [type=text] , input[type=password] {
+  width: 150px;
+  border: 1px solid #999;
+  margin-bottom:5px;
+} */
+
+
+
+/* b.로그인버튼 */
+.login .btnlogin{
+  float: left;
+  width: 90px;
+  height: 42px;
+  margin: 0 10px;
+  background: rgb(160, 223, 248);
+  border: 1px solid rgb(218, 218, 218);
+  border-radius: 8px;
+  font-weight: bold;  
+}
+
+.login .btnlogin:hover{
+  background: lightgoldenrodyellow;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  cursor: pointer;
+}
+
+/* c.아이디저장/보안접속  */
+.login .btn1{
+  clear: both;
+  padding-left:65px;
+ background: pink;
+ margin-top: 60px;
+}
+
+
+/* d.회원가입,아이디 비번찾기 */
+
+.btn2{margin: 10px 0 0 60px;}
+.btn2 .btnjoin{
+  background: #999;
+  border-radius: 5px;
+  padding: 7px;
+  color:#fff;
+  border-style: none;
+}
+
+.btn2 .btnsearch{
+  background: #ccc;
+  border-radius: 5px;
+  padding: 7px;
+  border-style: none;
+}
+
+.btnjoin:hover, .btnsearch:hover{
+  background: #000;
+  color:#fff;
+  cursor: pointer;
+}
