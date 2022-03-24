@@ -1,0 +1,72 @@
+@import url(common.css); /* 초기세팅을 가져옴 */
+
+ .login{  /* form.login 이렇게 띄워쓰지 않으면 동급인 태그를 표시한다. 한칸 띄면 하위를 뜻하는 그거 */
+  width:270px;
+  margin: 50px auto;
+ }
+ 
+ .login fieldset{
+   padding:20px;
+   border: 1px solid #ccc;
+ }
+
+ .login fieldset legend{
+   width:80px;
+   height: 30px;
+   background: darkslateblue;
+   color:whitesmoke;
+   border-radius: 0 10px 0 10px;
+   /* text-align: center; ->글자와 함께 legend박스도 같이 움직임 -> 바로 아래처럼 h2로 감싸서 그걸 지정함*/
+ }
+
+ .login fieldset legend h2{
+   font-size: 16px;
+   text-align: center;
+   line-height: 30px;
+   text-transform: uppercase;
+  }
+
+
+  .login label{
+    display: inline-block;
+    /* <label>은 inline태그라서 width안먹음
+      그래서 block으로 바꿔준다. 근데 옆에 input이랑 나란히 배열되야 하기 때문에 inline-block으로 해줘야한다. */
+    width:60px;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+
+  .login input{
+    width:120px;
+    height: 20px;
+    background-color: #e8e8e8;;
+    border:1px solid #ccc;
+    /* padding-left: 5px; 인쪽 여백인 패딩 사용시 가로너비가 늘어남 그래서 들여쓰기 사용 */
+    text-indent: 5px;
+    /* 들여쓰기 ->가로너비는 변하지 않고 안의 글자만 옆으로 이동  */
+  }
+
+  input:focus{outline:none;}
+  /* input:focus{outline: 1px dotted cadetblue;} */
+  /* input박스 클릭시 생기는 테두리 없애기&색상바꾸기
+  outline 속성:html요소의 가장 바깥부분을 둘러싸고 있는 부분이다.
+  border속성처럼style,color,width속성이 있다.
+  폼태그와 a태그처럼 커서가 있는 곳에 사용할 수 있다. */
+
+
+/* 로그인버튼 */
+  .login .login_btn{
+    width: 122px;
+    height: 22px;
+    background: rgb(106, 93, 194);
+    color:whitesmoke;
+    border:none;
+  }
+
+  .login .login_btn:hover{
+    cursor: pointer;
+    background: rgb(65, 65, 65);
+    color:yellow;
+  }
+
+

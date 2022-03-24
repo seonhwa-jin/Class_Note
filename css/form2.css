@@ -1,0 +1,47 @@
+@import url(common.css); /* 초기세팅을 가져옴 */
+
+ body{background: #666;}
+ 
+ .login{
+   width: 250px;
+   margin: 50px auto 0; 
+ }
+
+.login fieldset{
+  background: white;
+  border: 0;
+  padding:20px;
+  box-shadow: 0 0 30px #000;;
+}
+
+
+.login fieldset p {margin-bottom: 10px;}
+.login label {margin-bottom: 20px; display: block;} /* 라벨은 인라인!@!!!!! */
+
+.login input{
+  width: 100%;
+  height: 30px;
+  background: #f9f9f9;
+  border:1px solid #ddd;
+  text-indent: 6px;
+  /* color:red;-> placeholder 글자색 변경 -> 익스,파이어폭스에서만 적용되고 입력시에도 글자가 빨상색이 됨. */
+}
+
+/* ::-webkit-input-placeholder{color:red; font-weight: bold;} */
+ 
+.login input:hover{
+  background: lightgoldenrodyellow;
+  cursor: pointer;
+}
+
+.login .login_btn{
+  height: 40px;
+  background: #555;
+  color:whitesmoke;
+  border-color: #222;
+}
+
+.login .login_btn:hover{
+  background: #000;
+  cursor:pointer;
+}
