@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>tag3-하이퍼링크</title></head>
+
+
+
+<body>
+  <h1 id="top"> a태그- 하이퍼링크 연결하기 : inline태그 </h1>
+  <ol>
+    <li>외부사이트 연결하기
+      <ul>
+        <li><a href="https://www.naver.com" target="_blank">네이버로 이동하기</a></li>
+        <li><a href="https://www.daum.net">다음으로 이동하기</a></li>
+        <li><a href="http://webd.kr/main2019.php">쌤홈피</a>로 이동하기</li>
+      </ul>
+    </li>
+    <li>html문서 연결하기
+      <ul>
+        <li><a href="tag1-기본태그.html">기본태그</a></li>
+        <li><a href="tag2-표만들기.html">표만들기</a></li>
+      </ul>
+    </li>
+    <li id="img">이미지에 링크연결하기
+      <ul>
+        <li>이미지에 한개의 링크 연결하기1<br>
+          <a href="https://www.naver.com" target="_blank"><img src="image/modify2.png" alt="Hello!" title="네이버로 이동합니다"></a>
+        </li>
+        <li>이미지에 한개의 링크 연결하기2<br>
+          <a href="http://webd.kr/main2019.php"><img src="image/modify.jpg" alt="hello!" title="썜홈피로이동합니다" target="_blank"></a>
+        </li>
+        <li>이미지에 여러개의 링크 연결하기: 이미지맵<br>
+          <h2>각 지역별 특산물 보기<small>(아래 지도에서 지역별로 클릭하세요!)</small></h2>
+          <img src="image/map.jpg" alt="지도" title="각 지역별로 클릭하세요!" usemap="#maplink">
+            <!-- 이미지맵: 한개의 이미지에 좌표로 영역을 설정하여 여러개의 링크를 걸때 사용하고, <map>태그의 위치는 어디든지 상관없다. -->
+              <map name="maplink">
+                <area shape="rect" coords="54,89,117,111"  href="map1.html" alt="서울,인천">
+                <area shape="rect" coords="221,200,298,239"  href="map2.html" alt="경북,대구">
+                <area shape="circle" coords="80,491,25"  href="map3.html" alt="제주도">
+              </map>
+        </li>
+      </ul>
+    </li>
+    <li>메일주소 연결하기<br>
+      <a href="mailto:ahfbd17@naver.com">관리자에게 메일쓰기</a>
+      <!-- mailto:메일주소 전자메일을 쓸 수 있는창 outlook을 연결함(웹메일이 아님) -->
+    </li>
+
+
+    <li>특정한 위치 연결하기
+      <ul>
+        <li><a href="#top">맨위로 이동하기</a></li>
+        <li><a href="#img">이미지가 처음 삽입된 위치로 이동하기</a></li>
+        <li></li>
+      </ul>
+    </li>
+  </ol>
+</body>
+</html>
+

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>실습3-메인레이아웃구성</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;}
+
+    .clear:after{  /*float문제해결*/
+      content:"";
+      display:block;
+      clear:both;
+    }
+    body{
+      font-family: 'Nanum Gothic', sans-serif;
+      font-size:14px;
+    }
+
+    #wrap{
+      width:900px;
+      margin:0 auto;	
+    }
+
+    /* ///// 헤더영역 /////*/
+    #header{
+      width:100%;
+      height:150px;
+      background-color:#f46075;
+      background-image:url(image/logo.png);
+      background-repeat:no-repeat;
+      background-position:right center;
+      /*
+      축약시에는
+      background:url(image.logo.png) no-repeat right center #f46075;
+      */
+    }
+    #header ul{padding-top:50px;}
+    #header ul li{
+      list-style-type:none;
+      float:left;
+      padding:20px;
+    }
+    #header ul li a{
+      font-size:16px;
+      font-weight:600;
+      color:#fff;
+      font-family: 'Nanum Gothic', sans-serif;
+      text-decoration:none;
+      padding:5px;
+    }
+    #header ul li a:hover{
+      color:#f46075;
+      background:#fff;
+      border-radius:30px;
+    }
+
+
+    /* ///// 컨텐츠영역 /////*/
+    /*Box*/
+    .box{margin-top:10px;}
+    h2{
+      border:solid #333399;
+      border-width:0 0 0 4px;
+      padding-left:5px;
+      margin-left:10px;
+      margin-bottom:10px;
+      color:#666699;
+    }
+    .box p{line-height:20px;}
+    .box h3{
+      color:#9933ff;
+      font-family: 'Nanum Myeongjo', serif;
+      font-size:18px;
+      font-style:italic;
+      text-decoration:underline;
+      margin-bottom:5px;
+    }
+    .box .mtop{margin-top:20px;}
+    .box1, .box2, .box3{
+      float:left;
+      width:280px;
+      height:300px;
+      padding:0 8px;
+      
+    }
+    .box2{
+      border:solid #000;
+      border-width:0 1px;
+    }
+
+
+    /*Photo*/
+    .photo{
+      width:100%;
+      height:165px;
+      background:#e8e8e8;
+      border:1px solid #666;
+      margin:10px 0;
+    }
+    .photo ul{
+      margin-left:50px;
+      margin-top:15px;
+    }
+    .photo ul li{
+      float:left;
+      list-style-type:none;
+      padding:0 10px;
+    }
+
+
+    /*Note*/
+    .note ul{
+      margin-left:40px;
+      margin-top:20px;	
+    } 
+    .note ul li{
+      list-style-image:url(image/dot.gif);
+      line-height:20px;
+    }
+
+
+    /* ///// 푸터영역 /////*/
+    #footer{
+      height:50px;
+      background:#333;
+      margin-top:20px;
+    }
+    #footer p{
+      color:#fff;
+      font-size:14px;
+      text-align:center;
+      padding-top:15px;
+    }
+   
+  </style>
+</head>
+<body>
+  <div id="wrap">
+    <div id="header">
+      <ul>
+        <li><a href="#">애완견 종류</a></li>
+        <li><a href="#">입양하기</a></li>
+        <li><a href="#">건강돌보기</a></li>
+        <li><a href="#">더불어살기</a></li>
+      </ul>
+    </div>
+
+    <div id="content">
+      <div class="box clear">
+        <h2>강아지 용품 준비하기</h2>
+        <div class="box1">
+          <h3>강아지 집</h3>
+          <p>강아지가 편히 쉴 수 있는 포근한 집이 필요합니다. 강아지의 집은 강아지가 다 큰 후에도 계속 쓸 수 있는 집으로 구입하세요.집을 구입하실 때는 박음질이 잘 되어 있는지, 세탁이 간편한 제품인지 꼭 확인하시고 고르시는 것이 좋습니다.</p>
+        </div>
+        <div class="box2">
+          <h3>강아지 먹이</h3>
+          <p>강아지의 먹이는 꼭 어린 강아지용으로 나와있는 사료를 선택하세요. 강아지들은 사람에 비해 성장속도가 8배정도 빠르답니다. 따라서 강아지에게는 성장속도에 맞는 사료를 급여하셔야 합니다. 사람이 먹는 음식을 먹게 되면 양념과 향신료에 입맛이 익숙해지고, 비만이 될 가능성이 매우 높아집니다. 강아지용 사료는 생후 12개월까지 급여하셔야 합니다.</p>
+          <h3 class="mtop">밥그릇, 물병</h3>
+          <p>밥그릇은 쉽게 넘어지지 않도록 바닥이 넓은 것이 좋습니다.</p>
+        </div>
+        <div class="box3">
+          <p>물병은 대롱이 달린 것으로 선택하세요.
+            밥그릇에 물을 주게 되면 입 주변에 털이 모두 젖기 때문에 비위생적이므로 대롱을 통해서 물을 먹을 수 있는 물병을 마련하시는 것이 좋습니다.</p>
+          <h3 class="mtop">이름표, 목줄</h3>
+          <p>강아지를 잃어버릴 염려가 있으니 산책할 무렵이 되면 이름표를 꼭 목에 걸어주도록 하세요. 그리고 방울이 달린 목걸이를 하고자 하실 때는 신중하셔야 합니다. 움직일 때마다 방울이 딸랑 거리면 신경이 예민한 강아지들에게는 좋지 않은 영향을 끼칠 수 있기 때문입니다.
+          </p>
+        </div>
+      </div>
+      <div class="photo">
+        <ul>
+          <li><img src="image/dog1.png" alt="dog1"></li>
+          <li><img src="image/dog2.png" alt="dog2"></li>
+          <li><img src="image/dog3.png" alt="dog3"></li>
+          <li><img src="image/dog4.png" alt="dog4"></li>
+        </ul>
+      </div>
+      <div class="note">
+        <h2>공원에서 하지 말아야 할 행동</h2>
+        <ul>
+          <li>심한 소음 또는 악취를 나게 하는 등 다른 사람에게 혐오감을 주는 행위</li>
+          <li>애완 동물의 배설물을 수거하지 않고 방치하는 행위</li>
+          <li>애완동물을 통제할 수 있는 줄을 매지 않고 입장하는 행위</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="footer">
+      <p>Copyright&copy; 2022 funnycom</p>
+    </div>
+  </div>
+</body>
+</html>

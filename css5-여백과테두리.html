@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS5-여백과테두리</title>
+  <style>
+  .boxx{
+    width: 200px;
+    height: 200px;
+    background-color: rgb(189, 189, 189);
+    border-style: solid;
+    border-width: 20px;
+    border-color:darkcyan;
+     /* border width,style,color,radius 이렇게 4가지 속성이 있다. 주로 앞에 3개만 사용*/
+    
+    margin: 50px; /* 바깥여백 */
+    padding:30px;/* 안쪽여백,풍선처럼 부푼다 처음너비 200, padding때문에 30씩 2번추가돼서 260됨*/
+  }
+    
+  .snd1{
+    background-color: pink;
+    padding-left: 100px;
+    margin-left: 100px;
+  }
+
+  .snd2{
+    background-color: pink;
+    width: 500px;
+    height: 50px;
+    margin-top:100px ;
+    padding-top:50px ;
+  }
+
+ 
+
+  .mbox1{
+    width:200px;
+    height: 100px;
+    margin: 30px;
+    background-color: #8E806A;
+  }
+
+  .mbox2{
+    width:200px;
+    height: 100px;
+    margin: 30px;
+    background-color: #C3B091;
+  }
+   
+  .mbox3{
+    width:200px;
+    height: 100px;
+    margin: 30px;
+    background-color: #E4CDA7;
+  }
+
+  .mbox4{
+    width:200px;
+    height: 100px;
+    margin: 30px;
+    background-color: #FFE6BC;
+  }
+
+
+  .box{
+    width:600px;
+    border-width: 5px;
+    border-color:orange;
+    margin-bottom:20px;
+    padding:10px;
+  }
+
+  .box1{border-style: none;}
+  .box2{border-style: dotted;}
+  .box3{border-style: dashed;}
+  .box4{border-style: solid;}
+  .box5{border-style: groove; border-color:#06c;}
+  .box6{border-style: ridge; border-color:#f06c;}
+  .box7{border-style: double; border-color:#e8e34a;}
+  .box8{border-style: inset; border-color:#0c3;}
+  .box9{border-style: outset; border-color:#063;}
+
+
+
+  h2{
+    width: 800px;
+    height: 50px;
+    /* border-style: solid;
+    border-color:red;
+    border-width: 5px; 이걸 축약하면 아래처럼 한줄로*/  
+    /* border: solid #f00 5px;  ->축약시*/
+
+
+    /* border-style: solid;
+    border-color:#f00;
+    border-top-width: 10px;
+    border-bottom-width: 20px;
+    border-left-width: 15px;
+    border-right-width:5px; 축약하려면 위에두줄 / 아래4줄 이런식으로 묶어야함 바로 아래가 그결과*/
+    border:solid #f00;
+    /* border-width: 10px; 값이 1개일 경우 전체적용*/
+    /*border-width: 20px 10px;  값이 2개일경우  상하,좌우 */
+    /* border-width: 20px 10px 5px; 값이 3개일 경우 상,좌우, 하*/
+    border-width: 10px 5px 20px 15px; /* 값이 4개일경우 상,우,하,좌  */
+    /* 이 원리는 margin, style등등 다 가능하다. */
+    margin:50px;
+
+  }
+
+  h3{/* 실습 */
+    border-style: solid;
+    border-color:blue;
+    border-top-width: 10px;
+    border-bottom-width: 10px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+    margin-left:100px;
+    padding-left:100px;
+    
+    /* 축약 */
+    border:solid blue ;
+    border-width: 10px 0px;
+    
+    
+  }
+
+  p{/* 실습 */
+    border-style: dotted;
+    /* border-top-color: blue;
+    border-bottom-color:blue;
+    border-right-color: red;
+    border-left-color:red; */
+    border-color: blue red;
+
+
+    /* padding-top:20px;
+    padding-bottom:20px;
+    padding-left:50px;
+    padding-right:50px; */
+    padding: 20px 50px;   
+  }
+
+  table{
+    width:400px;
+    height:200px;
+    border: 2px solid green;
+    text-align: center;  /* 텍스트의 수평정렬 가운데  text-align,vertical-align 둘다 텍스트를 정렬*/;
+    margin:0 auto; /* 이게 실제로 table자체를 가운데로 옮기는것 부모를 통째로 옮기는것
+    요소(컨텐츠를 감싸고 있는 부모)의 가운데 정렬 */
+    
+  }
+
+  table td{
+     border: 1px dotted red;
+   }
+
+
+  </style>
+</head>
+
+<body>
+  <img width="50%" src="image/box_style.jpg" alt="박스속성">
+  <hr>
+
+  <h1>바깥여백: margin</h1>
+  <h1>안쪽여백:padding</h1>
+  <div class="boxx"> 내용이 들어갑니다.</div>
+
+  <h5 class="snd1">언어랑 무엇인가?음성으로 의사를 표현하여 의지를 관철시키려는 의도가 있는 것.</h5>
+  <h5 class="snd2">의지를 관철시키려는 의도가 있건 없건 음성으로 의사를 표현하기만 하면 그것이 언어일까?</h5>
+
+  <hr>
+
+  <h1>마진 중첩현상(margin overlap, margin collapse)</h1>
+  <h4>마진이 세로로 중첩되면(똑같아서 겹치면) 하나 상쇄되고 하나의 마진만 나온다 </h4>
+  <h4>하나가 크면 큰쪽의 마진이 이긴다. </h4>
+  <div class="mbox1"></div>
+  <div class="mbox2"></div>
+  <div class="mbox3"></div>
+  <div class="mbox4"></div>
+
+  <hr>
+
+  <h1>테두리의</h1>
+  <h1>모양:border-style</h1>
+  <h1>두께:border-width</h1>
+  <h1>색상:border-color</h1>
+
+    <div class="box box1">테두리의 테두리모양속성:none</div>
+    <div class="box box2">테두리의 테두리모양속성:dotted</div>
+    <div class="box box3">테두리의 테두리모양속성:dashed</div>
+    <div class="box box4">테두리의 테두리모양속성:solid</div>
+    <div class="box box5">테두리의 테두리모양속성:groove</div>
+    <div class="box box6">테두리의 테두리모양속성:ridge</div>
+    <div class="box box7">테두리의 테두리모양속성:double</div>
+    <div class="box box8">테두리의 테두리모양속성:inset</div>
+    <div class="box box9">테두리의 테두리모양속성:outset</div>
+
+    <hr>
+
+    <h2>연습중입니다....</h2>
+
+    <hr>
+
+    
+
+
+
+
+
+
+    <h3>아메리카노</h3>
+    <p>에스프레소의 향은 그대로 느끼면서 뜨거운 물을 부어 1:2정도의 비율로 연하게 먹는 커피다.</p>
+
+
+    <hr>
+
+
+    <table>
+      <tr>
+        <td>내용1</td>
+        <td>내용2</td>
+        <td>내용3</td>
+      </tr>
+      <tr>
+        <td>내용4</td>
+        <td>내용5</td>
+        <td>내용6</td>
+      </tr>
+      <tr>
+        <td>내용7</td>
+        <td>내용8</td>
+        <td>내용9</td>
+      </tr>
+
+    </table>
+</body>
+</html> 

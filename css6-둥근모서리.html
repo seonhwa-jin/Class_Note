@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS6-둥근모서리</title>
+  <style>
+  
+  div{
+    width: 200px;
+    height: 100px;
+    background-color: skyblue;
+    border: 1px solid #000;
+    margin: 20px;
+  }
+
+  .box{
+    border:5px dashed #000;
+    border-radius:50px 40px 20px 10px;
+    /* 왼쪽위부터 시계방향 */
+  }
+
+  .content1{
+    border-radius: 50%; 
+     /*타원->가로,세로 크기 다를때 -->얘는 지금 원본사각형이 직사각형이었음 */
+  }
+
+  .content2{
+    width:200px;
+    height: 200px;
+    border-radius: 50%; 
+     /*정원->가로,세로 크기 같을때 --> 원본사각형이 정사각형 */
+  }
+
+  .brd1{
+    border:5px dashed #000;
+    border-radius: 50px 0px 0px 0px;
+  }
+
+  .brd2{
+    border: 3px dotted palevioletred;
+    border-radius: 20px 0px 20px 0px;
+    background-color: pink;
+  }
+
+
+  .brd3{
+    border: solid 7px red;
+    border-radius: 0px 20px 0px 20px;
+  }
+
+
+
+  </style>
+</head>
+
+<body>
+  <h1>border-radius속성: 둥근모서리 만들기</h1>
+    <div class="box">
+      <h3>Lorem ipsum dolor sit amet </h3>
+    </div>
+
+   <div class="content1"></div>
+   <div class="content2"></div>
+
+
+   <div class="brd1"></div>
+   <div class="brd2"></div>
+   <div class="brd3"></div>
+
+</body>
+</html> 

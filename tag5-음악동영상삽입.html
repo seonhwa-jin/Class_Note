@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>tag5-음악동영상 삽입</title></head>
+
+
+
+<body>
+  <h1>audio태그 : 음악 삽입 (inline태그) </h1>
+    <audio src="media/old_melody.mp3" controls></audio>
+
+  <audio controls autoplay loop>
+    <source src="media/old_melody.mp3" type="video/mp3">
+    <source src="media/old_melody.ogg" type="video/ogg">
+    <source src="media/old_melody.wav" type="video/wav">
+  </audio>
+  <!-- 모든 브라우저에서 오디오파일을 재생할 수 있게 하려면
+  최소한 mp3파일과 wav파일, ogg파일을 갖추고 있어야 한다. -->
+
+  <h1>video태그 : 동영상 삽입 (inline태그) </h1>
+    <video src="media/gate.mp4" controls autoplay width="450px" height="300px"></video>
+
+
+    <video poster="media/seagull.jpg" width="450px" height="300px" controls autoplay muted loop> <!-- 음소거를 써주면 오토플레이 막아둔걸 뚫고 틀 수 있다. -->
+      <source src="media/seagull.mp4" type="video/mp4">
+      <source src="media/seagull.ogv" type="video/ogv">
+      <source src="media/seagull.webm" type="video/webm"> 
+      여기에 입력되는 텍스트는 브라우저에 표시되지 않으며, 영상을 지원하지 않는 브라우저일 경우 이 메세지를 영상 대신 출력한다.
+    </video>
+    
+</body>
+</html>
+
+<!-- 
+  controls: 비디오 컨트롤 버튼을 추가 (재생,일시정지 등)
+  width: 음악,비디오의 너비를 지정
+  height: 음악, 비디오의 높이를 지정
+  src: 음악,비디오 파일의 경로를 지정
+  poster: 동영상의 까만 화면 대신 이미지가 먼저 출력된다. 재생시 사라진다. (autoplay에서는 의미없음)
+  preload : 음악, 비디오를 재생하기 전에 모두 불러올지 지정
+  autoplay: 음악, 비디오를 자동 재생할지 지정
+  loop: 음악, 비디오를 반복할지 지정
+  muted: 음소거
+
+  *크롬에서 동영상 자동재생 안되는 이유
+  18년 1월부터 크롬에서 기본설정으로 차단해놓음
+  소리가 없는 동영상만 오토플레이 허용이므로 소리가 있는 영상에는 muted옵션을 넣으면 자동재생(autoplay) 적용됨!
+ -->

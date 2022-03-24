@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>tag4-form태그</title></head>
+
+
+
+<body>
+  <form> <!-- form:block태그 -->
+    <h1>input:inline태그</h1>
+    <p>이름을 입력하세요!</p>
+    <label for="aa">성명</label> 
+    <!-- <label>은 웹접근성을 위해 꼭 적어야하는 태그. for랑 같이쓰인다.-->
+    <input type="text" id="aa" name="name">
+
+    <p>비밀번호를 입력하세요!</p>
+    <label for="bb">비밀번호</label>
+    <input type="password" id="bb" name="pw" placeholder="8~12w자리의 숫자 입력!">
+
+    <p>인터넷을 사용하는 횟수는?</p>
+    <input type="radio" id="h1" name="hour"> 매일 5~6시간
+    <input type="radio" id="h2" name="hour"> 매일 3~4시간
+    <input type="radio" id="h3" name="hour" checked="checked"> 매일 1~2시간
+    <input type="radio" id="h4" name="hour"> 일주일에 3시간이하
+
+
+
+    <p>관심분야를 선택하세요!</p>
+    <input type="checkbox" value="i1" name="item"> 교육,문화
+    <input type="checkbox" value="i2" name="item"> 스포츠,연예
+    <input type="checkbox" value="i3" name="item"> 정치,경제
+    <input type="checkbox" value="i4" name="item"> 기타
+
+      <!-- 
+        라디오 버튼과 체크박스는 
+        name은 같은 질문에 대한 답이므로 이름이 같아야하고
+        id 또는 value(아무거나 해도 상관없음)는 각각의 답에대한 이름이므로 각각 달라야한다.
+       -->
+
+       <!-- checked="checked"는 미리 체크되어있게 설정하는것  
+        지금처럼 속성과 그 값이 동일한경우 checked 만 써도 동작한다 (required처럼)-->
+
+
+
+    <p>파일을 첨부하세요</p>
+    <input type="file" name="file">
+    
+    <p>버튼을 클릭하세요</p>
+    <input type="button" name="btn" value="이벤트 참여하기">
+
+    <p>전송/취소버튼</p>
+    <input type="submit" name="submit" value="회원가입">
+    <input type="reset" name="reset" value="취소하기">  
+
+
+
+  
+    <!-- 아예 새로 <button>이라는 태그가 나왔다 -->
+    <p>일반 버튼태그</p>
+    <button type="submit">전송하기</button>
+    <hr>
+    
+    <h1>fieldset : block태그</h1>
+      <fieldset>  <!-- <fieldset>은 폼의 그룹을 만든다 -->
+        <legend>개인신상</legend>
+        <label for="na">이름<input type="text" id="na" name="name"></label><br>
+        <label for="tel">이름<input type="text" id="tel" name="tel"></label><br>
+        <label for="mail">이메일<input type="text" id="mail" name="email"></label>
+      </fieldset>
+
+      <fieldset>
+        아이디 <input type="text" name="id">
+        비밀번호 <input type="password" name="pw">
+        <input type="image" src="image/login.jpg" alt="login">
+      </fieldset>
+
+      <hr>
+
+      <h1>select: inline태그</h1>
+      <select name="job">
+        <option value="j0">당신의 직업을 선택하세요!</option>
+        <option value="j1">기술직</option>
+        <option value="j2">연구직</option>
+        <option value="j3">영업,판매</option>
+        <option value="j4">교사,교수</option>
+        <option value="j5">프로그래머</option>
+        <option value="j6">학생</option>
+        <option value="j7">주부</option>
+        <option value="j8">기타</option>
+      </select>
+
+      <select name="subject" size="3" multiple>
+        <option value="s1">건축공학과</option>
+        <option value="s2">기계공학과</option>
+        <option value="s3">컴퓨터공학과</option>
+        <option value="s4">화학공학과</option>
+      </select>
+
+      <hr>
+
+      <h1>textarea: inline태그</h1>
+      <textarea rows="8" cols="50" placeholder="문의사항을 입력하세요!"></textarea>
+      <!-- 한줄에 50자씩 입력할 수 있는 8줄크기 -->
+
+      <hr>
+      <br>
+
+      <!-- 이 밑에는 HTML5 신규 속성들(신규 태그x) -->
+      <h1>신규 속성들</h1>
+      <fieldset>
+        <legend>개인정보</legend>
+        <p>
+          <label for="mail2"> 메일주소 </label>
+          <input type="email" id="mail2">
+          <!-- @있는지 체크해줌 -->
+        </p>
+        <p>
+          <label for="tel"> 연락처 </label>
+          <input type="tel" id="tel">  <!-- tel은 특이 기능은 없고 전화번호라는 가독성으로 존재 -->
+        </p>
+        <p>
+          <label for="site"> 홈페이지 </label>
+          <input type="url" id="site">
+        </p>
+        <!-- url주소를 입력, "http://를 입력했는지 체크" -->
+        
+        <p>
+          <input type="search">
+          <input type="submit" value="검색">
+          <!-- 검색어 입력하면 옆에 x표시 나온다. -->
+        </p>
+        <input type="submit" name="submit" value="가입하기">
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>등록정보</legend>
+        <ul>  <!-- ul은 단독자식으로 li만 품는다. h2같은거 못들어감. 대신 li사이에는 태그가 들어간다. li는 블록이라 다 가능-->
+          <li>
+            <label for="member">참여인원<small>(최대10명)</small></label>
+            <input type="number" id="member" value="1" min="0" max="10" step="1">   <!-- 위코드 2줄에서 for,id는 접근성때문에 들어간것. -->
+          </li>
+          <li>
+            <label for="stuffs">지원물품<small>(1인당 5개)</small></label>
+            <input type="number" id="stuffs" value="10" min="0" max="50" step="5"> 
+            <!-- type= "number" :범위를 정하여 숫자를 조절할 수 있는 화살표가 나옴 -->
+          </li>
+          <li>
+            <label for="satis">희망 단계<small>(하,중,상)</small></label>
+            <input type="range" id="satis" value="1" min="1" max="3">
+          </li>
+        </ul>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>여름방학 특강 신청</legend>
+        <ul>
+          <li>
+            <label for="color">선호색상</label>
+            <input type ="color" id="color">
+            <!-- 색상을 선택할 수 있는 색상표가 나옴 -->
+          </li>
+          <li>
+            <label for="month">조회기간 선택</label>
+            <input type="date" id="date">  <!-- 이게 제일 많이 쓰임 -->
+            <!-- 날짜를 선택할 수 있는 달력이 나옴 -->
+            <input type="month" id="month">
+            <input type="week" id="week">
+            <input type="time" id="time">
+            <input type="datetime" id="datetime1">  <!-- 이 기능은 아직 크롬도 안됨 -->
+            <input type="datetime-local" id="datetime2">
+          </li>
+          <li>
+            <label for="subj">수강과목</label>
+            <input type="text" id="subj" value="영어회화(초급)" readonly>
+            <!-- readonly:쓸 수는 없고 읽을 수만 있는 형태의 입력박스 -->
+          </li>
+        </ul>
+      </fieldset>
+
+      <br>
+
+      <fieldset>
+        <legend>신청자</legend>
+        <ul>
+          <li>
+            <label for="uname">이름</label>
+            <input type="text" id="uname" autofocus required>
+            <!-- autofocus: 입력 커서 표시하기 / required: 필수 입력 지정하기 -->
+          </li>
+          <li>
+            <label for="uid">학번</label>
+            <input type="text" id="uid" placeholder="하이픈없이 입력" maxlength="8" required>
+            <!-- maxlength: 최대값 지정하기 -->
+          </li>
+          <li>
+            <label for="uclass">학과</label>
+            <select id="uclass" name="class">
+              <option value="archi">건축공학과</option>
+              <option value="mechanic">기계공학과</option>
+              <option value="indust">산업공학과</option>
+              <option value="elec">전기전자공학과</option>
+              <option value="computer" selected>컴퓨터공학과</option>
+              <option value="chemical">건축공학과</option>
+            </select>
+          </li>
+        </ul>
+        <button type="submit" name="submit2">신청하기</button>
+        <button type="reset" name="reset">다시쓰기</button>
+        <!-- <button> (inline태그) : <input type="button"과 동일한 버튼을 만들어준다. -->
+      </fieldset>
+
+  </form>
+</body>
+</html>
+

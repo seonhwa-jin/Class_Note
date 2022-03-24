@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS11-display와 visibility속성</title>
+  <style>
+    .box1{
+      display: none;
+    }
+    .box2{
+      display: block;
+    }
+
+
+    .box3{
+      display: inline;
+      /*  inline으로 하면 -> width,height 적용x , margin은 좌우만 적용, padding은 모두 적용*/
+      background-color: orange;
+      width: 300px;
+      height: 200px;
+      margin: 100px;
+      padding: 20px;
+    }
+    .box4{
+      display:inline-block;
+      /* inline-block은 - > 모두 적용 */
+      background-color: orange;
+      width: 300px;
+      height: 200px;
+      margin: 100px;
+      padding: 20px;
+    }
+
+
+    .box5{
+      visibility: hidden;
+    }
+    body{
+      background-color: cadetblue;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>display속성: 태그에서 block형식,inline형식의 태그를 바꿀 수 있다.</h1>
+  <!-- none/block/inline/inline-block 4가지 값이 있다 -->
+  
+  <h2>display:none</h2>
+  <h3>태그를 보이지 않게 만든다(공간 차지 x)</h3>
+  <span>dummy</span>
+  <div class="box1">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+  </div>
+  <span>Dummy</span>
+
+  <h2>display:block</h2>
+  <h3>inline태그를 block태그로 변경</h3>
+  <span>dummy</span>
+  <div class="box2">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+  </div>
+  <span>Dummy</span>
+
+  <h2>display:inline</h2>
+  <h3>block태그를 inline으로 변경</h3>
+  <span>dummy</span>
+  <div class="box3">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+  </div>
+  <span>Dummy</span>
+
+  <h2>display:inline-block</h2>
+  <h3>block태그를 inline으로 변경</h3>
+  <span>dummy</span>
+  <div class="box4">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+  </div>
+  <span>Dummy</span>
+
+  <h2>visibility:hidden</h2>
+  <h3>태그를 보이지 않게 만든다</h3>
+  <span>dummy</span>
+  <div class="box5">
+    <span>Lorem ipsum, dolor sit amet consectetur adipisicing elit.</span>
+  </div>
+  <span>Dummy</span>
+
+
+</body>
+</html> 
+
+

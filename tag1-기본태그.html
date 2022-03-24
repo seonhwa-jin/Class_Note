@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <!-- 문자셋팅: utf-8(다국어용) / euc-kr(국내용) -->
+  <title>tag1-기본태그</title></head>
+
+<body>
+  <h1>웹에서 특수문자 사용하기</h1>
+  <h3>특수문자는 &로 시작해서 ;로 끝난다.</h3>
+  <p> &copy;  &amp;  &lt;  &gt;</p>
+
+
+
+  본문입니다.<br><br><br><br><br> <!-- 줄바꾸기 태그 -->
+  본문입니다.<p><p><p><sup><p></p> <!-- 문단바꾸기 태그  -->
+  <p>본문입니다.</p>
+  <hr color="red" width="500px" size="10px" align="left">
+  <!-- hn태그:큰 제목 태그 , block -->
+  <h1>큰 제목 태그입니다.</h1>
+  <h2>큰 제목 태그입니다.</h2>
+  <h3>큰 제목 태그입니다.</h3>
+  <h4>큰 제목 태그입니다.</h4>
+  <h5>큰 제목 태그입니다.</h5>
+  <h6>큰 제목 태그입니다.</h6>
+
+  <hr>
+
+  <h1>글자모양 변화:inline태그</h1>
+  <strong>진하게</strong><sup>입니다.</sup>
+  <i>이탤릭체</i><sub>입니다.</sub>
+  <small>작은글자</small>입니다.
+  <u>밑줄글자</u>입니다.<br>
+  <del>가운데 줄이 이어진 글자</del>입니다.
+
+  <hr>
+
+  <h1>목록만들기:block태그</h1>
+  <h3>순서가 있는 태그: 출근해서 하는 일!</h3>
+  <ol type="A"> <!-- type="A,a,I,i (기본은 숫자)" -->
+    <li>책상 위 먼지를 닦는다.</li>
+    <li>컴퓨터를 켠다.</li>
+    <li>차 한잔을 마신다.</li>
+    <li>메일을 확인한다.
+      <ul>
+        <li>daum.net</li>
+        <li>naver.com</li>
+        <li>google.com</li>
+      </ul>
+
+    </li>
+    <li>하루 업무 내용을 정리한다.
+      <ol>
+        <li>물품구매기안을 올린다.</li>
+        <li>책상구매건 견적을 받는다.</li>
+        <li>직원들에게 당직표를 공지한다.</li>
+      </ol>
+    </li>
+  </ol>
+
+  <h3>순서가 없는 태그: 과일 목록</h3>
+  <ul> <!-- type="square, circle, disc(기본)" -->
+    <li>망고</li>
+    <li>토마토</li>
+    <li>사과</li>
+    <li>귤</li>
+    <li>체리</li>
+  </ul>
+  
+  <dl>
+    <dt>RAM</dt>
+      <dd>언제든지 읽고 쓸 수 있는 주기억장치</dd>
+    <dt>ROM</dt>
+      <dd>단지 읽기만 할 수 있는 메모리</dd>
+  </dl>
+
+  <hr>
+
+  <h1>이미지 삽입하기 : inline태그</h1>
+  <img src="image/modify.jpg" alt="hello!" title="안녕하세요"><br>
+  <!-- html파일이 있는 위치를 기준으로 하위경로(/) -->
+  <img src="../img/patch.jpg" alt="flower" title="안녕하세요">
+  <!-- html 파일이 있는 위치를 기준으로 상위경로(../) -->
+  <img src="image/modify.jpg" alt="hello!" width="200px" height="200px">
+  <!-- 이미지의 실제사이즈가 변경되는 것이 아니고 사이트상에 임시로 줄여서 보여주는것임 -->
+
+  <hr>
+  <!-- 
+    *block형식의 태그는 block.inline 태그를 모두 포함할 수 있다.
+    단, 블록 형식의 태그중에 <p><h>태그들은 같은 블록태그를 포함할 수 없다.
+
+    *inline 형식의 태그는 글자와 inline태그만 포함할 수 있다.
+    단, 인라인 형식의 태그중에 <a>태그는 block,inline태그를 모두 포함할 수 있다.
+   -->
+  
+  
+  
+  
+  <h1>div,span,p태그의 차이:그룹을 묶는 태그</h1>
+   <div><p>그룹을 묶는 태그에는 <span>p,span,div</span> 태그가 있다.</p> </div>
+
+   <h3>div,p  :  block태그</h3>
+   <div>div태그는 block형식으로 공간을 분할합니다.</div>
+   <div>div태그는 block형식으로 공간을 분할합니다.</div>
+   <div>div태그는 block형식으로 공간을 분할합니다.</div>
+   <div>div태그는 block형식으로 공간을 분할합니다.</div>
+   <div>div태그는 block형식으로 공간을 분할합니다.</div>
+   <p>p태그는 block형식으로 공간을 분할합니다.</p>
+   <p>p태그는 block형식으로 공간을 분할합니다.</p>
+
+
+   <h3>span  :  inline태그</h3>
+   <span>span태그는 inline형식으로 공간을 분할합니다.</span>
+   <span>span태그는 inline형식으로 공간을 분할합니다.</span>
+   <span>span태그는 inline형식으로 공간을 분할합니다.</span>
+   <span>span태그는 inline형식으로 공간을 분할합니다.</span>
+   <span>span태그는 inline형식으로 공간을 분할합니다.</span>
+
+
+    <hr> 
+    <h1>HTML5에 새로 나온 태그</h1>
+    <figure> <!-- block태그: 이미지 그룹 만들기(이미지나 컨텐츠에 설명을 달 수 있음) -->
+      <img src="image/dong.png" alt="동백방 4인실">
+      <img src="image/yu.png" alt="유채방 4인실">
+      <figuration>동백방과 유채방은 4인실로 동성4인 또는 가족 1팀이 함께 묵을 수 있습니다. 
+        <mark>1인 20,000원</mark>
+      </figuration>
+    </figure>
+
+     <!-- <mark>태그는 강조처리(형광펜 효과) -->
+      <p>mark태그는 선택한 부분의 배경색이 노랑색이 되며<br>
+      <mark>형광펜으로 그어 놓은 듯한 효과</mark>를 낸다.</mark></p>
+
+      <q cite="http://www.w3.org">웹의 힘은 보편성에 있다.
+        장애에 구애없이 모든 사람이 접근할 수 있는 것이 필수적인 요소이다.</q>
+        <!-- <q>는 인용부호를 표시. cite 속성은 출처를 표시하지만 실제 연결되지는 않는다. -->
+
+      <p><time datetime="2022-11-17T14:00:00">목요일 오후 2시</time> 회의일정</p>
+      <!-- 
+        <time datetime="YYYY-MM-DDThh:mm:ssZ" >
+      T는 시간을 함께 표시해야 할 경우 앞의 날짜와 뒤의 시간 사이를 구분해주는 표시
+      Z는 시간대를 의미한다.
+    
+      <time>태그는 날짜나 시간에 관련된 부분에 사용된다. 하지만 웹문서에 날짜나 시간을 자동으로 표시해주는 태그는 아니다.-->
+
+      <details> <!-- block태그/ 세부 항목이나 추가정보를 숨겨놓았다가 펼쳐 보여줄 수 있는 기능 -->
+        <summary>아이폰으로 용돈벌기</summary>
+        <ul>
+          <li>출판사:아이콕스</li>
+          <li>저자:정창훈</li>
+          <li>가격:25,000원</li>
+          <li>출간일: <time datetime="2022-03-16">2022년 3월 16일</time></li>
+        </ul>
+      </details>
+
+      <h2>파일 다운로드</h2>
+      <p>다운로드 진행: <progress max="100"><span>0</span>%</progress></p>
+
+      <h2>투표상황</h2>
+      <p>현재 투표 진행상황: <meter min="0" max="100" value="20" low="30" high="65" title="percent">20%</meter></p>
+      <p>현재 투표 진행상황: <meter min="0" max="100" value="60" low="30" high="65" title="percent">60%</meter></p>
+      <p>현재 투표 진행상황: <meter min="0" max="100" value="70" low="30" high="65" title="percent">70%</meter></p>
+
+      <!-- 
+        <progress> : 다운로드의 진행상황같은 값을 나타낸다.
+        <meter> :정해져 있는 범위의 값에서 현재 상태의 값을 나타낸다.
+
+          min,max 속성은 범위의 최대값과 최소값을 나타낸다.
+          value 속성은 현재값을 의미한다.
+          low,high속성은 전체값에서 낮은값과 높은값을 의미한다.
+          title 속성은 상황에 맞는 도움말이나 실제값에 대한 설명 
+       -->
+
+</body>
+</html>
+

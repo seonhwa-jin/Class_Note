@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS17-표꾸미기</title>
+  <style>
+    caption{
+      color: #f00;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    thead{
+      background-color: green;
+      color:white;
+    }
+    tfoot{
+      background-color: orange;
+      font-size: 20px;
+    }
+    .col1{background-color: red;}
+    .col2{background-color: blue;}
+    .col3{background-color: skyblue;}
+
+    .table1, .table2, .table3, .table4{margin-top: 30px;}
+    .table1{
+      border:1px solid #000;
+      border-collapse: collapse;  /* 신규속성 더블선을 합침 */
+      /* border-spacing: 20px 10px;  이건 border-collapse:seperate일때만 사용함 벌려져있어야 간격을 조정할거니까  , 얘는 또 순서가 좌우, 상하가 됨. table2참고*/
+    }
+    .table1 td{
+      border:1px dotted #000;
+      padding: 10px;
+    }
+
+
+
+    /* border-spacing 배우기*/
+    .table2{
+      border:1px solid #000;
+      border-collapse: separate; 
+      border-spacing: 20px 10px;  
+    }
+    .table2 td{
+      border:1px dotted #000;
+      padding: 10px;
+    }
+
+
+
+    /* empty-cells 배우기 :빈 셀에 대한 */
+    .table3{
+      border:1px solid #000;
+      border-collapse: separate; 
+      border-spacing: 20px 10px;  
+    }
+    .table3 td{
+      border:1px dotted #000;
+      padding: 10px;
+      empty-cells: hide; /* 보이게할지, 안보이게 핳지 show/hide */
+    }
+
+
+
+
+    /* 넘치는 내용에 table-layout 사용하기*/
+    .table4{
+      border:1px solid #000;
+      border-collapse: collapse; /* 표안의 테두리 합침 */
+      width:300px;
+      table-layout: fixed; /* 셀너비 고정.내용 많아지면 밑으로 길어짐  이거 안해주면 내용많은쪽 늘어나고 적은쪽이 줄어드는게 디폴트 */
+      word-break: break-all; /* 셀너비보다 긴 내용도 셀 인에 표시 */
+      height: auto; /* 셀의 줄 바꿈따라 높이값 자동 조절 */
+    }
+    .table4 td{
+      border:1px dotted #000;
+      padding: 10px;
+      
+    }
+
+  </style>
+</head>
+
+
+<body> 
+  <table border="1px">
+    <caption>표의 제목이 들어감</caption> <!-- 표 제목 태그 -->
+    
+    <colgroup>  <!-- 표의 열(세로) 그룹 --> <!-- <col>은 단독태그 -->
+      <col span="2" class="col1">  <!-- 표의 5열중 1,2열 -->
+      <col class="col2">           <!-- 표의 5열중 3열 -->
+      <col span="2" class="col3">  <!-- 표의 5열중 4,5열 -->
+    </colgroup>
+    
+    
+    
+    
+    <thead>  <!-- 표의 머리: head인데 t가 붙은거, 어려운거 아니다
+       이거 걍 div로 묶어준거같은 개념이다  -->
+      <tr>
+        <th>Table Header</th>
+        <th>Table Header</th>
+        <th>Table Header</th>
+        <th>Table Header</th>
+        <th>Table Header</th>
+      </tr>
+    </thead>
+    <tbody> <!-- 표의 본문 -->
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+      <tr>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+        <td>Table Data</td>
+      </tr>
+    </tbody>
+    <tfoot> <!-- 표의 꼬리 -->
+      <tr>
+        <td>Table Footer</td>
+        <td>Table Footer</td>
+        <td>Table Footer</td>
+        <td>Table Footer</td>
+        <td>Table Footer</td>
+      </tr>
+    </tfoot>
+    </table>
+  
+<!-- 
+  지금 <thead><tbody><tfoot>은 표의 행그룹으로 나눈거
+  열그룹은 아예 캡션 바로 밑에부터 시작해야 한다.-->
+
+
+    <p> <!-- 줄띄우는용도 -->
+
+    <table class="table1">
+      <tr><td>내용1</td><td>내용2</td><td>내용3</td></tr>
+      <tr><td>내용4</td><td>내용5</td><td>내용6</td></tr>
+      <tr><td>내용7</td><td>내용8</td><td>내용9</td></tr>
+    </table>
+
+    <table class="table2">
+      <tr><td>내용1</td><td>내용2</td><td>내용3</td></tr>
+      <tr><td>내용4</td><td>내용5</td><td>내용6</td></tr>
+      <tr><td>내용7</td><td>내용8</td><td>내용9</td></tr>
+    </table>
+
+    <table class="table3">
+      <tr><td>내용1</td><td>내용2</td><td>내용3</td></tr>
+      <tr><td>내용4</td><td>내용5</td><td></td></tr>
+      <tr><td>내용7</td><td>내용8</td><td></td></tr>
+    </table>
+
+
+    <table class="table4">
+      <tr>
+        <td>한글로띄어쓰지않고길게입력하기</td>
+        <td>CDIKWJOETKJVCNDVBKEJRLKJQPWOIPLQKSKPQOWLIKPREWOQLKWPQRLKWPQRLKWPQ</td>
+      </tr>
+    </table>
+
+
+</body>
+</html> 
+
+
+
+<!-- 
+  🤍* caption-side속성 - 표 제목 위치 정하기
+  caption-side: top ; (캡션을 표의 윗부분에 표시-기본값)
+  caption-side: bottom ; (캡션을 표의 아랫부분에 표시)
+
+  🤍* border-collapse속성 - 테두리 통합, 분리하기
+  border-collapse:collapse; (테두리를 하나로 합쳐 표시)
+  border-collapse:seperate; (테두리를 따로따로 표시-기본값)
+
+  
+  🤍* border-spacing속성 - "border-collapse:separate"속성을 사용해 셀들을 분리했을 경우
+  인접한 셀 테두리 사이거리 지정하기
+  border-spacing :크기;
+
+  🤍* empty-cells 속성 - 빈 셀의 표시 여부 지정하기
+  empty-cells: show; (빈 셀 주위에 테두리를 표시하고 빈셀을 표시 - 기본값)
+  empty-cells: hide; (빈 셀에 테두리가 표시되지 않고 비워둠)
+  
+  🤍* table-layout 속성- 콘텐츠에 맞게 셀너비 지정하기
+  table-layout: fixed; (셀너비를 고정, 즉 셀 내용에 따라 너비가 달라지지 않음)
+  table-layout: auto;  (셀 내용에 따라 셀이 너비가 달라짐 - 기본값)
+
+ -->
+
+ 

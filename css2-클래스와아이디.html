@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS1-사용형식1</title>
+  <!-- css사용형식1: 문서내 <head>~</head>사이에 css선언하기 -->
+  <style>
+    .aa{color:#F00}
+    .bb{font-weight: bold;}
+    #aa{color:green}
+    #bb{font-weight: bold;}
+
+    .tt{text-align:center; background-color: #ff0;}
+    .t01{color:#F00, font-weight:bold;}
+    .t02{color:orange;}
+    
+    table{width: 400px; height: 400px;}
+    table td{text-align:center; color:red;}
+  </style>
+</head>
+
+<body>
+  <p>이것은 보통단락입니다.</p>
+  <p class="aa bb">색상이 적용됩니다.</p>
+  <p>이것은 보통단락입니다.</p>
+  <p>색상이 적용됩니다.</p>
+  <p>진하게 표시됩니다.</p>
+
+  <!-- 
+    (1)한 태그에 클래스는 1개 이상을 적용할 수 있지만, 아이디는 한개만 적용가능
+    (2)클래스는 문서내에서 여러번 사용할 수 있지만, 아이디는 한번만 사용됨.
+   -->
+   <div class="tt">
+      <h1>center 태그를 사용한다면...</h1>
+      <p> 
+        center태그를 사용한다면, <br>
+        div태그를 이용해서<br>
+        스타일시트의 text-align을 쓰는 것이 좋습니다.
+      </p>
+    </div>
+
+</body>
+</html> 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS10-하이퍼링크</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet"> 
+  <style>
+    /* 하이퍼링크 상태
+    a:link{}    -> 하이퍼링크에 대한 기본설정
+    a:visited{} -> 한번 누른적이 있는 링크에 대한 설정
+    a:active{}  -> 누르고 있는 동안의 링크에 대한 설정
+    a:hover{}   -> 마우스 오버시의 링크에 대한 설정*/
+
+    body{
+      font-family: 'Nanum Gothic', sans-serif;
+      font-size: 14px;
+      color:#666;
+    }
+
+    h1{
+      border-left: solid red 10px;
+      /*border-left-style:solid;
+      border-left-color:red;
+      border-left-width:5px; */
+      font-size:24px;
+      color:#333;
+      padding-left:10px;
+      border-radius: 3px;
+    }
+
+
+    /* 모든 상태의 하이퍼링크 밑줄 없애기 */
+    /* a:link, a:visited, a:active, a:hover{
+      text-decoration: none 요즘은 link, hover두개만 신경쓰긴함;
+    } */
+    a{
+      text-decoration: none;
+    }
+
+
+
+
+    /* 기본 하이퍼링크 설정 */
+    a{
+      color:skyblue;
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    a:hover{ /* 마우스 오버시 설정 */
+      color:#333;
+    }
+
+    /* 기본 설정 외 하이퍼링크 설정=-> 오버시 효과를 한가지가 아닌 여러가지로 적용할때 */
+    .link1{
+      color:orange;
+      padding:3px 5px;
+    }
+    .link1:hover{
+      background-color: rgb(124, 86, 36);
+      color:beige;
+      /* padding:3px 5px; ->오버시에만 여백을 넣으면 크기가 달라지니까 글자가 밀림. 이걸 방지하려고 오버때 패딩말고 위에다가 줘버림*/
+    }
+
+    .link2{
+      color:green;
+      padding:3px 5px;
+    }
+    .link2:hover{
+      /* text-decoration: underline;  <-이 속성은 진짜 밑줄기능뿐임 색상이나 여백등등 꾸밀수가없음. 그래서 border로 하는게 좋다. */
+      border-bottom: 3px solid aquamarine; 
+      
+      padding-bottom:3px;/* 글자와 밑줄 사이의 간격 조정 */
+
+      background-color: yellowgreen;
+      color:white;
+    }
+    
+    .link3 {
+      color:purple;
+      border:2px dotted transparent;
+      padding: ;
+    }
+    .link3:hover{
+      border:2px dotted hotpink;
+    }
+    /* 마우스 오버시 글자가 밀리는 경우는  OUT(마우스 올리기 전)과 OVER(마우스 올린 후)의 상태가 동일하지 않기 때문이다. 
+    ->해결:OUT상태를 OVER상태와 동일하게 설정해준다. 예를 들어 border, padding등..  */
+
+
+
+    .link4{
+      text-align: center;
+      margin-top: 200px;
+    }
+
+
+    .link4 a{ /* div태그안에 있는 a태그 -> 경로를 적어주어야 한다. */
+      color:#999;
+      font-size: 13px;
+      font-weight: normal; /* 기본으로 설정된 "bold"를 해지, normal은 초기화같은 개념으로 알아두기 */
+      /* a태그는 인라인이기 때문에 text-align:center;는 적용 안됨. 텍스트얼라인은 블록에만 적용됨.
+      그러면 이친구의 부모는 div고 div는 블록이니까 걔한테 얼라인을 주면 된다.
+       */
+    }
+    .link4 a:hover{
+      font-style: italic;
+      color:pink;
+    }
+    
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <h1>하이퍼링크란?</h1>
+  <p>인터넷에서 홈페이지를 방문한 경우 <a href="#">파란글자</a>에 밑줄이 있는 글자나 어떤 그림이나 사진에 마우스포인트를 올려놓으면 마우스 포인트가 화살표 모양에서 손 모양으로 바뀌는 것을 본 적이 있을 것이다. 이렇게 마우스가 손 모양으로 바뀌는 것을 <a href="#" class="link1">하이퍼텍스트</a>라고 하며, 하이퍼텍스트를 클릭하면 연결되어 있는 다른 페이지가 나타난다. 하이퍼텍스트를 클릭하였을때 다른 문서로 연결시켜 주는것을 <a href="#" class="link2">하이퍼링크</a>라고 한다. </p>
+
+  <p>html에서는 한 문서에 한개의 하이퍼링크 설정만 할 수 있었지만, css에서는 class를 이용해 한 문서에 <a href="#" class="link3">여러개의 하이퍼링크</a> 설정을 할 수 있다.</p>
+
+  <div class="link4">
+    <a href="#">BACK</a> |  <a href="#">LIST</a>  |  <a href="#">NEXT</a>
+  </div>
+
+</body>
+</html> 
+
+

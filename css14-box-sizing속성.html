@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS14-box-sizing 속성</title>
+  <style>
+    body{
+      background-color:snow;
+    }
+    *{margin:0 ; padding:0; }  
+
+  .wrapper{
+    width: 300px;
+    height:100px;
+    border: 5px solid #ffb2f5;
+    background-color: brown;
+  }
+
+  .one, .two{
+    float: left;
+    width:150px; 
+    height:100px;
+  
+    border:5px solid purple;
+    background-color: #ccc;
+  }
+  /* .one, .two{
+    float: left;
+    width:150px; 150,150=300이군 하고 넣으면 안넣어진다 -> 공간이 부족함 여유있게해야한다.
+                width안에 border가 포함이 안되므로 좌우의 border 10px만큼을 줄여준다.
+    height:100px; height 안에 border가 포함이 안되므로 상하의 border 10px만큼을 줄여준다.
+  
+    border:5px solid purple;
+    background-color: #ccc;
+  } */
+
+  .one{box-sizing: border-box;}  /* margin속성만 포함  <-신경쓸게 적어서 이걸 더 많이 쓴다.*/
+  .two{box-sizing: content-box;} /* padding,border속성 포함 */
+   
+  </style>
+</head>
+
+<body>
+  <h3>box-sizing:border-box</h3>
+  <div class="wrapper">
+    <div class="one">50%</div>
+    <div class="one">50%</div>
+  </div>
+
+  <h3>box-sizing:contetn-box</h3>
+  <div class="wrapper">
+    <div class="two">50%</div>
+    <div class="two">50%</div>
+  </div>
+</body>
+</html> 
+
+<!-- box sizing속성
+width와 height속성은 글자를 감싸는 영역의 크기를 지정하는 스타일 속성이며,
+box-sizing속성은 width속성과 height속성이 차지하는 범위(전체너비와 전체높이)를 지정한다.  
+
+전체너비 = width + 2x(margin + border + padding)
+전체높이 = height + 2x(margin + border + padding)-->
+
+

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS4-목록</title>
+  <style>
+  .color{
+    color:blue;
+    font-weight: 600;
+  }
+
+  .ti1{list-style-type: disc;}
+  .ti2{list-style-type: square;}
+  .ti3{list-style-type: decimal;}
+  .ti4{list-style-type: lower-roman;}
+  .ti5{list-style-type: upper-roman;}
+  .ti6{list-style-type: lower-alpha;}
+  .ti7{list-style-type: upper-alpha;}
+  .ti8{list-style-type: none;}
+
+  .ti9A{
+    background-color: pink;
+    list-style-position: inside; /* 블릿이나 숫자를 안으로 들여씀 
+    기본이 outside다. 아래랑 비교 */
+    padding-left: 0;
+    margin-left:50px;
+  }
+
+  .ti9B{
+    background-color: pink;
+    list-style-position: outside; 
+    padding-left: 0;
+    margin-left:50px;
+    /* 목록태그에서 블릿이나 숫자는 기본적으로 outside값으로 영역내에 포함안된다. */
+  }
+
+  .ti10{
+    list-style-image: url(image/dot.gif);
+  }
+  /*  .ti10{list-style-image: url();}이게 공식 */
+
+
+  </style>
+</head>
+
+<body>
+ <h1>목록꾸미기:list-style-type</h1>
+  인터넷에는,
+  <ol class="ti1">
+    <li class="color">★list-style-type: disc</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti2">
+    <li class="color">★list-style-type: square</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti3">
+    <li class="color">★list-style-type: decimal</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti4">
+    <li class="color">★list-style-type: lower-roman</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti5">
+    <li class="color">★list-style-type: upper-roman</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti6">
+    <li class="color">★list-style-type: lower-alpha</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti7">
+    <li class="color">★list-style-type: upper-alpha</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+  <ol class="ti8">
+    <li class="color">★list-style-type: none(제일 많이 사용)</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+
+  <hr size="5">
+
+ <h1>목록에 들여쓰는 효과내기 : list-style-position  inside와 outside차이</h1>
+  <ol class="ti9A">
+    <li class="color">여기는 inside</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>  
+  </ol>
+<br>
+  <ol class="ti9B">
+    <li class="color">여기는 outside</li>
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>  
+  </ol>
+
+  <hr size="5">
+
+ <h1>이미지로 목록꾸미기:list-style-image (많이 사용)</h1>   
+   <ol class="ti10">
+    <li>World Wide Web</li>
+    <li>Telenet</li>
+    <li>FTP</li>
+  </ol>
+    
+</body>
+</html> 

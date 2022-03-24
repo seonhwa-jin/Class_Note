@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS9-그라데이션 효과</title>
+  <!-- 새로운 CSS속성을 지원하지 않는 브라우저에서 접두사를 붙여 식별할 수 있도록 한다. 
+    
+    -webkit- 크롬,사파리 등
+    -moz-, -모질라 파이어폭스 등
+    -o-오페라
+    -ms- 익스플로러
+  
+    소스를 4번 복사해서 하나씩 앞에 붙여준다. (나중엔 강제로 붙여주는 스크립트를 따로 사용한다.)
+    
+    똑같은 명령을 계속 쓴다면 제일 아래에 적힌게 우선순위 1등 
+    그래서 원본을 두고 접두사 붙인애들은 그 "위에" 4개 적는다.-->
+
+
+  <style>
+    body{
+     background: linear-gradient(to bottom, skyblue, white 50%);
+     background-attachment: fixed;
+    }
+
+    .box{
+      width: 400px;
+      height:200px;
+      background-color: #CCC; /* 그라데이션을 지원하지 않는 브라우저를 위한 배경지정 */
+    }
+
+    .box1{background: linear-gradient(45deg, #f00, #fff);}
+    .box2{background: linear-gradient(to bottom, blue, white);}
+    .box3{background: linear-gradient(150deg, blue, white, yellow);}
+    .box4{background: radial-gradient(circle, white, blue);}
+
+
+
+    /* https://www.colorzilla.com/gradient-editor/
+    를 이용해서 복잡한 그라데이션을 만들기 */
+    .box5{
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#75d88c+0,67c2ce+25,112d33+49,b2ac59+79,994c87+100 */
+background: #75d88c; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #75d88c 0%, #67c2ce 25%, #112d33 49%, #b2ac59 79%, #994c87 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(-45deg,  #75d88c 0%,#67c2ce 25%,#112d33 49%,#b2ac59 79%,#994c87 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(135deg,  #75d88c 0%,#67c2ce 25%,#112d33 49%,#b2ac59 79%,#994c87 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75d88c', endColorstr='#994c87',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+    }
+
+
+
+  </style>
+</head>
+
+<body>
+  <div class="box box1"><h2>선형그라데이션</h2></div>
+  <div class="box box2"><h2>선형그라데이션</h2></div>
+  <div class="box box3"><h2>선형그라데이션</h2></div>
+  <div class="box box4"><h2>원형그라데이션</h2></div>
+  <div class="box box5"><h2>Gradient Generator</h2></div>
+
+</body>
+</html> 
+
+
+<!-- 
+  linear gradient (45deg, #f85032 0% , #E73827 100%)    ->선형
+                   각도      색상 위치 ,  색상 위치 
+                  
+  *선형 그라데이션 위치값
+    to top: 아래에서 시작 위로 그라데이션
+    to left: 오른쪽에서 왼쪽으로 그라데이션
+    to right:왼쪽에서 시작 오른쪽으로 그라데이션
+    to bottom: 위에서 시작 아래로 그라데이션
+
+  radial-gradient
+  -->

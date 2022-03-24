@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS13-float속성</title>
+  <style>
+    body{
+      background-color: #daf0f7;
+    }
+    *{margin:0 ; padding:0; }  
+    #row1{
+      width:500px;
+      border:5px solid #999;
+      margin: 20px auto;  /* 요소의 가운데 정렬 앞에는 건드려도 됨 */
+      overflow: hidden; 
+       /* - > 해결방법(1) 부모가 자식의 높이를 인식못하는것. -> 오버플로우 히든을 적용*/
+    }
+    #row1 .box01{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      margin: 5px;
+      padding:5px;
+      float: left;
+    }
+    #row1 .box02{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      margin: 5px;
+      padding:5px;
+      float: left;
+    }
+
+
+
+    /* 해결방법(2) 
+    자식이 모두 float를 적용하면 부모가 높이를 인식하지 못해서 문제가 생기는것이었다
+    -> 맨뒤에 float가 해지된 내용이 없는 빈 자식을 만든 후 부모(태그)에게 적용한다.*/
+    #row2{
+      width:500px;
+      border:5px solid #999;
+      margin: 20px auto;  /* 요소의 가운데 정렬 앞에는 건드려도 됨 */
+    }
+    #row2 .box01{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      margin: 5px;
+      padding:5px;
+      float: left;
+    }
+    #row2 .box02{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      margin: 5px;
+      padding:5px;
+      float: right;
+    }
+
+    .clear:after{        /* 맨뒤를 뜻하는 선택자 */
+      content: "";       /* 내용이 없음 */
+      display: block;    /* block의 성질을 가지고 있는 자식을 만듦 */
+      clear: both;       /* float의 left,right 모두 해제 */
+    }
+
+    #row2 .box03{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #999;
+      margin: 5px;
+      padding:5px;
+      clear:both;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="row1">
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+  </div>
+
+  <div id="row2" class="clear">
+    <div class="box01">box01</div>
+    <div class="box02">box02</div>
+    <!-- 해결방법(2)때문에 clear속성으로 만든 자식이 들어감(맨 마지막이라는 선택자 포함 ) -->
+    <div class="box03">box03</div>
+  </div>
+
+</body>
+</html> 
+
+

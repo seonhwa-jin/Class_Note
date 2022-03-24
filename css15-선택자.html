@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS15-선택자</title>
+  <style>
+  h4{background-color:salmon; color: white; width:fit-content;}
+
+    
+    /* 자손후손 선택자 */
+    /* #select1 h1{color:#f00;} -->후손 선택자 (선택자 태그 아래에 위치한 "모든"태그) */
+    #select1>h1{color:#f00;} /* 자손 선택자 (선택자 바로 한단계 아래에 위치한 태그 = 직계자손같은 느낌, > 하나만 적음) */
+
+
+    /* 형태구조 선택자 */
+    #select2 h1:first-of-type{color:red} /* h1 태그 중 첫번째 */
+    #select2 h2:first-of-type{color:orange} /* h2 태그 중 첫번째 */
+    #select2 h3:first-of-type{color:blue} /* h3 태그 중 첫번째 */
+    #select2 h3:last-of-type{color:green} /* h3 태그 중 마지막 */
+    #select2 h2:nth-of-type(2){color:skyblue} /* h2 태그 중 2번째 */
+    #select2 h3:nth-of-type(3){color:pink} /* h3 태그 중 3번째 */
+    #select2 h3:nth-last-of-type(2){color:gray} /* h3 태그 중 뒤에서 2번째 */
+    
+
+    /* 일반구조 선택자 */
+    .list{
+      overflow: hidden; /* float문제 해결 (css13번 문서 참고) */
+    }
+    .list ul{}
+    .list ul li{
+      list-style-type:none;
+      float:left;
+     padding: 10px;
+     display: inline;
+    }
+
+    .list ul li:nth-child(2n){background-color: pink;} /* 2,4,6... 짝수(even) */
+    .list ul li:nth-child(2n+1){background-color: purple;} /* 1,3,5... 홀수(odd) */
+    .list ul li:first-child{border-radius: 15px 0 0 15px;}
+    .list ul li:last-child{border-radius: 0 15px 15px 0;}
+    
+
+    .box p:first-letter{font-size:300%; color:red;}  /* p태그 안의 첫 글자는 글자 크기 세배로 */
+
+    .box{border: solid 2px #666;}
+    .box:before{content:"box의 맨앞에 문장을 삽입한다."; color:green;}
+    .box:after{content:"box의 맨뒤에 문장을 삽입한다."; color:orange;}
+
+
+
+    /* 일반구조,형태구조 차이점 볼수있게 예시 */
+    #select4 p:nth-child(3){color:beige; background-color: #666; font-weight: bold;}  /* 일반구조 선택자*/
+    #select4 p:nth-of-type(3){color:plum; background-color: #666; font-weight: bold;}  /* 형태구조 선택자*/
+    /* 일반과 형태구조 선택자의 차이
+    nth-child 일반구조 선택자는 부모요소의 모든 자식요소를 대상으로 n번째 자식을 선택하고 (차별없이 여러태그중 n번째 순서로만 구분)
+    nth-of-type 형태구조 선택자는 부모요소의 특정요소만을 대상으로 n번째 자식을 선택(p면 p중에서 3번째 이렇게 차별을 해서 찾음)*/
+
+
+
+
+
+    /* 동위선택자 */
+    #select5 h1+h2{color:red;}
+    /* h1태그의 바로 뒤에 위치하는 h2태그의 color속성에 red를 적용, 꽤 사용함 */
+
+    #select5 h1~h2{background-color: yellowgreen}
+    /* h1태그의 뒤에 위치하는 h2태그의 bg 속성에 yellowgreen을 적용 */
+
+
+
+
+
+
+    /* 기본 속성 선택자 ( form 태그에서 주로 사용함)*/
+    /* input{background-color: darkorange;}  <-이렇게하면 input은 가뜩이나 종류도 많은데 온갖 input에 다 적용됨. 
+    그래서 아래처럼 대괄호로 씀 */
+    input[type=text]{background-color: red; width: 100px;}
+    input[type=password]{background-color: blue; width: 300px;}
+A
+
+
+
+
+
+
+
+
+    /* 특정범위는 nth-child(n+k):nth-child(-n+m) 형식을 취해주면 된다. 
+    (ex) nth-child(n+4):nth-child(-n+8)  ->4번째에서 8번째 
+    
+    1,3,5,7... 처럼 홀수만 선택할때는 nth-child(2n-1)
+    3,7,11....과 같은 경우 4n-1을 적용해야 한다.
+    
+    n은 0부터 시작함.
+    -0+4=4 -1+4=3 -2+4=2  -3+4=1  
+    ★아 규칙 이해 완★ 내가 읽어보니까 
+    a번째부터 -> n+a 고
+    b번째까지 -> -n+b네 */
+    
+    
+     /* (ex) ~5번째까지 */
+     #select6 ul li:nth-child(-n+5){color:orange; background-color: lightyellow;}
+
+     /* (ex) 6~10번째까지 */
+     #select6 ul li:nth-child(n+6):nth-child(-n+10){color:purple; background-color: pink;}
+
+     /* (ex) 11번째부터~ */
+     #select6 ul li:nth-child(n+11){color:blue; background-color: skyblue;}
+
+
+
+
+
+
+  </style>
+</head>
+<body>
+  <h1>자손후손선택자</h1>
+  <h4>자식태그 속에 또 자식태그 있을때 적용범위를 직계자식까지만 할껀지, 손주들까지 해줄껀지 선택하는것. 직계자손만 해주려면 >를 사용하면된다</h4>
+  <div id="select1">  
+    <h1>Lorem ipsum</h1>
+    <h1>Lorem ipsum</h1>
+    <div id="nav">
+      <h1>Navigation</h1>
+      <h1>Navigation</h1>
+      <h1>Navigation</h1>
+    </div>
+  </div>
+<hr>
+<h1>형태구조 선택자:nth-of-type</h1>
+<h4>여러 태그들 중에 몇번째 자식으로 구분. 똑같이 생긴 태그중에서만 순서를 센다</h4>
+<div id="select2">
+  <h1>Header - 1</h1>
+  <h2>Header - 2</h2>
+  <h2>Header - 2</h2>
+  <h2>Header - 2</h2>
+  <h3>Header - 3</h3>
+  <h3>Header - 3</h3>
+  <h3>Header - 3</h3>
+  <h3>Header - 3</h3>
+  <h3>Header - 3</h3>
+  <h2>Header - 2</h2>
+  <h1>Header - 1</h1>
+</div>
+
+<hr>
+<h1>일반구조 선택자 : nth-child</h1>
+<h4>내가 자주 쓰던 그거. 근데 여러 태그들이랑 섞여있을때는 걔네들도 다 세서 정말로 "몇번째"에 위치했는지가 중요<br>
+  odd-홀수/ even-짝수
+</h4>
+
+<div class="test">
+  <span></span>
+  <span></span>
+  <p></p>
+
+</div>
+
+<div id="select3">
+  <div class="list">
+    <ul>
+      <li>일요일</li>
+      <li>월요일</li>
+      <li>화요일</li>
+      <li>수요일</li>
+      <li>목요일</li>
+      <li>금요일</li>
+      <li>토요일</li>
+    </ul>
+  </div>
+<hr><br>
+  <div class="box">
+    <p>COMPANY</p>
+    <p>PRODUCT</p>
+    <p>SERVICE</p>
+  </div>
+</div>
+<hr>
+
+<h1>'일반구조 선택자'와 '형태구조 선택자'의 차이 </h1>
+<h4>nth-child와 nth-of-type의 차이를 직접 볼수있음</h4>
+<div id="select4">
+  <p>구조 선택자</p>
+  <span></span>
+  <p>구조 선택자</p> <!-- p:nth-child(3)일반구조 -> 같은 서열이면 중간에 있는 <span>까지 포함해서 3번째임 -->
+  <span></span>
+  <p>구조 선택자</p> <!-- p:nth-of-type(3)형태구조 - > 선택된 <p>중에서 3번째임 -->
+</div>
+  
+<hr>
+
+<h1>동위선택자</h1>
+<div id="select5">
+  <h1>Header -1 </h1>
+  <h2>Header -2 </h2>
+  <h2>Header -2 </h2>
+  <h2>Header -2 </h2>
+  <h2>Header -2 </h2>
+  <h3>Header -3 </h3>
+  <h2>Header -2 </h2>
+</div>
+
+<hr>
+
+<h1>기본속성 선택자 : 선택자[속성=값]</h1>
+<h4>form에 많이 쓰이는 input같은거 개별로 색상 바꿀때 사용하는거</h4>
+<form>
+  <input type="text">
+  <input type="password">
+</form>
+
+<hr>
+
+
+
+
+<h1>00~00까지 범위 지정하기</h1>
+<h4>엄청 긴 목록에서 어디~어디까지만 뭐 하고 이럴때 많이 씀</h4>
+<div id="select6">
+  <ul>
+    <li>강남캠퍼스</li>
+    <li>종로캠퍼스</li>
+    <li>신촌캠퍼스</li>
+    <li>노원캠퍼스</li>
+    <li>상봉캠퍼스</li>
+    <li>대림캠퍼스</li>
+    <li>안양캠퍼스</li>
+    <li>의정부캠퍼스</li>
+    <li>구리캠퍼스</li>
+    <li>성남캠퍼스</li>
+    <li>일산캠퍼스</li>
+    <li>대전캠퍼스</li>
+    <li>진주캠퍼스</li>
+    <li>IT아카데미</li>
+  </ul>
+
+ <!-- 특정범위는 nth-child(n+k):nth-child(-n+m) 형식을 취해주면 된다. 
+  (ex) nth-child(n+4):nth-child(-n+8)  ->4번째에서 8번째 
+  
+  1,3,5,7... 처럼 홀수만 선택할때는 nth-child(2n-1)
+  3,7,11....과 같은 경우 4n-1을 적용해야 한다.
+  
+  n은 0부터 시작함.
+  -0+4=4 -1+4=3 -2+4=2  -3+4=1  -->
+</div>
+
+</body>
+</html> 
+
+

@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>tag2-표만들기</title></head>
+
+
+
+
+
+
+  <!-- <body background="image/modify.jpg" 문서 전체에 배경이미지(바둑판식 배열 반복) -->
+<body>
+  <h1>table을 작성해 봅시다: block태그</h1>
+  <h3>테이블의 기본</h3>
+  
+  <table border="1px" bgcolor="yellow">
+    <tr bgcolor="green">
+      <td bgcolor="red">A</td>
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+      <td>D</td>
+    </tr>
+  </table>
+
+  <!-- 태그 속성의 우선 순위는 가까운 거리에 있는 것이 높다. -->
+
+  <h3>열병합 table</h3>
+  <table border="1px" width="400px" height="300px"  cellspacing="0" cellpadding="10px">
+    <tr>
+      <td colspan="2">A</td>  <!-- colspan은 열병합(가로방향) -->
+    </tr>
+    <tr>
+      <td>B</td>
+      <td align="right" valign="bottom" >C</td>
+    </tr>
+  </table>
+
+
+  <h3>행병합 table</h3>
+  <table border="10px" width="500px" height="400px" align="center" background="image/modify.jpg">
+    <tr>
+      <td rowspan="2">A</td>  <!-- rowspan은 열병합(가로방향) -->
+      <td>B</td>
+    </tr>
+    <tr>
+      <td>C</td>
+    </tr>
+  </table>
+
+  <!-- 
+    cellpadding은 td의 안쪽여백을 말한다.
+    cellspacing은 테두리 사이의 간격을 말한다.
+    align="left/center/right" ->수평(가로)정렬
+    valign="top/middle/bottom" ->수직(세로)정렬 -->
+
+  <h3>표속의 표만들기</h3>
+    <table border="1px" cellpadding="20px">
+      <tr>
+        <th colspan="2">표의 제목</th>
+        <!-- <th>:<td>와 동일하지만 진하게와 가운데정렬 기능이 있어서 주로 제목에 사용 -->
+      </tr>
+      <tr>
+        <td>
+          <table border="5px">
+            <tr>
+              <td>교향곡</td>
+              <td>9</td>
+            </tr>
+            <tr>
+              <td>피아노협주곡</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>바이올린협주곡</td>
+              <td>1</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table border="1px">
+            <tr >
+              <th colspan="2" bgcolor="pink">[스마트&콘텐츠개발]<br>스마트 웹 콘텐츠 UI/UX디자인 & 프론트엔드(React.js)</th>
+            </tr>
+            <tr>
+              <td bgcolor="yellow">교육기간</td>
+              <td>2021.12.29~2022.07.05(880h)</td>
+            </tr>
+            <tr>
+              <td bgcolor="yellow">강의실</td>
+              <td>603호</td>
+            </tr>
+            <tr>
+              <td bgcolor="yellow">교육시간</td>
+              <td>일 8교시(09:00 ~ 17:10)</td>
+            </tr>
+            <tr>
+              <td bgcolor="yellow">담당강사</td>
+              <td>김경숙</td>
+            </tr>
+            <tr>
+              <td bgcolor="yellow">학생성명</td>
+              <td>진선화</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    
+
+
+  <h3>표만들기 실습</h3>
+    <h4>Table-1</h4>
+      <table width="400px" height="250px" border="1px" cellspacing="0">
+        <tr>
+          <td rowspan="3">A</td>
+          <td>B</td>
+          <td rowspan="3">E</td>
+        </tr>
+        <tr>
+          <td>C</td>
+        </tr>
+        <tr>
+          <td>D</td>
+        </tr>
+        <tr >
+          <td colspan="3">F</td>
+        </tr>
+      </table>
+
+
+    <h4>Table-2</h4>
+    <table border="1px" width="400px" height="250px" cellspacing="0">
+      <tr>
+        <td>A</td>
+        <td>C</td>
+        <td rowspan="2">E</td>
+        <td>F</td>
+      </tr>
+      <tr>
+        <td>B</td>
+        <td>D</td>
+        <td>G</td>
+      </tr>
+      <tr>
+        <td colspan="3">H</td>
+        <td>I</td>
+      </tr>
+    </table>
+
+</body>
+</html>
+

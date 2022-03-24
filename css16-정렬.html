@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS16-정렬</title>
+  <style>
+    *{margin: 0; padding: 0;}
+    body{background-color: #666;}
+
+    .talign{
+      width: 100%;
+      height: 500px;
+      background-color: paleturquoise;
+    }
+    /* .tt1{text-align: center;} ->적용되지 않음 
+    왜냐하면 text-align은 'block형식의 태그'에서만 사용할 수 있다.
+    vertical-align은 img,input,select,th,td등에 사용할 수 있다. 
+    지금 <span>이 쓰였는데 이 span의 display를 아예 바꿔도 되겠지만
+      꼭 span이 쓰이는 경우도 많다. 그러면 그 inline태그를 block태그로 감싸고 그 블록에게 속성을 주면 된다! 지금의 class */
+    .text1{text-align: center;}
+
+    /* .text2 img{text-align: center;} =>적용되지 않음 img도 인라인이라 */
+    .text2{text-align: center;}  /* 이렇게 바꿔주면 적용됨 */
+
+
+    .text3 img{vertical-align: top;}  /* 동작 잘 됨. vertical-얼라인은 이미지를 움직이는게 아니라 이미지옆의 글자를 배치하는 명령 */
+
+    .text4 input{ /* imput이런애들이 버티컬얼라인 많이 쓴다. 왜냐하면 옆에 써치버튼 같은게 자주 있기 때문에 그거랑 정렬 맞추려고 많이씀 !  버티컬얼라인은 어섭쇼그림같은걸 기준으로 잡고 옆에거를 움직이는 명령임. 그냥 단순히 이미지를 옮기고 그러는게 아님 */
+      width: 300px;
+      height:50px;
+      vertical-align: middle;
+    }
+
+
+    .text5{
+      text-align: center;
+      width: 600px;
+      height:100px;
+      background-color: cornflowerblue; /* 여기까지 오면 글자는 가운데로오는데 배경은 가운데로 안온다. 이럴때 margin:0 auto를 사용하는것이다. 
+      =부모 요소인 div는 가운데로 정렬되지 않고 그 안에 있는 자식요소만 정렬됨*/
+
+      margin: 0 auto;
+      
+    }
+
+
+    /* __________________탑메뉴 만들기________________________ */
+
+     /* 수평 가운데 정렬 방법 (1) margin :0 auto 이용
+    .mainNav{
+      text-align: center;  <-적용 안됨 (float주석걸면 적용됨. 이거로 하는방법은 2번으로) 
+      margin: 0 auto; 마진0오토를 쓰면 사용하긴 쉬운데 width를 계산해서 넣어줘야 가운데에 쏙 들어감. 대충 1000px~ 이러고 넣으면 쏠림
+      width: 790px; ->컨텐츠 크기만큼 계산해사 넣어줘야함
+      height: 100px;
+      background-color: pink;
+    } */
+
+
+
+
+    /* 수평 가운데 정렬 방법 (2) text-align:center를 이용
+    -> float를 이용하여 자식을 가로배열을 하면 상위부모에 텍스트얼라인센터가 적용되지 않는다. 
+    ->해결방법 : li의 부모인 ul에 display:inline-block을 적용해준다.
+    
+     */
+    .mainNav{
+      text-align: center;
+    }
+    .mainNav .nav{display: inline-block;}
+    .mainNav .nav li{
+      list-style-type: none;
+      float:left;
+      padding:30px;
+    }
+    .mainNav .nav li a{
+      text-decoration: none;
+      color:#ccc;
+      font-size: 18px;
+      font-weight: bold;
+      text-shadow: 2px 2px 10px #000;
+    }
+    .mainNav .nav li a:hover{
+      color:white;
+      text-shadow: 2px 2px 10px gold;
+      /*text-decoration: underline;   밑줄은 글자색과 동일 무조건 동일 */
+      border-bottom: 2px solid gold;
+      padding-bottom: 10px;
+    }
+
+
+
+    /* -------------------수평수직 가운데정렬------------- */
+    .box_in{ /* 부모박스 */
+      width:100%;
+      height:300px;
+      background-color: goldenrod;
+      display: flex; /* 플렉스박스 */
+      justify-content: center; /* 주축을 기준으로 배치방법을 조절 (가로방향-수평) */
+      align-items: center; /* 교차축을 기준으로 배치방법을 조절(세로방향 -수직) */
+      
+    }
+    .box_in .box{ /* 자식박스 */
+      width: 100px;
+      height:100px;
+      background-color: whitesmoke;
+      float: left;
+      margin: 0 5px;
+      text-align: center;
+      /* vertical-align: middle; 적용되지 않음 line-height를 부모높이만큼줘라 */
+      line-height: 100px; 
+      
+      
+    }
+    .box_in .box:hover{ /* 박스 오버시 */
+      background-color: #000;
+      color:white;
+      font-weight: bold;
+      cursor:pointer;  /* 마우스를 손가락모양으로 바꾸게 하는거 */
+    }
+
+
+
+
+
+
+
+
+    /* --------------------음식 이미지 오버 효과 -------------------*/
+
+    /* 수평수직 가운데정렬 - > 정렬 속성을 적용하기 위해 표로 변경하여 적용하는 방법
+    display:table; -> 표로 만든다.(HTML에서 table에 해당됨)
+    display:table-row; -> 표의 행으로 만든다. (HTML에서 tr에 해당됨)
+    display:table-cell; => 표의 칸으로 만든다. (HTML에서 td에 해당됨) \
+    숫자로 적을테니까 숫자로 따라가면서 보기, 부모 2개는 필요 */
+    #img_ov1{
+      /* 최상위 부모에게 영역 설정 */
+      width: 100%;
+      height: 400px;
+      background-color: rgb(255, 144, 124);
+
+      display: table;  /* 1)상위부모에 적용 ->table  */
+    
+    }
+    #img_ov1 .img1{
+      display: table-cell; /* 2)두번째 부모에 적용 ->td */
+      text-align: center;
+      vertical-align: center; /* 3) td자리에 텍스트 얼라인,버티컬얼라인 같이 적용 */
+    }
+    #img_ov1 .img1 img{
+      width: 350px;
+      height: 230px;
+      margin: 0 10px;
+      border:1px solid #fff;
+
+    }
+    #img_ov1 .img1 img:hover{
+    
+      margin: 0 10px;
+      border:1px solid #fff;
+      border-radius: 30px 0 30px 0;
+      cursor: pointer;
+      opacity: 0.5;
+    }
+
+
+
+
+
+
+
+
+    /* 얘는 table방법으론 못함 div라서 , flexbox는 아직 신기능이니까 text-aligncenter방법 사용해본다*/
+    #img_ov2{
+      width:100%;
+      height:400px;
+      background-color: antiquewhite;
+      /* display: table;  ->적용되지않음 */
+      text-align: center;
+      /* vertical-align: center;  -적용되지 않음*/
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #img_ov2 .img2{
+      /* display: table-cell;
+      text-align: center;
+      vertical-align: center;  적용되지 않음*/
+      display: inline-block;
+    }
+
+    /* 이미지를 삽입(img src...)하지 않고 배경으로 넣는 2번방법을 쓸때는 반드시
+    가로,세로 크기가 있어야 한다. */
+    .mc01, .mc02, .mc03{/* 공통으로 적용하는것 */
+      width: 200px;
+      height:200px;
+      border: 3px solid #999;
+      border-radius: 50%;  /* 동그라미 만들기 */
+      float: left;
+      margin: 0 20px;
+
+      background-position: -30px -10px; /* 배경이미지를 11시방향으로 땡김 */
+      cursor: pointer ;
+    }
+
+
+    .mc01{background-image: url(image/pic5.jpg);}
+    .mc01:hover{
+      border: 3px solid #000;
+      background-position:-50px -30px ;
+    }
+
+    .mc02{background-image: url(image/pic7.jpg);}
+    .mc02:hover{
+      border:red 3px dotted;
+      opacity: 0.6;
+    }
+
+    .mc03{background-image: url(image/pic4.jpg);}
+    .mc03:hover{
+      background-image: url(image/pic3.jpg);
+    }
+    /* 마우스 오버시 다른이미지로 변환하는 효과를 주려면 css에서 배경을이용해서 삽입해야한다 . 1번방법으로 하려면 소스가 엄청 길어짐*/
+
+
+
+
+
+
+
+    
+
+
+
+  </style>
+</head>
+
+
+<body>
+
+
+ <div class="talign">
+
+   <div class="text1">
+     <span class="tt1">이젠컴퓨터학원 종로점</span>
+   </div>
+   
+   <div class="text2">
+     <img src="image/m.gif" alt="">
+   </div>
+
+   <div class="text3">
+     <img  src="image/m.gif" alt=""> 수직정렬
+   </div>
+
+   <div class="text4">
+     <input type="text">수직정렬(확인버튼같은거)
+   </div>
+
+   <div class="text5">
+     <p>이젠컴퓨터학원 종로점</p>
+   </div>
+
+
+
+
+   <!-- 탑메뉴 만들기 연습-->
+   <div class="mainNav">   
+    <ul class="nav">
+      <li><a href="#">NOTICE</a></li>
+      <li><a href="#">SHOES</a></li>
+      <li><a href="#">ACC</a></li>
+      <li><a href="#">BAG</a></li>
+      <li><a href="#">TOP</a></li>
+      <li><a href="#">DRESS</a></li>
+      <li><a href="#">BOTTOM</a></li>
+    </ul>
+   </div>
+
+
+   <div class="box_in">   
+    <div class="box">box 01</div>
+    <div class="box">box 02</div>
+    <div class="box">box 03</div>
+    <div class="box">box 04</div>
+    <div class="box">box 05</div>
+    <div class="box">box 06</div>
+    <div class="box">box 07</div>
+   </div>
+
+
+
+
+
+   <!-- 문서에 이미지넣는 방법 2개 1)img태그사용 2)백그라운드에넣는방법 -->
+   <div id="img_ov1">
+     <div class="img1"> <!-- img태그를 이용한 이미지 삽입 -->
+       <img src="image/pic1.jpg" alt="food1">
+       <img src="image/pic2.jpg" alt="food2">
+       <img src="image/pic8.jpg" alt="food3">
+     </div>
+   </div>
+
+   <div id="img_ov2">
+    <div class="img2"> <!-- background에 이미지 배경 이코드가 더 간단해서 자주 씀-->
+      <div class="mc01"></div>
+      <div class="mc02"></div>
+      <div class="mc03"></div>
+    </div>
+  </div>
+
+ </div>
+</body>
+</html> 
+
+
+<!-- 
+🧡가로 가운데 정렬🧡____________________________________
+  🧡(1)텍스트 가운데 정렬: 'text-align:center'
+  ->block 또는 inline-block 속성을 가졌을때만 사용할 수 있다.
+  inline 속성에는 text-align이 적용되지 않는다. (float:left로 자식을 배열한 경우)
+  해결-> 최상위 부모에 'text-align:center'를 적용하고, 
+  상위부모에겐 "display:inline-block"을 적용한다.
+
+  ex) 
+  ul의 부모요소{text-align:center;}
+  ul {display:inline-block;}
+  li {float:left}
+
+  🧡(2)요소의 가운데 정렬: "margin:0 auto"
+  ->block속성을 가졌을때만 적용된다. 가로값(width)을 지정해주어야한다.
+  (가로 100%는 적용되지 않음)
+
+  ex)
+  부모요소 {width:900px; margin:0 auto;} -> 배경color를 넣어서 컨텐츠에 맞게 가로크기를 정합다. (내가 계산해서 잘 넣으라는 뜻)
+
+
+💙세로 가운데 정렬💙____________________________________
+  💙(1)vertical-align:middle
+  ->부모에 "display:table"(높이값을 꼭 설정해야 함)을 주고,
+  정렬을 하고자 하는 요소에 "display:table-cell; vertical-align:middle;"을 적용한다.
+
+  💙(2)line-height
+  ->텍스트가 한줄일때나 이미지가 하나 들어가거나 할때 사용하면 좋다.
+  높이값을 설정해주고 높이값이랑 같은 값을 line-height로 설정해준다.
+
+  ex)height:100px; line-height:100px
+
+
+💛완벽하게 수직수평 정가운데 정렬-> 플렉서블박스💛_______________________
+
+선택자{
+  height:300px; (높이가 있어야 함)
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+
+
+ -->
