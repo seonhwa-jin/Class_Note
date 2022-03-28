@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/login_jin.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>로그인실습1_진선화</title>
+</head>
+<body>
+  <form id="loginform">
+    <fieldset class="square1">
+      <h1>로그인</h1>
+      <div class="loginP">
+        <p><label for="userId"><span class="material-icons">
+          account_circle
+          </span>회원아이디</label></p>
+        <input type="text" placeholder="ID" id="userId">
+        <p><label for="userPw"><span class="material-icons">
+          lock
+          </span>비밀번호</label></p>
+        <input type="password" placeholder="PASSWORD" id="userPw"><br>
+        <input type="checkbox" id="SaveLogin">
+        <label for="SaveLogin">자동로그인</label>
+
+        <p><input type="submit" value="로그인" id="loginBtn"></p>    
+      </div>
+    </fieldset>
+
+    <fieldset class="square2">
+      <div>
+        <p><span class="material-icons">
+          login
+          </span>회원로그인 안내</p>
+        <div class="menual">회원아이디및 비밀번호가 기억 안나실 때는 <br><mark>아이디/비밀번호 찾기</mark>를 이용하십시오. <br>아직 회원이 아니시라면 <mark>회원으로 가입</mark> 후 이용해 주십시오.</div>
+        <div>
+          <input type="submit" value="아이디/비밀번호 찾기" id="btnSearch">
+          <input type="submit" value="회원가입" id="btnJoin">
+        </div>
+      </div>
+    </fieldset>
+
+    
+  </form>
+  
+</body>
+</html>
