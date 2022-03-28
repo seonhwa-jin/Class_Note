@@ -1,0 +1,29 @@
+@import url(common.css);
+
+#nav{
+  width:100%;
+	height:50px;
+	background:#333;
+  border-top:5px solid orange;
+}
+
+/* 주메뉴*/
+/*자손선택자(>)사용->첫번째나오는 li에만 적용(주메뉴를 말함)
+->후손선택자를 사용하면 서브메뉴까지 모두 적용이 됨*/
+#nav>ul{}
+#nav>ul>li{  
+  float:left;
+  width:150px;
+  border-right:1px solid rgba(255,255,255,0.1);
+}
+#nav>ul>li:first-child{border-left:1px solid rgba(255,255,255,0.1);}
+
+
+#nav>ul>li>a{
+  color:#ccc;
+	font-size:16px;
+}
+#nav>ul>li>a:hover{}
+
+
+/*서브메뉴*/

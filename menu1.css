@@ -1,0 +1,52 @@
+@import url(common.css);
+
+h2{margin-top:50px;}
+
+/*유틸메뉴-텍스트*/
+.util_menu{}
+.util_menu ul{margin-top:20px;}
+.util_menu ul li{
+  float:left;
+  padding:0 20px;
+  border-left:1px solid #ccc;
+  /* color:#999;   -> li안에 a가 있는 경우는 부모에 넣는 color속성은 적용되지 않음
+  그래서 a태그가 있는 경우는 글자색은 a태그에 적용해야 함.
+  해결방법->color속성이 li나 a에 모두 적용하기위해서 common.css 파일안에 "color:inherit;(부모값 상속받기)"속성을 적용함*/
+}
+.util_menu ul li:first-child{border-left:none;} /*첫번째 li의 border삭제*/
+.util_menu ul li a{
+  color:#999;
+  font-size:13px;
+}
+.util_menu ul li a:hover{
+  color:#c00;
+	text-decoration:underline;
+}
+
+
+/*유틸메뉴-아이콘(이미지)*/
+.util_menu_icon{margin-top:20px;}
+.util_menu_icon ul{}
+.util_menu_icon ul li{
+  float:left;
+  padding:0 20px;
+  border-left:1px solid #ccc;
+  width:100px;
+  height:15px;
+}
+/*배경이미지를 적용할때는 반드시 가로,세로크기가 있어야 함.
+->모든 이미지의 크기가 동일할때는 li에 공통으로 크기를 지정하고,
+다를 경우에는 각li의 클래스에 각각 크기를 지정해야 함.*/
+
+.util_menu_icon ul li:first-child{border-left:none;} /*첫번째 li의 border삭제*/
+
+/*li의 각 클래스에 배경이미지 적용*/
+.util_menu_icon ul .list0{background:url(../image/util_off_01.png) no-repeat center center;}
+.util_menu_icon ul .list1{background:url(../image/util_off_02.png) no-repeat center center;}
+.util_menu_icon ul .list2{background:url(../image/util_off_03.png) no-repeat center center;}
+.util_menu_icon ul .list3{background:url(../image/util_off_04.png) no-repeat center center;}
+
+.util_menu_icon ul .list0:hover{background:url(../image/util_on_01.png) no-repeat center center;}
+.util_menu_icon ul .list1:hover{background:url(../image/util_on_02.png) no-repeat center center;}
+.util_menu_icon ul .list2:hover{background:url(../image/util_on_03.png) no-repeat center center;}
+.util_menu_icon ul .list3:hover{background:url(../image/util_on_04.png) no-repeat center center;}
