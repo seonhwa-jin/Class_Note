@@ -91,25 +91,29 @@ class note
 ***
 
 22.03.24 thu
-  
-  menu1-유틸메뉴
-  
-  menu2-드롭다운메뉴
-  
-  과제1-
-  
-  ***
 
-22.03.25 fri
-  
-  form1 -로그인
+
+form1 -로그인
   
   form2 -회원등록
   
   form3 -회원로그인
   
-  실습5 -Greenfood(folder 로그인화면실습)
+  실습5 -Greenfood(folder 로그인화면실습)  
+
+  ***
+
+22.03.25 fri
+
+  
+  menu1-유틸메뉴
+  
+  menu2-드롭다운메뉴
+  
+  과제1-로그인화면
   
   
+    ***
+
   
   
