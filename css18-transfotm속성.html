@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS18-transform</title>
+  <style>
+    /* 2차원변형과 3차원변형으로 나뉜다. 
+    2차원 변형은 웹요소를 변형시킬때 단순히수평이나 수직으로 이동하고
+    회전하는것을 말한다. 
+    3차원변형은 x축과 y축에 원근감을 주는 z축을 추가해 변형하는 것을 말한다. */
+
+    .box div{
+      display: inline-block;
+      margin:50px;
+    }
+    
+    .movex:hover{transform:translateX(50px);} /* 오른쪽으로 50px만큼 이동 */
+    .movey:hover{transform:translateY(30px);} /* 아래쪽으로 30px만큼 이동 */
+    .movexy:hover{transform:translate(10px,20px);} /* 오른쪽으로 10px,아래로 20px만큼 이동 */
+
+    .scalex:hover{transform:scaleX(1.2);} /* 가로로 1.2배 확대 */
+    .scaley:hover{transform:scaleY(1.5);} /* 세로로 1.5배 확대 */
+    .scalexy:hover{transform:scale(0.7);} /* 가로,세로로 0.7배 확대 */
+
+    .skewx:hover{transform:skewX(30deg);} /* x축 기준 30도 비틀기 */
+    .skewy:hover{transform:skewY(15deg);} /* y축 기준으로 15도 비틀기 */
+    .skewxy:hover{transform:skew(-25deg,-15deg);} /* x축으로 -25도, y축으로 -15도 비틀기  */
+
+    .rotate1:hover{transform:rotate(20deg);} /* 시계방향으로 20도회전 */
+    .rotate2:hover{transform:rotate(-40deg);} /* 시계반대방향으로 40도회전 */
+
+    .per{perspective: 200px;} /* 3차원에서 입체적인 느낌을 주기 위해 화면에 깊이감을 주는 perspective=원근감 속성을 사용 */
+    .rotatex{transform: rotateX(45deg);} /* x축을 기준으로 시계방향으로 45도 회전 */
+    .rotatey{transform: rotateY(45deg);} /* y축을 기준으로 시계방향으로 45도 회전 */
+    .rotatez{transform: rotateZ(45deg);} /* z축을 기준으로 시계방향으로 45도 회전 */
+    .rotatexyz{transform: rotate3d(2.5,1.2,-1.5,45deg);} /* z추으로 2.5, y춧으로 1.2 , z축으로 -1.5만큼의 방향 벡터로 45도 회전 */
+    
+    .img{transform: rotateZ(10deg);}
+    .ltop .img{transform-origin: left top;} /* 왼쪽 윗부분을 기준으로 변형 */
+    .rtop .img{transform-origin: right top;} /* 오른쪽 윗부분을 기준으로 변형 */
+    .lbottom .img{transform-origin: left bottom;} /* 왼쪽 아랫부분을 기준으로 변형 */
+    .rbottom .img{transform-origin: right bottom;} /* 오른쪽 아랫부분을 기준으로 변형 */
+
+    .nopers img{transform: rotateX(50deg);} /* perspec안주고 트랜스폼 */
+    .pers {perspective: 300px;}
+    .pers img{transform: rotateX(50deg);}  /* perspec주고 트랜스폼 */
+
+
+
+
+
+    .container{display: inline-block;}
+    .box1{
+      width:200px;
+      height:250px;
+      background-color: #82cbd8;
+      transform:rotateY(45deg);
+    }
+    .box2{
+      width:200px;
+      height:250px;
+      background-color: #0d6097;
+      transform-origin: left top;
+      transform:rotateX(45deg);
+    }
+    #tr-style1{transform-style: flat;} /* 자식요소의 3d변환을 사용하지 않음(평면으로 처리) */
+    #tr-style2{transform-style: preserve-3d;} /* 자식요소의 3d변환을 사용함 */
+
+
+
+
+    .box3{
+      width:200px;
+      height: 250px;
+      background: #ceb9ff;
+      transform:rotateY(135deg);
+    } /* BACK이라는 텍스트를 y축기준으로 135도 회전시키는데 뒷면을 보이게했을때와 안보이게 했을때의 차이 */
+    #back1{backface-visibility: hidden;}
+    #back2{backface-visibility: visible;}
+
+    #wrap{
+      position: relative; /* 부모설정 /자식들을대체한다는의미 */
+      width:1000px; /* 부모 내에서 자식을 움직이게하려면 크기가 있어야함 */
+      height:600px;
+      margin: 0 auto;
+      border:5px dashed #ccc;
+      perspective: 1000px;
+      transform-style: preserve-3d;
+    }
+    #box4{
+      position: absolute;
+      left: 0px;
+      top:100px;
+      width:300px;
+      height:200px;
+      padding:35px;
+      text-align:center;
+      border-radius: 50px;
+      background: #7bc76e;
+      box-shadow: 0px 0px 15px #6b6a6a;
+      transform:rotateY(60deg); /* y축회전 */
+    }
+    #box5{
+      position: absolute;
+      left: 100px;
+      top:50px;
+      width:300px;
+      height:200px;
+      padding:35px;
+      text-align:center;
+      border-radius: 50px;
+      background: #6e9cc7;
+      box-shadow: 0px 0px 15px #6b6a6a;
+      transform: rotateX(20deg) translate3d(20px,30px,0px) translate(200px,300px); /* x,y,z축으로 이동 */;
+    }
+    #box6{
+      position: absolute;
+      right: 0px;
+      top:100px;
+      width:300px;
+      height:200px;
+      padding:35px;
+      text-align:center;
+      border-radius: 50px;
+      background: #c7c56e;
+      box-shadow: 0px 0px 15px #6b6a6a;
+      transform:rotateY(-60deg); /* y축회전 */
+    }
+
+
+  </style>
+</head>
+
+
+<body> 
+  <!-- 크기 회전 이동 왜곡 크게 4가지 기능
+  rotate scale translate 
+  filter는 아직 크로스브라우징x -->
+
+  <h1>(1)transform: translate(이동)</h1>
+    <div class="box">
+      <div class="movex"><img src="image/sunset.jpg" alt=""></div>
+      <div class="movey"><img src="image/sunset.jpg" alt=""></div>
+      <div class="movexy"><img src="image/sunset.jpg" alt=""></div>
+    </div>
+
+    <h1>(2)transform: scale</h1>
+    <div class="box">
+      <div class="scalex"><img src="image/sunset.jpg" alt=""></div>
+      <div class="scaley"><img src="image/sunset.jpg" alt=""></div>
+      <div class="scalexy"><img src="image/sunset.jpg" alt=""></div>
+    </div>
+
+    <h1>(3)transform: 왜곡  기울기</h1>
+    <div class="box">
+      <div class="skewx"><img src="image/sunset.jpg" alt=""></div>
+      <div class="skewy"><img src="image/sunset.jpg" alt=""></div>
+      <div class="skewxy"><img src="image/sunset.jpg" alt=""></div>
+    </div>
+
+    <h1>(4)transform: rotate</h1>
+    <h3>2차원 회전하기</h3>
+    <div class="box">
+      <div class="rotate1"><img src="image/sunset.jpg" alt=""></div>
+      <div class="rotate2"><img src="image/sunset.jpg" alt=""></div>
+    </div>
+    <h3>3차원 회전하기</h3>
+    <div class="box">
+      <div class="per"> <!-- 3차원은 div로 한번 더 감쌌다 -->
+        <div class="rotatex"><img src="image/sunset.jpg" alt=""></div>
+      </div>
+      <div class="per">
+        <div class="rotatey"><img src="image/sunset.jpg" alt=""></div>
+      </div>
+      <div class="per">
+        <div class="rotatez"><img src="image/sunset.jpg" alt=""></div>
+      </div>
+      <div class="per">
+        <div class="rotatexyz"><img src="image/sunset.jpg" alt=""></div>
+      </div>
+    </div>
+
+
+<hr><div>여기서부터는 부가 속성들</div>
+    <h1>(5)transform-origin속성: 변형기준점 설정하기</h1>
+    <div class="box">
+      <div class="ltop"><img src="image/sunset.jpg" alt="" class="image"></div>
+      <div class="rtop"><img src="image/sunset.jpg" alt="" class="image"></div>
+      <div class="lbottom"><img src="image/sunset.jpg" alt="" class="image"></div>
+      <div class="rbottom"><img src="image/sunset.jpg" alt="" class="image"></div>
+    </div>
+
+    <h1>perspective,perspective-origin속성:원근감 표현하기</h1>
+    <!-- perspective속성은 3차원 변형에서 사용하는 속성으로 원래 위치에서 사용자가 있는 방향이나 반대방향으로 잡아당기거나 밀어내는 원근감을 갖게 된다. 속성값을 0보다 커야하며, 값이 클수록 사용자로부터 멀어진다.
+    perspective-origin속성은 원근거리의 기준점을 설정 -->
+    <div class="box">
+      <div><img src="image/sunset.jpg" alt=""></div> <!-- 원본 -->
+      <div class="nopers"><img src="image/sunset.jpg" alt=""></div> <!-- 비교1 -->
+      <div class="pers"><img src="image/sunset.jpg" alt=""></div> <!-- 비교2 -->
+    </div> 
+
+    <h1>transform-style속성:3D 변형 적용하기</h1>
+    <div class="container">
+      <div class="box1" id="tr-style1">
+        <div class="box2"></div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box1" id="tr-style2">
+        <div class="box2"></div>
+      </div>
+    </div>
+
+    <h1>backface-visibility속성: 요소의 뒷면 표시하기</h1>
+    <div class="container">
+      <div class="box3" id="back1">
+        <h1>BACK</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div class="box3" id="back2">
+        <h1>BACK</h1>
+      </div>
+    </div>
+    
+    <hr>
+
+    <div id="wrap">
+      <div id="box4">html5+css3 web design1</div>
+      <div id="box5">html5+css3 web design1</div>
+      <div id="box6">html5+css3 web design1</div>
+    </div>
+    
+
+</body>
+</html> 
+
+
+
+
+ 

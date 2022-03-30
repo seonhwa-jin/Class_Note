@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="css/tr1.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>tr1-트렌지션을이용한이미지오버효과</title>
+</head>
+<body>
+  <div id="container">
+    <p>
+      <strong>CSS can be used to create image galleries.</strong><br>
+      This example use media queries to re-arrange the images on different screen sizes. Resize the browser window to see the effect.
+    </p>
+
+    <ul class="photo clear">
+      <!-- //위에서 아래로 내려오는 검정박스+돋보기 -->
+      <li>
+        <div class="block1"><span class="material-icons icon">
+          zoom_in
+          </span></div>
+        <img src="image/small1.jpg" alt="pic">
+      </li>
+
+      <!-- //전체검정받스+가운데글자 -->
+      <li>
+        <div class="block2"><p>view images</p></div>
+        <img src="image/small2.jpg" alt="pic">
+      </li>
+      
+      <!-- //위에서 아래로 내려오는 검정받스 --3,4,5가 세트-->
+      <li>
+        <div class="block3"><p>CSS can be used to create image galleries.</p></div>
+        <img src="image/small3.jpg" alt="pic">  
+      </li>
+
+      <!-- // 아래에서 위로 올라가는 검정박스-->
+      <li>
+        <div class="block4"><p>CSS can be used to create image galleries.</p></div>
+        <img src="image/small4.jpg" alt="pic">
+      </li>
+
+      <!-- //왼쪽에서 오른쪽으로 올라가는 검정박스 + 글자 -->
+      <li>
+        <div class="block5"><p>CSS can be used to create image galleries.</p></div>
+        <img src="image/small5.jpg" alt="pic">
+      </li>
+
+      <!-- // 가운데부터 검정박스가 커지면서 나옴 6,7 세트-->
+      <li>
+        <div class="block6"><p>CSS can be used to create image galleries.</p></div>
+        <img src="image/small6.jpg" alt="pic">
+      </li>
+
+      <!-- // 검정박스가 사라지면서 이미지가 보임-->
+      <li>
+        <div class="block7"><p>CSS can be used to create image galleries.</p></div>
+        <img src="image/small7.jpg" alt="pic">
+      </li>
+
+      <!-- // 이미지 블러효과-->
+      <li>
+        <img src="image/small8.jpg" alt="pic">
+      </li>
+
+      <!-- // 이미지 흑백효과-->
+      <li>
+        <img src="image/small9.jpg" alt="pic">
+      </li>
+
+    </ul>
+  </div>
+
+  <div id="footer">
+    <p>copy&copy; css images gallery transform animation All right Crop.</p>
+  </div>
+
+</body>
+</html>

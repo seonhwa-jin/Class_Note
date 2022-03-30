@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>실습5-움직이는마우스와화살표</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+
+.mouseBox{
+      position:relative;/*부모 설정을 위해서 넣은 position*/
+      top:30px;
+      width:100px;
+      height:200px;
+      /* background:yellow; */
+      /*영역 확인을 위한 background-color설정*/
+    }
+    .mouseBox .mouse{
+      position:relative;/*부모 설정->마우스 모양안에서 휠의 위치를 잡기 위함*/
+      width:40px;
+      height:65px;
+      border:4px solid #000;
+      border-radius:30px;
+      margin:0 auto;
+    }
+    .mouseBox .mouse span{
+      width:6px;
+      height:16px;
+      background:#000;
+      border-radius:20px;
+      position:absolute;
+      top:10px;
+      left:17px;
+      animation:line_down 1s infinite;
+    }
+    /*마우스 휠 animation*/
+    @keyframes line_down{
+      0%{opacity:100%;top:10px;}
+      100%{opacity:0%;top:40px;}
+    }
+    
+    /*화살표 animation*/
+    @keyframes arrow_down{
+      0%{opacity:0;}
+      100%{opacity:1;}
+      0%{opacity: 0;}
+    }
+    .mouseBox .arrows_down{
+      
+    }
+    .mouseBox .arrows_down .arrow1{
+      font-size:55px;
+      position:absolute;
+      top:70px;
+      left:23px;
+      animation:arrow_down 1s infinite alternate;  /* alternate붙인거랑 아닌거 비교해보기 css20파일 공부 후 보기 */
+      animation-delay: 1s; 
+    }
+    .mouseBox .arrows_down .arrow2{
+      font-size:55px;
+      position:absolute;
+      top:90px;
+      left:23px;
+      animation:arrow_down 1s infinite alternate;
+      animation-delay: 1.5s;
+    }
+    .mouseBox .arrows_down .arrow3{
+      font-size:55px;
+      position:absolute;
+      top:110px;
+      left:23px;
+      animation:arrow_down 1s infinite alternate;
+      animation-delay: 2s;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div class="mouseBox">
+    <div class="mouse"><!--마우스 모양-->
+      <span></span><!--마우스 휠-->
+    </div>
+    <div class="arrows_down"><!--화살표 영역-->
+      <span class="material-icons arrow1">keyboard_arrow_down</span><!--화살표 모양-->
+      <span class="material-icons arrow2">keyboard_arrow_down</span>
+      <span class="material-icons arrow3">keyboard_arrow_down</span>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>css20-animation속성</title>
+  <style>
+    @-moz-keyframes myfirst{  
+      0%{background:#c00;width:140px;height:120px;}
+      25%{background:#00c;width:450px;height:120px;}
+      50%{background:#808;width:450px;height:180px;}
+      75%{background:#080;width:140px;height:180px;}
+      100%{background:#c00;width:140px;height:120px;}
+    }
+    @keyframes myfirst{  /*"myfirst"라는 이름의 애니메이션 생성*/
+      0%{background:#c00;width:140px;height:120px;}
+      25%{background:#00c;width:450px;height:120px;}
+      50%{background:#808;width:450px;height:180px;}
+      75%{background:#080;width:140px;height:180px;}
+      100%{background:#c00;width:140px;height:120px;}
+    }
+    p{
+      width:140px; 
+      height:120px;
+      background:#c00;
+      color:#fff;
+      font-size:20px;
+      animation:myfirst 5s infinite; /* infinite->무한재생*/
+    }
+
+    @keyframes myani{
+      0%{left:10px;}
+      40%{top:50px;background:url(image/f2.png) no-repeat center center;}
+      100%{left:500px;}
+    }
+    #myball{
+      position:relative;
+      width:100px;
+      height:100px;
+      border-radius:50px;
+      border:2px solid #000;
+      background:url(image/f1.png) no-repeat center center;
+      animation:myani 3s infinite alternate;     
+     /*-애니메이션의 방향
+      normal:기본값(0%->100%)
+      reverse:역방향으로 움직인다.(100%->0%)
+      alternate:정방향으로 움직이고 그 다음에는 역방향으로 움직인다.(0%->100%->0%)
+      alternate-reverse:역방향으로 움직이고 그 다음에는 정방향으로 움직인다.(100%->0%->100%) */
+    }
+
+    @keyframes big1{
+      from{width:0px;height:0px;}
+      to{width:150px;height:150px;}
+    }
+    @keyframes big2{
+      0%{width:0px;height:0px;}
+      25%{width:150px;height:150px;}
+      50%{width:100px;height:100px;}
+      75%{width:200px;height:200px;}
+      100%{width:150px;height:150px;}
+    }
+    #jb1{
+      margin:100px auto;
+      background:orange;
+      animation:big1 3s infinite;
+    }
+    #jb2{
+      margin:100px auto;
+      background:orange;
+      animation:big2 3s infinite;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Animation</h1>
+  <p>Animation  is my pleasure.<br>
+  Animationwork gives me great pleasure.</p>
+
+  <div id="myball"></div> 
+  <div id="jb1"></div>
+  <div id="jb2"></div>
+</body>
+</html>

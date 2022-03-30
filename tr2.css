@@ -1,0 +1,316 @@
+@import url(common.css);
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+body{background: #eff0f2;}
+.hover1, .hover2, .hover3, .hover4, .hover5, .hover6{margin: 100px 0;}
+
+h1{
+  text-align: center;
+  font-size: 20px;
+  margin-top: 100px;
+}
+h2{
+  text-align: center;
+  font-size: 13px;
+  margin-top: 100px;
+  background-color: rgb(236, 252, 237);
+}
+
+/* -------------Type.1--------------- */
+.hover1{text-align: center;}
+.hover1 ul{display: inline-block; /* 이거써야 가운데로 옴 */}
+.hover1 ul li{
+  position:relative;
+  width: 240px;
+  height: 390px;
+  float: left;
+  overflow: hidden;
+  margin-right: 15px;
+}
+
+.hover1 ul li .title1{/* 텍스트부분 */
+  position: absolute;/* 자식설정 */
+  top:30px;
+  left:20px;
+  z-index: 100; /* 이미지에 효과를 주면 텍스트가 밑으로 내려가서 보이지 않음. 중복순서 문제가 발생. 텍스트에 zindex를 줘서 텍스트가 이미지 위로 올라오게 해줌 */
+  font-size: 20px;
+  color:#fff;
+  font-weight: bold;
+  transition: all 0.5s;
+}
+.hover1 ul li:hover .title1{left: 30px;}
+
+.hover1 ul li img{
+  transition: all 0.5s;
+  transform: scale(1);
+}
+.hover1 ul li:hover img{transform: scale(1.1);}
+
+
+
+/* -------------Type.2--------------- ★공부하기*/
+/* 이 버튼은 이미지가 안보이는곳이 나오는 느낌이라 img태그보다는 백그라운드로 깔아주는게 더 안전하다
+그래서 ho21 등등으로 class로 나눴다. */
+
+.hover2{text-align: center;}
+.hover2 ul{display: inline-block; }
+.hover2 ul li{
+  position:relative;
+  width: 240px;
+  height: 350px;
+  float: left;
+  overflow: hidden; 
+  margin-right: 15px;/* 이미지가 커졌을때 넘치지않게 */
+}
+
+.hover2 ul li a{
+/* 각 클래스에 배경을 넣을 가로,세로크기(공통적용)
+a는 인라인이라 크기주면서 디스플레이도 바꿔야함 */
+width:240px;
+height:450px;
+display: block;
+transition: all 0.5s;
+}
+
+.hover2 ul li a.ho21{background: url(../image/donation_03_01.jpg) no-repeat 0px 0px}
+.hover2 ul li a.ho22{background: url(../image/donation_03_02.jpg) no-repeat 0px 0px}
+.hover2 ul li a.ho23{background: url(../image/donation_03_03.jpg) no-repeat 0px 0px}
+
+.hover2 ul li:hover a {background-position: -20px 0px;}
+
+
+
+.hover2 ul li .title2{ /* 글자효과,위치 */
+  font-size:18px;
+  font-weight: bold;
+  color:#666;
+  letter-spacing: -1px;
+  position: absolute;
+  top:10px;
+  left:12px;
+}
+
+.hover2 ul li .line{
+  width: 0px;
+  height: 1px;
+  background: #000;
+  opacity: 0;
+  position: absolute;
+  top:35px;
+  left:10px;
+  transition:all 0.5s;
+}
+.hover2 ul li:hover .line{
+  width:80px; opacity: 1;
+}
+
+/* -------------Type.3--------------- */
+.hover3{text-align: center;}
+.hover3 ul{display: inline-block; }
+.hover3 ul li{
+  position:relative;
+  width: 200px;
+  height: 280px;
+  float: left;
+  overflow: hidden; 
+  margin-right: 15px;/* 이미지가 커졌을때 넘치지않게 */
+}
+
+.hover3 ul li p{/* 검정박스 */
+  width:100%;
+  height: 30%;
+  background: rgba(0,0,0,0.4);
+  position: absolute;
+  z-index: 100;
+  transition:all 0.5s;
+}
+
+.hover3 ul li:hover p{
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.hover3 ul li .title3{ /* 텍스트 */
+  color:white;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Nanum Myeongjo', serif;
+  position:absolute;
+  z-index: 300;
+  top:7px;
+  left: 10px;
+}
+.hover3 ul li small{
+  display: block;
+  color:#e8e8e8;
+  font-size: 12px;
+  margin-top: 35px;
+  margin-left:10px;
+  text-align: left;
+}
+
+.hover3 ul li .over_box{ /* 글자흰색박스 */
+  width:0;
+  height:25px;
+  background: rgba(255, 255, 255, 0);
+  position: absolute;
+  z-index: 200;
+  top:7px;
+  left: 7px;
+  transition: all 0.5s;
+}
+
+.hover3 ul li:hover .over_box{
+  width:150px;
+  background: rgba(255, 255, 255, 1);}
+
+.hover3 ul li:hover .title3{color:#000}
+
+
+.hover3 ul li img{
+  transform:scale(1);
+  transition: all 0.5s;
+}
+.hover3 ul li:hover img{transform:scale(1.1);}
+
+
+/* -------------Type.4--------------- */
+
+.hover4{
+  width:980px;
+  height: 320px; /* a */
+  margin:0 auto; 
+  position: relative;  /* b */
+}
+
+.hover4 ul{
+  position: absolute; /* c */
+  z-index: 1000;
+}
+
+/* ★★★중요
+오버시 박스의 세로크기가 커질때 다음항목이 같이 내려가지 않게 하는 방법
+(a)최상위 부모에 높이(height)를 설정한다.
+(b)최상위 부모에 "position:relative"속성을 적용하고 , 다음 부모에 absoute를 해준다.
+-> 다음 콘첸츠보다 위로 올라오게 하려면 z-index에 높은 숫자를 적용한다.*/
+
+
+.hover4 ul li{
+  width: 310px;
+  height: 320px;
+  float: left;
+  /* overflow: hidden; */
+  margin-right: 15px;
+  background: #fff;
+  transition: all 0.3s;
+}
+.hover4 ul li:hover{height: 450px;}
+
+
+/* 마우스 오버 전: 텍스트 */
+.hover4 ul li .all_title{padding:10px;}
+.hover4 ul li .text{color:#83a90d;}
+.hover4 ul li .bar{margin-right: 5px;}
+.hover4 ul li .tet11{
+  margin-top:8px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 마우스 오버후: 텍스트 & 버튼 */
+.hover4 ul li .all_view{
+  padding:20px;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.hover4 ul li:hover .all_view{opacity: 1;}
+
+.hover4 ul li .tet12{
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.hover4 ul li .greenbtn a{/* 자세히 보기 버튼 */
+  display: block;
+  width:100px;
+  background: #83a90d;
+  text-align: center;
+  color: #fff;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+
+/* -------------Type.5--------------- */
+
+.hover5{text-align: center;}
+.hover5 ul{display: inline-block; }
+.hover5 ul li{
+  width: 280px;
+  height: 210px;
+  float: left;
+  margin-right: 15px;
+}
+
+.hover5 ul li .ho5_title{ /* 제목글자 */
+  font-size: 15px;
+  padding: 10px;
+}
+
+
+
+
+/* 오렌지막대그래프 색깔이 안나오네... 공부하기 */
+.graph{}
+.graph .left{ /* 금액 */
+  color:orange;
+  font-weight: bold;
+  margin:5px 0 0 15px;
+}
+.graph .right{/* 백분율 */
+  color:green;
+  font-weight: bold;
+  margin:5px 0 0 140px;
+
+}
+
+.graph .b1{ /* 가장 바깥 둥근 테두리-회색 */
+  width:250px;
+  height:10px;
+  overflow: hidden;
+  border:1px solid #ccc;
+  border-radius: 20px;
+  margin: 0 auto;
+}
+
+.graph .b1 div{/* 오렌지막대(공통) */
+  width:0;
+  height:10px;
+  background: #f5c875;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.graph .b1 div{ /* 그린막대(공통) */
+  width:0;
+  height:10px;
+  background: #95cb6e;
+  border-radius: 20px;
+  transition: all 0.3s;
+}
+
+.hover5 ul li:hover .b21{width:160px;}
+.hover5 ul li:hover .b31{width:140px;}
+
+.hover5 ul li:hover .b22{width:210px;}
+.hover5 ul li:hover .b32{width:180px;}
+
+.hover5 ul li:hover .b23{width:100px;}
+.hover5 ul li:hover .b33{width:80px;}
+
+
+
+/* -------------Type.6--------------- */
+
+

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>CSS19-transition</title>
+  <style>
+    #ex1 div{
+      width:100px;
+      height:100px;
+      background: red;
+      cursor: pointer;
+
+      /*축약x
+       transition-property: background,border-radius;
+      transition-duration: 1s;
+      transition-delay: 2s;  마우스오버 2초 후 트랜지션 됨 
+      timing-function:ease-in-out; */
+      transition:all 1s ease-in-out; /* all은 호버일때 두줄을 적어주는것 보통 all만씀 */
+    }
+    #ex1 div:hover{ /* #ex1:hover div 이렇게 걸면 마우스오버의 영역을 조절하는거라 잘 설정해야함 지금 예제는 티가 안남 */
+      background-color: blue;
+      border-radius: 50%;
+    }
+
+    #ex2 div{
+      width:100px;
+      height:100px;
+      border:2px solid #000;
+      background: url(image/f1.png) no-repeat center center;
+      cursor: pointer;
+      transition:all 1s ease-in;  /* ex2가 블록이기 때문에 옆에 공백에 커서 올라가도 hover효과나옴 */
+    }
+
+    #ex2:hover div{
+      border-radius: 50%;
+      border:2px solid blue;
+      background:url(image/f2.png) no-repeat center center;
+    } 
+
+    #ex3 div{
+      float:left;
+      width:100px;
+      height:50px;
+      margin:5px 10px;
+      padding:5px;
+      color:#fff;
+      background-color: cadetblue;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      margin-bottom: 600px;
+    }
+
+    #ex3:hover div{height:400px; cursor: pointer;}
+    #ex3 .ease{transition: all 3s ease;}
+    #ex3 .linear{transition: all 3s linear;}
+    #ex3 .ease-in{transition: all 3s ease-in;}
+    #ex3 .ease-out{transition: all 3s ease-out;}
+    #ex3 .ease-in-out{transition: all 3s ease-in-out;}
+
+    #ex4 div{
+      float:left;
+      width:100px;
+      height:50px;
+      margin:5px 10px;
+      padding:5px;
+      color:#fff;
+      background-color: rgb(236, 212, 71);
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #ex4 div:hover{height:400px; cursor: pointer;}
+    #ex4 .ease{transition: all 3s ease;}
+    #ex4 .linear{transition: all 3s linear;}
+    #ex4 .ease-in{transition: all 3s ease-in;}
+    #ex4 .ease-out{transition: all 3s ease-out;}
+    #ex4 .ease-in-out{transition: all 3s ease-in-out;}
+
+    #transform{
+      width:200px;
+      height:200px;
+      background-color: #f90;
+      margin: 50px auto;
+      cursor: pointer;
+      transition: all 0.5s; /* a부분 */
+    }
+    #transform:hover{transform: rotate(90deg);} /* 트랜스폼은 트랜지션(a부분) 걸어주지않으면 확인어려운게 몇가지있음 */
+    #boxContent div{
+      display: inline-block;
+      width:150px;
+      height:150px;
+      box-shadow: 1px 2px 4px #666;
+    }
+
+    .box1{background-color: #fc0; transition:all 0.5s;}
+    .box2{background-color: #6cf; transition:all 0.5s;}
+    .box3{background-color: #9c0; transition:all 0.5s;}
+    .box4{background-color: #f00; transition:all 0.5s;}
+    .box5{background-color: #000; transition:all 0.5s;}
+
+    .box1:hover, .box2:hover, .box3:hover, .box4:hover, .box5:hover{
+      transform:scale(1.5,1.5);
+      cursor:pointer;
+    }
+
+  </style>
+</head>
+
+
+<body>
+  <h1>mouse on!</h1>
+  <div id="ex1">
+    <div></div>
+  </div>
+
+  <p>배경이미지 넣기</p>
+  <div id="ex2">
+    <div></div>
+  </div>
+
+  <h1>timing-function:트랜지션 효과의 곡선형태</h1>
+  <div id="ex3">
+    <div class="ease">ease</div>
+    <div class="linear">linear</div>
+    <div class="ease-in">ease-in</div>
+    <div class="ease-out">ease-out</div>
+    <div class="ease-in-out">ease-in-out</div>
+  </div>
+
+  <br><br><br><br><br>
+  <h2>부록 :hover위치의 차이(개별로 마우스오버)</h2>
+  <div id="ex4">
+    <div class="ease">ease</div>
+    <div class="linear">linear</div>
+    <div class="ease-in">ease-in</div>
+    <div class="ease-out">ease-out</div>
+    <div class="ease-in-out">ease-in-out</div>
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br>
+  <div id="transform"></div>
+  <div id="boxContent">
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+    <div class="box5"></div>
+  </div>
+  
+  
+</body>
+</html> 
+
+
+
+<!-- 
+  *트랜지션이란 한 스타일에서 다른스타일로 바뀌는것을 말한다.(바뀌는 시간을 조절)
+
+  🔹transition:property값 duration값 timing-function값 delay값
+  ex)transition: all 1s linear: 요소의 모든 부분에 1초동안 linear 적용 (linear를 탄력함수라고함 지금은 5개 배우지만 제이쿼리에선 종류가 많음)
+
+  * timing-finction값
+  linear:시작에서 끝까지 똑같은 속도로 트랜지션을 진행한다.
+  ease: 처음에는 천천히 시작하고 점점 빨라지다가 마지막엔 천천히 끝낸다. 기본값
+  ease-in:트랜지션 시작을 느리게 한다.
+  ease-out:트랜지션을 느리게 끝낸다.
+  ease-in-out: 느리게 시작하고 느리게 끝낸다.
+ -->
+ 

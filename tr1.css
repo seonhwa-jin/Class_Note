@@ -1,0 +1,253 @@
+@import url(common.css);
+@
+
+body{
+  background-color:lightgoldenrodyellow;
+  color:#fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+  width:950px;
+  margin: 0 auto;
+  text-align: center;
+  margin
+}
+
+/* 자손선택자:부모 container의 첫번째에 나오는 <p> */
+#container>p{color:#333; margin-bottom:50px}
+#container .photo{width: inherit;} /* 부모값 950상속받음 */
+#container .photo li{
+  position: relative;
+  float:left; /* 푸터 올라오는 문제는 class photo에 clear넣어줬음 */
+  width: 300px;
+  height: 250px;
+  cursor: pointer;
+  margin: 0 10px 10px 0 ;/* 오른쪽,밑에만 간격준거 */
+  color:white;
+}
+
+#container .photo li div{
+  position:absolute;
+  background: #000;
+  
+}
+
+#container .photo li img{width:100%; height:100%;}
+/* 이건 부모박스 크기에 꽉채우게 img사이즈 조절한거 */
+
+
+
+
+
+/* 1번 이미지   ★공부하기*/
+#container .photo li .block1{
+  width:100%;
+  height: 0;
+  /* opacity: 0.5;  이렇게하면 돋보기글자가 비친다.rgba로*/
+  background: rgba(0,0,0,0.5);
+  transition:all 0.5s ease-out;
+}
+
+#container .photo li:hover .block1{
+  /* 부모인 li에 hover했을때 block1을 어떻게할꺼냐 */
+  height: 100%;
+}
+
+#container .photo li .block1 .icon{ /* 돋보기아이콘 */
+   font-size: 40px;
+   line-height: 250px;
+   opacity: 0;
+   transition: all 0.5s ease-out;
+}
+
+#container .photo li:hover .block1 .icon{opacity: 1;}
+
+
+
+
+
+
+
+
+
+
+
+/*2번 이미지 */
+#container .photo li .block2{
+  width:100%;
+  height: 100%;
+  opacity: 0;
+  transition:all 0.5s ease-in;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#container .photo li:hover .block2{opacity: 1;}
+
+#container .photo li .block2 p{
+  text-transform: uppercase;
+  border:1px solid #fff;
+  width: 140px;
+  padding: 10px 0;
+  /* <p>니까 텍스트얼라인센터 당연히 안됨 ,p의 부모에게 table주거나 flex해야함*/
+  
+}
+
+
+/* 3번 이미지 */
+#container .photo li .block3{
+  width:100%;
+  height: 0;
+  transition:all 0.3s;
+}
+
+#container .photo li:hover .block3{height: 50px;}
+
+#container .photo li .block3 p{
+  line-height: 50px;
+  opacity: 0;
+  transition:all 0.3s;
+}
+
+#container .photo li:hover .block3 p{
+  opacity: 1;
+}
+
+
+
+
+/* 4번 이미지 */
+#container .photo li .block4{
+  width:100%;
+  height: 0;
+  bottom:0;  /* top:0이 기본. bot을써주면 여기가 기준됨 ,position과 함께쓰는것들*/
+  transition:all 0.3s;
+}
+
+#container .photo li:hover .block4{height: 50px;}
+
+#container .photo li .block4 p{
+  line-height: 50px;
+  opacity: 0;
+  transition:all 0.3s;
+  
+}
+
+#container .photo li:hover .block4 p{
+  opacity: 1;
+}
+
+
+
+
+
+
+/* 5번 이미지 */
+#container .photo li .block5{
+  width:0;
+  height: 100%;
+  bottom:0;  /* top:0이 기본. bot을써주면 여기가 기준됨 ,position과 함께쓰는것들*/
+  transition:all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#container .photo li:hover .block5{width:100%;}
+
+#container .photo li .block5 p{
+  line-height: 50px;
+  opacity: 0;
+  transition:all 0.3s;
+  
+}
+
+#container .photo li:hover .block5 p{
+  opacity: 1;
+}
+
+
+/* 6번 이미지 */
+
+#container .photo li .block6{
+  /*width:0;
+  height: 0;
+   width,height를 쓰면 왼쪽위가 기준이라 
+센터를기준점으로 하고싶다면 트랜스폼써야한다. */
+
+  width: 100%;
+  height: 100%;
+  transform: scale(0,0);
+  opacity: 0;
+  transition:all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#container .photo li:hover .block6{
+  transform: scale(1,1);
+  opacity: 1;
+}
+
+
+
+
+
+/* 7번 이미지 */
+#container .photo li .block7{
+  width: 100%;
+  height: 100%;
+  transform: scale(1,1);
+  opacity: 1;
+  transition:all 0.3s;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+#container .photo li:hover .block7{
+  transform: scale(0,0);
+  opacity: 0;
+}
+
+
+/* 8번 이미지 */
+#container .photo li:nth-child(8){overflow: hidden;}
+/* 자식이 부모보다 넘치지 않게 하기 위함 */
+#container .photo li:nth-child(8) img{transition: all 0.5s;}
+#container .photo li:nth-child(8):hover img{
+  transform:scale(1.4); /* 1.4 1.4 중복일때는 하나만 붙여도됨 */
+  -webkit-filter: blur(4px); /* 접두사 필요-크롬 */
+  filter: blur(4px); /* 흐림효과 - >filter속성은 익스플로러에서 적용되지 않음 */
+}
+
+/* 9번 이미지 */
+#container .photo li:nth-child(9){overflow: hidden;}
+/* 자식이 부모보다 넘치지 않게 하기 위함 */
+#container .photo li:nth-child(9) img{transition: all 0.5s;}
+#container .photo li:nth-child(9):hover img{
+  transform:scale(1.4); /* 1.4 1.4 중복일때는 하나만 붙여도됨 */
+  -webkit-filter: grayscale(100%); /* 접두사 필요-크롬 */
+  filter: grayscale(100%); /* 흐림효과 - >filter속성은 익스플로러에서 적용되지 않음 */
+}
+
+
+/* 푸터 */
+#footer p {
+  color:#666;
+  font-style: italic;
+  text-align: center;
+  padding-bottom: 100px;
+}
+/* 다음 컨텐츠가 없는 마지막 하단에는 margin-bottom이 적용 안됨
+margin은 문제가 많다 . */
