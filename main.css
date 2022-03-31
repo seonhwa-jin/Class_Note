@@ -1,0 +1,345 @@
+@import url(common.css);
+
+/* ----top버튼---- */
+#top_btn{ /* 위치설정 */
+  position: fixed;
+  right:0;
+  bottom:0;
+  z-index: 1000;
+}
+#top_btn a.active{ /* 버튼설정 , 아 a태그안의 .active구나라고 표시한거 실무자들이 자주사용, a태그는 인라인이다!!!! a태그-블록은 외워두기*/ 
+  width:60px;
+  height:60px;
+  background:url(../image/top.png) no-repeat; 
+  transition: all 0.3s;
+  display: block;
+
+}
+#top_btn a.active:hover{ /* 버튼호버설정 */
+  background:url(../image/top_on.png) no-repeat; 
+}
+
+
+
+/* --------------------------header------------------------------ */
+
+header{ /* 헤더영역 전체 가로 100% + 비주얼 배경이미지 */
+  width: 100%;
+  height: 660px; /* 시안이미지에서 활용한거 */
+  background:url(../image/visual.png) no-repeat bottom center;
+  background-size:cover ; /* 배경 풀스크린 */
+  position: relative; /* 부모기준설정 - 메인타이틀텍스트때문 */
+  
+  
+} 
+
+
+/* ----탑메뉴---- */
+.header_in{
+  /* width:1200px;
+  margin: 0 auto; 메뉴바가 옆으로 나가야하기때문에 여기다가 사이즈넣으며면안됨 이 경우엔 부모가 3개가되는 특수경우 
+  header_in은 결국 메뉴바를 위해 만들어진 부모*/
+  width: 100%;
+  height: 87px; /* 시안사이즈 참고 */
+  background: rgba(0,0,0,0.4);
+  
+}
+
+.topMenuBar{ /* 실제 차지하는 컨텐츠의 가로크기+가운데정렬 */
+  width:1100px;
+  margin: 0 auto;
+}
+
+.left_logo{ /* 로고 */
+  float:left;
+  padding-top:25px;
+}
+nav{ /* 메인메뉴 */ float:right;}
+
+nav ul{}
+nav ul li{
+  float: left;
+  padding:0 15px;
+}
+nav ul li a{
+  color:#fff;
+  font-size: 16px;
+  line-height: 87px;
+  transition:all 0.3s;
+}
+nav ul li a:hover{color:#f90;}
+
+
+/* ----메인 타이틀 텍스트---- */
+
+.caption{
+  width:100%;
+  position:absolute; /* 자식설정 */
+  top:45%;
+  text-align:center; /* left로 맞추려면 위험, 지금 가로가 100%라서 자기모니터로만 맞춰짐  */
+}
+
+.caption h2{
+  font-family:"Century Gothic",arial;
+  color:#fed6b1;
+  font-size: 70px;
+  font-weight: 100;
+}
+.caption h3{
+  font-family: Arial;
+  color:#fff;
+  font-size: 15px;
+  font-weight: 100;
+}
+
+
+/* --------------------------section------------------------------ */
+
+section{
+  width:100%;
+  text-align: center;
+}
+
+section h4{
+  font-family: arial;
+  color:#232323;
+  font-size: 28px;
+
+}
+section h5{
+  color:#666;
+  font-size:16px;
+}
+section h6{
+  color:rgb(255, 123, 0);
+  font-size: 18px;
+  text-transform: capitalize; /* 맨앞만 대문자 */
+  margin: 10px 0;
+}
+section p{
+  font-family:"Century Gothic",arial;
+  color:#666;
+  line-height: 23px;
+}
+
+/* ---1.about---- */
+section #about{padding:50px 0;}
+
+.ab_num{
+  height:200px;
+  background: #eee;
+  margin-top: 20px;
+}
+
+.ab_num ul{display: inline-block;}
+.ab_num ul li{
+  float: left;
+  margin:50px 30px;
+}
+.ab_num ul li .material-icons{
+  font-size:50px;
+  color:#4f4e4d;
+  vertical-align: top; /* 아이콘이미지를 중심으로 옆글자 배열 */
+  transition: all 0.3s;
+}
+.ab_num ul li .num{
+  font-size: 42px;
+  color:#4f4e4d;
+  font-weight: bold;
+  padding-left: 20px;
+  transition: all 0.3s;
+}
+.ab_num ul li:hover .material-icons,
+.ab_num ul li:hover .num{
+  color:#f90;
+}
+.ab_num ul li .ntext{
+  font-size: 20px;
+  color:#666;
+  text-transform: uppercase;
+  padding-left: 70px;
+}
+
+
+
+
+
+
+/* ---2.our skill---- */
+section #our_skill{padding:50px 0;}
+
+.stick ul{display: inline-block; margin-top: 20px;}
+.stick ul li{
+  float:left;
+  width:520px;
+  height:30px;
+  background: #ccc;
+  margin:0 20px;
+  border-radius: 5px;
+}
+
+.stick ul li .block1{
+  width:480px;
+  height:30px;
+  background: #0cc;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.3s;
+}
+.stick ul li .block2{
+  width:400px;
+  height:30px;
+  background: #0cc;
+  border-radius: 5px 0 0 5px;
+  transition: all 0.3s;
+}
+.stick ul li:hover .block1,
+.stick ul li:hover .block2{
+  background: rgb(206, 203, 38);
+}
+
+
+.stick ul li .per{ /* 백분율 텍스트 */
+  font-family: 돋움체;
+  font-size: 13px;
+  color:#fff;
+  text-align: left;
+  padding: 2px 0 0 20px;
+}
+
+
+
+
+
+/* ---3.our service---- */
+section #our_service{padding:50px 0;}
+
+.service_img ul{display: inline-block; margin-top: 20px;}
+.service_img ul li{
+  float:left;
+  width:250px;
+  height:250px;
+  border:1px solid #ccc;
+  display: flex;
+  flex-direction: column; /* 플렉스박스-방향을 세로로 바꾸는 */
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
+
+/* ---4.our portfolio---- */
+section #our_portf{
+  padding:50px 0;
+  height: 900px;
+  background: #ccc;
+}
+
+#our_portf ul{display:inline-block; margin-top:30px;}
+#our_portf ul li{float:left;}
+#our_portf ul li a{
+  padding: 10px 60px;
+  color:#333;
+  font-size: 12px;
+}
+#our_portf ul li:first-child a{border-bottom:2px solid #09f;}
+
+.portf_img{ /* 이미지가 4개만 쌓이게 구간너비를 정해버림 */
+  width: 1100px;
+  margin: 30px auto;
+}
+.portf_img ul li {margin-bottom: 30px;}
+
+
+/* 버튼 */
+
+.btn{
+  width: 200px;
+  height:45px;
+  line-height: 45px;
+  border:1px solid #ccc;
+  background: #fff;
+  border-radius: 5px;
+  margin:0 auto;
+}
+.btn:hover{
+  border: 1px solid #09f;
+  cursor: pointer;
+}
+
+
+/* text-decoration:line-through <이거해보기 */
+
+
+
+
+
+
+
+/* ---5.our team---- */
+section #our_team{padding:50px 0;}
+
+.team_img ul{display: inline-block; margin-top:50px;}
+.team_img ul li{
+  float:left;
+  margin: 0 20px;
+  transform: scale(1);
+  transition: all 0.3s;
+}
+.team_img ul li:hover{
+  transform: scale(1.1);
+}
+
+
+.team_img .title{
+  width: 210px;
+}
+
+
+
+/* ---6.our blog---- */
+section #our_blog{padding:50px 0;}
+
+.blog_img ul{display: inline-block; margin-top:50px;}
+
+.blog_img ul li{
+  float:left;
+  margin: 0 10px;
+  
+}
+
+
+.blog_img .btitle{
+  width: 350px; /* 영역에맞춰서 수정해서 가운데배열, 꽉차서 줄 알아서 넘어가게 설정해주는 역할 */
+}
+
+.btitle .read1{text-align: left;}
+.btitle .read2{
+  text-decoration: underline;
+  text-align: left;
+  margin:20px 0 50px 0;
+}
+
+
+
+/* --------------------------footer------------------------------ */
+
+footer{
+  width:100%;
+  height: 150px;
+  background: #ccc;
+  text-align: center;
+}
+
+footer p{
+  color:#666;
+  padding-top: 50px;
+}
+
+address{
+  font-size: 13px;
+  margin-top:20px;
+  font-style:normal;
+}
