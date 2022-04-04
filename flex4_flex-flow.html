@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex4_flex-flow</title>
+  <style>
+    .container{
+      display: flex;
+      background:#eee;
+      border: 1px solid #222;
+      margin-bottom: 10px;
+    }
+    .box{
+      width:80px;
+      padding: 5px 45px;
+      margin: 5px;
+      background-color: #222;
+      
+    }
+    .box p{
+      color:#fff;
+      text-align: center;
+    }
+    
+/* flex-flow: flex-direction과 flex-wrap을 한꺼번에 지정할 수 있는 단축 속성 (순서 지키기 )*/
+    .opt1{flex-flow: row wrap;} /*왼쪽에서 오른쪽으로 배치, 줄바꿈*/
+    .opt2{flex-flow: row nowrap;} /*왼쪽에서 오른쪽으로 배치, 줄바꿈안하고 넘침*/
+
+  </style>
+</head>
+<body>
+  <div class="container opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+  <div class="container opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+    <div class="box"><p>4</p></div>
+    <div class="box"><p>5</p></div>
+    <div class="box"><p>6</p></div>
+  </div>
+</body>
+</html>

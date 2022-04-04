@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex1_float와flex의차이</title>
+  <style>
+    .box, .box1{
+      padding:5px 45px;
+      margin: 5px;
+      width:80px;
+      background: #222;
+    }
+    p{
+      color:#fff;
+      text-align: center;
+    }
+    .clear:after{
+      content: "";
+      display: block;
+      clear:both;
+    }
+    .container1{
+      background:#eee;
+      border: 1px solid #222;
+      margin-bottom: 10px;
+    }
+    .container1 .box1{float:left;}
+    
+    .container2{
+      display: flex;
+      background:#eee;
+      border: 1px solid #222;
+      margin-bottom: 10px;
+    }
+    .container3{display: flex; border: 1px solid #222; margin-bottom: 10px;} /*block요소의 성향을 가짐(수직쌓임)*/
+    .container4{display: inline-flex;border: 1px solid #222; margin-bottom: 10px;}  /*inline-block요소의 성향을 가짐(수평쌓임)*/
+      /*  여기서 말하는 수직과 수평쌓임은 items가 아니라 부모(container)를 말하는것임에 주의하자. 두 값의 차이는 내부에 items에게는 영향을 주지 않는다.    */
+
+  </style>
+</head>
+
+<body>
+  <h2>Float를 이용한 레이아웃 구성</h2>
+  <div class="container1 clear">
+    <div class="box1"><p>1</p></div>
+    <div class="box1"><p>2</p></div>
+    <div class="box1"><p>3</p></div>
+  </div>
+
+  <h2>Flexible Box를 이용한 레이아웃 구성</h2>
+  <div class="container2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+
+  <h2>display:flex 와 display:inline-flex의 차이</h2>
+  <div class="container3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+
+
+  <div class="container4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+</body>
+</html>

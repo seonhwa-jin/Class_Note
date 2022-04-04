@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex2_flex-direction</title>
+  <style>
+    .container{
+      display: flex;
+      background:#eee;
+      border: 1px solid #222;
+      margin-bottom: 10px;
+    }
+    .box{
+      width:80px;
+      padding: 5px 45px;
+      margin: 5px;
+      background-color: #222;
+    }
+    .box p{
+      color:#fff;
+      text-align: center;
+    }
+   /* flex-direction:아이템들이 배치되는 축의 방향을 결정 (메인축의 방향을 가로로 할지 세로로 할지..) */
+    .opt1{flex-direction: row;}  /* 박스를 왼쪽에서 오른쪽으로 배치*/
+    .opt2{flex-direction: row-reverse;} /* 박스를 오른쪽에서 왼쪽으로 배치 */
+    .opt3{flex-direction: column;} /* 박스를 위에서 아래로 배치 */
+    .opt4{flex-direction: column-reverse;} /*  박스를 아래에서 위로 배치 */
+     
+  </style>
+</head>
+<body>
+  <div class="container opt1">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container opt2">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container opt3">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+  <div class="container opt4">
+    <div class="box"><p>1</p></div>
+    <div class="box"><p>2</p></div>
+    <div class="box"><p>3</p></div>
+  </div>
+</body>
+</html>

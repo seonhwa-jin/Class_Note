@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex10_order_자식설정</title>
+  <style>
+    
+    .container{
+      width:90%;
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+      border: 3px solid #333;
+    }
+    
+    .container p{text-align: center;}
+    
+    .box1{
+      background: orange;
+      flex-basis: 60%;
+      order: 2;
+    }
+
+    
+    .box2{
+      background: green;
+      flex-basis: 30%;
+      order: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"><p>1</p></div>
+    <div class="box2"><p>2</p></div>
+    <div class="box3"><p>3</p></div>
+  </div>
+  
+  웹접근성에 떨어지는 명령어라 왠만하면 사용 자제하는것이 맞음.
+</body>
+</html>

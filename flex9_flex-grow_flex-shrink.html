@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex9_flex-grow_flex-shrink_자식설정</title>
+  <style>
+    .container{
+      height: 500px;
+      margin: 0 auto;
+      display: flex;
+      border: 3px solid #333;
+    }
+    .container p{text-align: center;}
+    .box1{
+      background: #d8ae16;
+/*
+      flex-grow: 2;
+      flex-shrink: 1;  이렇게 쓰면 너무 개념이 어려워짐. 
+*/
+/*      flex:1 1 0; 이거도 복잡함 .*/ 
+      flex-basis: 60%; /*이걸 사용하는게 제일 이상적이다.*/
+    }
+    .box2{
+      background: yellowgreen;
+/*
+      flex-grow: 1;
+      flex-shrink: 1;
+*/
+    }
+    .box3{
+      background: skyblue;
+/*
+      flex-grow: 1;
+      flex-shrink: 1;
+*/
+    }
+     /*플렉스 아이템이 플렉서블 박스보다 작거나 클 경우 여백이 생기거나 넘치는 문제가 발생할 수 있다.
+    이때 다음의 속성을 사용하면 자식박스들의 크기를 늘이거나 줄일 수 있고 가변적인 박스로 작동하게 할 수 있다.
+    
+    *flex-basis:유연한 박스의 기본 영역
+    예를 들어, 속성값을 0으로 하면 플렉스 아이템에 flex-grow, flex-shrink속성값에서 설정한 비율이 그대로 적용된다.
+    속성값을 auto로 하면 플렉스 아이템이 기본적으로 가지고 잇는 크기를 기준으로 flex-grow, flex-shrink속성값에서 설정한 비율이 적용된다.
+    
+    *flex-grow:유연하게 늘리기(아이템이 flex-basis의 값보다 커질 수 있는지를 결정하는 속성)
+    기본값은 0이기 때문에 따로 적용하기 전까지는 아이템이 늘어나지 않는다.
+    
+    *flex-shrink :유연하게 줄이기(아이템이 flex-basis의 값보다 작아질 수 있는지를 결정하는 속성)
+    기본값이 1이기 때문에 따로 세팅하지 않았어도 flex-basis보다 작아질 수 있다. 
+    
+    *축약형
+    flex:flex-grow flex-shrink flex-basis 순서 (증가너비 감소너비 기본너비)
+    -->예시 flex:0 1 auto (기본값)  */
+    
+    
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box1"><p>1</p></div>
+    <div class="box2"><p>2</p></div>
+    <div class="box3"><p>3</p></div>
+  </div>
+</body>
+</html>
