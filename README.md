@@ -163,6 +163,33 @@ form1 -로그인
  sac - 개인리뉴얼
   
   
+***
+
+22.04.04 mon
+
+  
+flex1- float와 flex의 차이
+
+flex2- flex-direction
+
+flex3- flex-wrap
+
+flex4- flex-flow
+
+flex5- justify-content
+
+flex6- align-items 
+
+flex7- align-content
+
+flex8- align-self
+
+flex9- flex-grow_flex-shrink
+
+flex10- order
+  
+  
+  
   
   
   
