@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Seoul Arts Center-Onepage Main</title>
   <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="css/sac.css">
 </head>
 <body>
@@ -18,7 +19,7 @@
           <li><a href="#today">오늘의공연/전시</a></li>
           <li><a href="#schedule">전체일정</a></li>
           <li><a href="#sacEvent">이벤트</a></li>
-          <li><a href="#sacClass">강좌</a></li>
+          <li><a href="#sacClass">음악/강좌</a></li>
           <li><a href="#place">공간안내</a></li>
         </ul>
       </div>
@@ -28,10 +29,10 @@
 
 
   <section>
-    <div id="section_in">
+    <div id="section_in1">
       <div id="today">
         <div class="title">오늘의공연/전시</div>
-        <div class="subTitle">오늘 예술의전당에서 보실 수 있는 공연/전시 목록입니다. </div>
+        <div class="subTitle">오늘 예술의전당에서 보실 수 있는 공연/전시 목록입니다.</div>
         <div class="content1">
           <ul class="clear">
             <li><a href="#"><img src="image/today1.png" alt="today1"></a></li>
@@ -44,12 +45,18 @@
           <div class="btn">더 보기</div>
         </div>
       </div>
+    </div>
   
+    
       <div id="schedule">
         <div class="title">전체일정</div>
         <div class="subTitle">모든 공연/음악/전시/강좌 스케쥴입니다.<br>해당하는 날짜를 클릭하시면 그날 모든 공연에 대한 정보를 볼 수 있습니다. </div>
         <div class="content2"> <!-- 달력흰배경 -->
-          <h4>April 2022</h4>
+          <h4>
+            <a href="#" alt="previouMonth"><span class="material-icons arrow">arrow_back_ios</span></a>
+            April 2022
+            <a a href="#" alt="nextMonth"><span class="material-icons arrow">arrow_forward_ios</span></a>
+          </h4>
           <div class="week">
             <ul class="clear">
               <li>Sun</li>
@@ -68,16 +75,16 @@
                 <td class="mar">28</td>
                 <td class="mar">29</td>
                 <td class="mar">30</td>
-                <td class="mar">31</td>
+                <td class="mar">31<br><span class="scheText">오스모 벤스케의 수수께끼 변주곡<br>(3.31 ~ 4.1)</span></td>
                 <td>1</td>
-                <td>2</td>
+                <td>2<br><span class="scheText">2022 교향악 축제<br>(4.2 ~ 4.28)</span></td>
               </tr>
               <tr>
                 <td class="sunday">3</td>
                 <td>4</td>
                 <td>5  식목일</td>
                 <td>6</td>
-                <td>7</td>
+                <td>7<br><span class="scheText">국립오페라단 &lt;아틸라&gt<br>(4.7 ~ 4.10)</span></td>
                 <td>8</td>
                 <td>9</td>
               </tr>
@@ -97,7 +104,7 @@
                 <td>20</td>
                 <td>21</td>
                 <td>22</td>
-                <td>23</td>
+                <td>23<br><span class="scheText">한국 소극장 오페라 축제(4.23 ~ 5.8)</span></td>
               </tr>
               <tr>
                 <td class="sunday">24</td>
@@ -112,25 +119,167 @@
 
           </div>
         </div>
-        <div class="contentLogo"></div>
+        <!-- <div class="contentLogo"></div> -->
       </div>
   
+
+
+
       <div id="sacEvent">
         <div class="title">이벤트</div>
-        <div class="subTitle">오늘 예술의전당에서보실 수 있는 공연/전시입니다. </div>
-        <div class="content3"></div>
+        <div class="subTitle">현재 서울 예술의 전당에서 진행중인 이벤트입니다. </div>
+        <div class="content3">
+          <ul class="clear">
+            <li>
+              <div class="firstBox">
+                <span class="over_box"></span>
+                <div class="moreBtn"><span class="material-icons">touch_app</span>자세히 보기</div>
+                <img src="image/event1.png" alt="event1">
+              </div>
+              <div class="viewAll">
+                <p>예술의 전당이 모바일 티켓 앱을 새롭게 출시합니다! 여러분이 직접 모바일 티켓 앱의 공식 명칭을 정해주세요!</p>
+              </div>
+            </li>
+            <li>
+              <div class="firstBox">
+                <span class="over_box"></span>
+                <div class="moreBtn"><span class="material-icons">touch_app</span>자세히 보기</div>
+                <img src="image/event2.png" alt="event1">
+              </div>
+              <div class="viewAll">
+                <p>&lt;고상지밴드와 반도네온 콘체르토 콘서트&gt;의 기대평 남기고 티켓 받아가세요!</p>
+              </div>
+            </li>
+            <li>
+              <div class="firstBox">
+                <span class="over_box"></span>
+                <div class="moreBtn"><span class="material-icons">touch_app</span>자세히 보기</div>
+                <img src="image/event3.png" alt="event1">
+              </div>
+              <div class="viewAll">
+                <p>예술의전당과 오랫동안 함께한 15년차 이상 골드회원에게 특별한 선물을 드립니다.</p>
+              </div>
+            </li>
+            <li>
+              <div class="firstBox">
+                <span class="over_box"></span>
+                <div class="moreBtn"><span class="material-icons">touch_app</span>자세히 보기</div>
+                <img src="image/event4.png" alt="event1">
+              </div>
+              <div class="viewAll">
+                <p>&lt;잃어버린 얼굴&gt;의 기대평 남기고 <br>주연배우 친필사인 프로그램북을 받아가세요!!</p>
+              </div>
+            </li>
+          </ul>
+          <div class="bardotdot"><span id="active">●</span> ○ ○</div>
+        </div>
       </div>
   
+
+
+
+
+
+
+       
       <div id="sacClass">
-        <div class="title">강좌</div>
-        <div class="subTitle">오늘 예술의전당에서보실 수 있는 공연/전시입니다. </div>
-        <div class="content4"></div>
+        <div class="title">음악/강좌</div>
+        <div class="subTitle">오늘 예술의전당에서보실 수 있는 음악/강좌입니다. </div>
+        <div class="content4">
+          <ul>
+            <li>
+              <div class="classText">
+                <p class="classTextTitle">김선욱<br>피아노 리사이틀</p>
+                <p class="classTextContent">세계를 무대로 자신을 담은 음악을 포디움에서, 건반에서 펼쳐 보이고 있는 피아니스트 김선욱이 슈베르트-알베니즈-리스트로 이어지는 3인 3색의 세계로 가득찬 피아노 리사이틀로 돌아온다.</p>
+                <p class="classTextBtn">예매하기</p>
+              </div>
+              <span class="over_box2"></span>
+              <a href="#" class="class1">
+              </a>
+            </li>
+            <li>
+              <div class="classText">
+                <p class="classTextTitle">화정 김무호 선생의<br>온라인 사군자</p>
+                <p class="classTextContent">사군자를 배운다는 것은 먹과 붓을 사용하여 예술 체험과 함께 심신 수양을 배운다는 것입니다. 언제 어디서든 나만의 시간과 속도에 맞추어 자유롭게 공부할 수 있는 온라인 강좌를 통해 차원 높은 예술 세계를 경험해 보세요.</p>
+                <p class="classTextBtn">예매하기</p>
+              </div>
+              <span class="over_box2"></span>
+              <a href="#" class="class2"></a>
+            </li>
+            <li>
+              <div class="classText">
+                <p class="classTextTitle">얀 리시에츠키<br>피아노 리사이틀</p>
+                <p class="classTextContent">그라모폰 영 아티스트 최연소 수상자 리시에츠키는 지난 시즌 극찬을 받았던 'Night Music' 리사이틀에 이어 새로운 솔로 리사이틀 프로그램과 잘츠부르크 페스티벌에서 바리톤 마티아스 괴르네와 함께했던 베토벤 가곡 사이클을 선보인다. </p>
+                <p class="classTextBtn">예매하기</p>
+              </div>
+              <span class="over_box2"></span>
+              <a href="#" class="class3"></a>
+            </li>
+          </ul>
+        </div>
       </div>
-  
+
+
+
+
+
+
+    <div id="section_in2"> 
       <div id="place">
         <div class="title">공간안내</div>
-        <div class="subTitle">오늘 예술의전당에서보실 수 있는 공연/전시입니다. </div>
-        <div class="content5"></div>
+        <div class="subTitle">예술의 열정이 이어지는 문화공간! 예술의 풍경을 담는 전시공간! 예술의전당의 모든 공간을 한눈에 확인하실 수 있습니다. </div>
+        <div class="content5">
+          <div class="placeIcon">
+            <ul class="clear">
+              <li>
+                <a href="#" class="place1"></a>
+                <div class="placeView1">
+                  <div class="placeA"></div>
+                  <div class="placeB"></div>
+                  <div class="placeC"></div>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="place2"></a>
+                <div class="placeView2">
+                  <div class="placeA"></div>
+                  <div class="placeB"></div>
+                  <div class="placeC"></div>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="place3"></a>
+                <div class="placeView3">
+                  <div class="placeA"></div>
+                  <div class="placeB"></div>
+                  <div class="placeC"></div>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="place4"></a>
+                <div class="placeView4">
+                  <div class="placeA"></div>
+                  <div class="placeB"></div>
+                  <div class="placeC"></div>
+                </div>
+              </li>
+              <li>
+                <a href="#" class="place5"></a>
+                <div class="placeView5">
+                  <div class="placeA"></div>
+                  <div class="placeB"></div>
+                  <div class="placeC"></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="placeView">
+            <div class="placeA"></div>
+            <div class="placeB"></div>
+            <div class="placeC"></div>
+          </div>
+        </div>
       </div>
       
       
