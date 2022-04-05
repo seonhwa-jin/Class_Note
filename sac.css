@@ -3,6 +3,29 @@ body{background-color: EEEEEE;}
 
 
 
+/* ---------top버튼---------------- */
+
+#toTop{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(33, 33, 33);
+  color:#fff;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Hahmlet', serif;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  right: 10px;
+  bottom:10px;
+}
+
+#toTop:hover{
+  background-color: #3282B8;
+}
+
+
 /* ---------header---------------- */
 
 header{
@@ -17,10 +40,10 @@ header{
   height: 650px;
   margin:0 auto;
   background: url(../image/visual_1.png) no-repeat center center;
-  transition: all 1.5s;
+  transition: all 0.8s linear;
 }
 #header_in:hover{
-  background: url(../image/visual_2.png) no-repeat center center;
+  background: url(../image/visual_3.png) no-repeat center center;
 }
 
 
@@ -221,6 +244,7 @@ header{
   box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
   color:rgb(0, 106, 255);
   transform: scale(1.2);
+  cursor: pointer;
 }
 
 .scheText{/* 달력 스케쥴 내부 텍스트 */
@@ -371,8 +395,9 @@ header{
 
 #sacClass{
   width: 100%;
-  height: 800px;
-  background-color: #333;
+  height: 700px;
+  /* background-color: #333; */
+  background:url(../image/bg1.png) no-repeat 0px 0px;
 }
 
 #sacClass .title{color:whitesmoke;}
@@ -382,7 +407,7 @@ header{
   width: 690px;
   margin: 20px auto;
   height: 400px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .content4 ul li{
   float:left;
@@ -473,25 +498,34 @@ header{
 
 
 
+
+
+
+
+
 /* ------------공간안내------------ */
 
 #section_in2{
   width:100%;
   height: 1000px;
-  background: beige;
+  background: rgb(255, 255, 255);
 }
 
 #place{
   width:1200px;
   height: inherit;
-  background-color:rgb(233, 233, 233);
+  /* background-color:rgb(233, 233, 233); */
   margin: 0 auto;
   position: relative;
 }
 
+#place .title{
+  padding-top: 70px;
+}
 #place .subTitle{
   padding-bottom: 30px;
 }
+
 
 .content5 ul{
   width:1000px;
@@ -516,49 +550,49 @@ header{
 .content5 a.place4{background:url(../image/place4.png) no-repeat 0px 0px;}
 .content5 a.place5{background:url(../image/place5.png) no-repeat 0px 0px;}
 
-.content5 li:hover a.place1{background:url(../image/place1h.png) no-repeat 0px 0px;}
-.content5 li:hover a.place2{background:url(../image/place2h.png) no-repeat 0px 0px;}
-.content5 li:hover a.place3{background:url(../image/place3h.png) no-repeat 0px 0px;}
-.content5 li:hover a.place4{background:url(../image/place4h.png) no-repeat 0px 0px;}
-.content5 li:hover a.place5{background:url(../image/place5h.png) no-repeat 0px 0px;}
+.content5 li a.place1:hover{background:url(../image/place1h.png) no-repeat 0px 0px;}
+.content5 li a.place2:hover{background:url(../image/place2h.png) no-repeat 0px 0px;}
+.content5 li a.place3:hover{background:url(../image/place3h.png) no-repeat 0px 0px;}
+.content5 li a.place4:hover{background:url(../image/place4h.png) no-repeat 0px 0px;}
+.content5 li a.place5:hover{background:url(../image/place5h.png) no-repeat 0px 0px;}
 
 
 
-/* place사진 -호버 전 메인*/
+
+/* 호버 전- 메인 분수대이미지*/
 
 .placeView{
   width:1000px;
-  height:700px;
+  height:650px;
   margin: 0 auto;
-  background: #000;
+  background: rgb(255, 255, 255);
   display: flex;
   flex-wrap: wrap;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
 }
 
 .placeView .placeA{
   width:1000px;
-  height: 500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: skyblue;
+  height:450px;
+  background:url(../image/placemain_01.png) no-repeat 0px 0px;
+  border-radius: 10px 10px 0 0 ;
+  /* background-color: skyblue; */
 }
 
 .placeView .placeB{
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_03.png) no-repeat 0px 0px; */
-  background-color: green;
+  background:url(../image/placemain_03.png) no-repeat 0px 0px;
+  border-radius: 0 0 0 10px ;
+  /* background-color: green; */
 }
 
 .placeView .placeC{
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_04.png) no-repeat 0px 0px; */
-  background-color: pink;
-}
-
-.placeView1,.placeView2,.placeView3,.placeView4,.placeView5{
-  display: none;
+  background:url(../image/placemain_04.png) no-repeat 0px 0px;
+  border-radius: 0 0 10px 0;
+  /* background-color: pink; */
 }
 
 
@@ -572,45 +606,37 @@ header{
 
 
 
-
-
-
-
-
-
-/* place사진 - 1호버*/
+/* 1호버-사진 :none 상태 */
 
 
 .placeView1 .placeA{ /* 제일큰사진-none상태 */
   width:1000px;
-  height: 500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: cadetblue;
+  height: 450px;
+  background:url(../image/place1a.png) no-repeat 0px 0px;
+  border-radius: 10px 10px 0 0;
+  /* background-color: rgba(159, 160, 95, 0.424); */
   position: absolute;
 }
 
 .placeView1 .placeB{ /* 2번째사진-none상태 */
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: rgb(118, 201, 204);
+  /* background:url(../image/place1b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
   position: absolute;
-  top:731px;
+  top:701px;
 }
 
 .placeView1 .placeC{ /* 3번째사진-none상태 */
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: yellow;
+  /*background:url(../image/place1c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
   position: absolute;
-  top:731px;
-  left:600px;
-}
-
-
-.content5 li:hover .placeView1{ /* none해제 */
-  display: block;
+  top:701px;
+  left:400px;
 }
 
 
@@ -619,159 +645,273 @@ header{
 
 
 
-/* place사진 - 2호버*/
+
+
+/* 2호버-사진 :none 상태 */
 
 
 .placeView2 .placeA{
   width:1000px;
-  height:500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: gold;
+  height:450px;
+  background:url(../image/place2a.png) no-repeat 0px 0px;
+  /* background-color: gold; */
+  border-radius: 10px 10px 0 0 ;
   position: absolute;
   left:100px;
 }
 
 .placeView2 .placeB{
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: rgb(118, 201, 204);
+  /* background:url(../image/place2b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
   position: absolute;
-  top:731px;
+  top:701px;
   left: 100px;
 }
 
 .placeView2 .placeC{
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: yellow;
+  /* background:url(../image/place2c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
   position: absolute;
-  top:731px;
-  left:600px;
-}
-
-
-
-.content5 li:hover .placeView2{
-  display: block;
+  top:701px;
+  left:400px;
 }
 
 
 
 
 
-
-
-
-/* place사진 - 3호버*/
+/* 3호버-사진 :none 상태 */
 
 .placeView3 .placeA{
   width:1000px;
-  height: 500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
+  height:450px;
+  background:url(../image/place3a.png) no-repeat 0px 0px;
   background-color: purple;
+  border-radius: 10px 10px 0 0 ;
   position: absolute;
   left:100px;
 }
 
 .placeView3 .placeB{
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: rgb(118, 201, 204);
+  /* background:url(../image/place3b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
   position: absolute;
-  top:731px;
-  left: 100px;
+  top:701px;
+  left:100px;
 }
 
 .placeView3 .placeC{
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: yellow;
+  /* background:url(../image/place3c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
   position: absolute;
-  top:731px;
-  left:600px;
-}
-
-.content5 li:hover .placeView3{
-  display: block;
+  top:701px;
+  left:400px;
 }
 
 
 
-/* place사진 - 4호버*/
+/* 4호버-사진 :none 상태 */
 
 .placeView4 .placeA{
   width:1000px;
-  height: 500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: navy;
+  height:450px;
+  background:url(../image/place4a.png) no-repeat 0px 0px;
+  /* background-color: navy; */
+  border-radius: 10px 10px 0 0 ;
   position: absolute;
   left:100px;
 }
 
 .placeView4 .placeB{
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: rgb(118, 201, 204);
+  /* background:url(../image/place4b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
   position: absolute;
-  top:731px;
-  left: 100px;
+  top:701px;
+  left:100px;
 }
 
 .placeView4 .placeC{
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: yellow;
+  /* background:url(../image/place4c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
   position: absolute;
-  top:731px;
-  left:600px;
-}
-
-
-.content5 li:hover .placeView4{
-  display: block;
+  top:701px;
+  left:400px;
 }
 
 
 
-
-
-
-/* place사진 - 5호버*/
+/* 5호버-사진 :none 상태 */
 
 .placeView5 .placeA{
   width:1000px;
-  height: 500px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: brown;
+  height:450px;
+  background:url(../image/place5a.png) no-repeat 0px 0px;
+  /* background-color: brown; */
+  border-radius: 10px 10px 0 0 ;
   position: absolute;
   left:100px;
 }
 .placeView5 .placeB{
-  width:500px;
+  width:300px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: rgb(118, 201, 204);
+  /* background:url(../image/place5b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
   position: absolute;
-  top:731px;
+  top:701px;
   left: 100px;
 }
 
 .placeView5 .placeC{
-  width:500px;
+  width:700px;
   height: 200px;
-  /* background:url(../image/placemain_01.png) no-repeat 0px 0px; */
-  background-color: yellow;
+  /* background:url(../image/place5c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
   position: absolute;
-  top:731px;
-  left:600px;
+  top:701px;
+  left:400px;
 }
 
+
+
+
+
+
+
+/* 1,2,3,4,5 호버 후  */
+
+.placeView1,.placeView2,.placeView3,.placeView4,.placeView5{
+  opacity:0;
+  transition: all 0.5s;
+}
+
+
+
+
+
+.content5 li:hover .placeView1{
+  opacity: 1;
+}
+
+.content5 li:hover .placeView2{
+  opacity: 1;
+}
+
+
+.content5 li:hover .placeView3{
+  opacity: 1;
+}
+
+
+.content5 li:hover .placeView4{
+  opacity: 1;
+}
+
+
 .content5 li:hover .placeView5{
+  opacity: 1;
+}
+
+
+
+/* 호버 후: place Name + text */
+.placeName{
   display: block;
+  font-family: 'Hahmlet', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color:#333;
+  padding: 40px 0 5px;
+  margin-left: 20px;
+  width: fit-content;
+  border-bottom: 3px solid #3282B8;
+}
+
+
+.placeNameSub{
+  display: block;
+  font-family: 'Hahmlet', serif;
+  font-size: 14px;
+  font-weight:400;
+  color:#333;
+  margin-left: 10px;
+  padding: 20px 10px;
+}
+
+.placeC .p1{
+  padding:20px;
+}
+
+.placeC .p2{
+  padding:10px 20px;
+}
+
+
+/* ----------------footer----------- */
+
+footer{
+  width: 100%;
+  height: 150px;
+  background-color: #1B262C;
+}
+
+#footer{
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #1B262C;
+} 
+
+.utilMenu{}
+.utilMenu ul{display: inline-block;}
+.utilMenu ul li{
+  float: right;
+  color:rgb(156, 156, 156);
+  margin:10px 8px 10px 0;
+  background: rgba(255,255,255,0.1);
+}
+
+
+.miniLogo{
+  width:100px;
+  height: 60px;
+  background:url(../image/logo_black_wh.png) no-repeat center center;
+  background-size:contain;
+  padding-top: 0;
+}
+
+
+.footerFloat{
+  color:rgb(156, 156, 156);
+  display: flex;
+  justify-content: space-between;
+  padding:20px 0;
+}
+
+/* .miniLogo{float:left;}
+.footerText1{float:left;}
+.footerText2{float:left;} */
+
+
+ .front{
+  font-weight: bold;
+  color:rgb(209, 209, 209);
 }
