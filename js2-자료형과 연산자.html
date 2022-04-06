@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js2-자료형과 연산자</title>
+</head>
+<body>
+  
+
+
+
+
+  <script>
+    let bar="-----------구분선------------";
+    // 자료형:값을 성질에 따라 분류한것
+    // -Primitive Type(원시타입): 한번에 하나의 값만 가질 수 있고, 하나의 고정된 저장공간 이용(숫자.문자,불리언,undefine,null)
+    // ex) let number=12;
+
+    // Non-Primitive Type(비원시타입): 한번에 여러개의 값을 가질  수 있고, 여러개의 고정되지 않은 동적 공간 이용(오브젝트,어레이,function) ex) let array=[1,2,3,4];
+
+
+    /*
+    let age=25; //정수
+    let tall=175.9 //실수
+    let inf=Infinity; //무한대(숫자로 정의되어 있음)
+    let minusInf=-Infinity; //음수의 무한대(숫자로 정의되어 있음)
+    let nan=NaN; //수학적인 계산의 실패
+    null //의도적으로 이 값은 아무것도 안담고 있다.
+    undefine // 값을 아무것도 할당하지 않았을때
+
+    문자:큰따옴표나 작은 따옴표 안에 들어가는건 모두 문자이다.
+    숫자: 정수, 음수,소수 다 가능하다.
+    불리언: 논리 연산에 쓰이는 데이터 타입(true/false) */
+
+    let test;
+    console.log(test); // undefined라고 뜬다
+
+    let test2=null;
+    console.log(test2); // null이라고 뜬다
+
+    let name="seonhwa";
+    let name2="jin";
+    let name3=`oh~ ${name2}` //백틱문자-템플릿 리터럴
+    console.log(name3); // oh~ jin 이라고 출력됨
+
+    
+    console.log(bar);
+
+
+    //산술연산자
+    let num1=15;
+    let num2=6;
+    let result;
+    
+    result=num1+num2;
+    console.log(result);
+
+    result=num1-num2;
+    console.log(result);
+
+    result=num1*num2;
+    console.log(result);
+
+    result=num1/num2;
+    console.log(result);
+
+    result=num1%num2; //나머지 구하는 연산자
+    console.log(result);
+
+
+
+    console.log(bar);
+
+
+
+
+    //문자결합연산자
+    let t1="학교종이";
+    let t2="땡땡땡";
+    let t3=8282;
+    let t4="어서모이자";
+    let result2;
+
+    result2=t1+t2+t3+t4;
+    console.log(result2);
+        //변수 result2에 문자+문자+숫자+문자이므로 하나의 문자로 결합된 데이터가 저장됨
+
+
+
+        console.log(bar);
+
+
+
+    //복합연산자
+    let num3=10;
+    let num4=3;
+
+    num3=num3+num4; //축약하면 num3+=num4; 인데 이걸 더 많이 씀 ★ ->num3:13
+    console.log(num3);
+
+    num3=num3-num4; //축약하면 num3-=num4; 인데 이걸 더 많이 씀 ★ ->num3:10
+    console.log(num3);
+
+    num3=num3*num4; //축약하면 num3*=num4; 인데 이걸 더 많이 씀 ★ ->num3:30
+    console.log(num3);
+
+    num3=num3%num4; //축약하면 num3%=num4; 인데 이걸 더 많이 씀 ★ ->num3: 0
+    console.log(num3);
+
+    console.log(bar);
+
+
+
+
+
+
+
+
+    //증감연산자 (++/--)
+    let num5=10;
+    let num6=20;
+    let result3;
+
+    num5--;   //변수 num5에서 1이 감소 ->num5:9
+    console.log(num5);
+
+    num5++;   //변수 num5는 현재 9, 1이 증가 ->num5:10
+    console.log(num5);
+
+
+          //++의 위치에 따른 값차이 ★
+    result3=num6++;   //지금 num6은 20, num6을 먼저 집어넣고 그 다음에 1을 더하라는거. 로그엔 num6이 20이라고 뜨고 아랫줄로 내려갈때 21이 되는거
+    console.log(result3);
+
+    result3=++num6;   //21이 된 num6이 내려왔음. ++가 앞에 붙어있으면 1을 더하고 로그에 출력되는거. 
+    console.log(result3); 
+
+    console.log(bar);
+
+
+
+
+
+
+    //비교연산자
+    let a=10;
+    let b=20;
+    let c=10;
+    let f="20"; //문자
+    let result4;
+
+    result4=a>b; //거짓
+    console.log(result4);
+
+    result4=a<b;  //참
+    console.log(result4);
+
+    result4=a<=b; //참
+    console.log(result4);
+
+    console.log(bar);
+
+    result4=b==f; //데이터형 상관없이 데이터가 같으므로 참
+    console.log(result4); 
+
+    result4=b===f; //데이터형이 일치하지 않으므로 거짓 
+    console.log(result4);
+
+    result4=a!=b; //참
+    console.log(result4);
+
+
+
+
+    console.log(bar);
+
+
+
+
+
+
+
+    //논리연산자 (and연산자 &&     , or연산자 ||)
+    var aa=10;
+    var bb=20;
+    var m=30;
+    var n=40;
+    var result5;
+
+    result5=aa>bb || bb>=m || m>n;  //셋다 false
+    console.log(result5);
+
+    result5=aa>bb || bb>=m || m<=n;  // 마지막만 true
+    console.log(result5);
+
+    result5=aa<=bb && bb>=m && m<=n;  // true false true 라서 하나라도 false니까 false임
+    console.log(result5);
+
+    result5=aa<=bb && bb<=m && m<=n;  // 셋다 true 라서 true
+    console.log(result5);
+
+
+    console.log(bar);
+
+    
+    result5= !(aa>bb);  //not연산자 - > !false
+    console.log(result5); //true
+
+
+
+
+    //삼향조건연산자  엄청나게 간단한 조건문같은거
+    //(공식)  result6=조건식 ? 조건식이 맞았을때 실행 : 조건이 맞지 않았을때 실행; 
+    let g=10;
+    let h=3;
+    let result6;
+
+    result6=g>h? "javascript" : "hello";
+    console.log(result6);
+
+    
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

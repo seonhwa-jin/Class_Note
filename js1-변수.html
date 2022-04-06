@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js1-변수</title>
+</head>
+<body>
+  
+
+
+
+
+  <script>
+    /* 변수란 프로그램이 실행되는 도중에 계속해서 바뀌는 값을 저장하기 위한 이름(공간)이다. */
+    let color="blue";
+    // let color="orange"; ->변수에 저장된 값을 변경할떄는 let을 붙이지 않고 바로 color~라고 쓴다.
+    color="orange";
+    console.log(color);
+
+    const password="pink";
+    // password="black"; -> const는 한번 할당이 되면 그 값을 영원히 가지기 때문에 재할당x 
+    console.log(password);
+
+    /* var는 자스 초기에 나온 명령이고, let과 const는 새로운 ES6 버전에서 나온것이다.
+    <변수명 만들때 유의사항>
+      -변수명은 기호와 같이 사용할 수 없다. 딘, _와 $는 사용가능 
+      -변수명은 숫지기 만자 나올 수 없다. (숫자를 넣을 경우는 중간이나 마지막에 넣는다.)
+      -예약어를 피해야 한다.  *예약어: js가 미리 사용하기로 예약한 단어들
+      
+      var는 변수를 중복으로 사용하는것을 막지 않기 때문에 문제가 발생할 수 있다.
+      let은 변수를 중복으로 아예 사용할 수 없게 되어 있다.*/
+
+  </script>
+</body>
+</html>
