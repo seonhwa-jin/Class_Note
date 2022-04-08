@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js14-함수</title>
+</head>
+<body>
+
+  <script>  
+  /* 함수는 어떤일의 단위이다. 또한 자주 쓰는 내용들을 만들어두면 필요할때 언제든 불러다 쓸 수 있다. 
+  (일반함수, 매개변수가 있는 함수 , return값이 있는 함수)
+  
+  function 함수이름(매개변수){
+    내용입력
+    return 반환
+  }
+
+  함수이름();  <--호출하는것
+  -매개변수: 함수 외부에서 함수 내부로 데이터를 전달하기 위한 용도로 사용하는 변수
+            함수가 뭔가 알아야 하거나 어떤 정보를 가지고 뭔가를 해야할때 어떤 정보를 함수에 알려줘야 함.
+  -return : 함수내부에서 처리한 결과값을 함수 외부로 전달하기 위해 사용하는 일종의 출력값이다.
+          반환값, 함수 완료 후 반환되어야 하는 값이 있을때 사용한다.
+
+  */
+
+  function makeFood(type,size,num){
+    console.log("밥");
+    console.log("구운김");
+    console.log("계란");
+    console.log("맛살");
+    // console.log("우엉");
+
+    if(type=="우엉"){
+      console.log("우엉넣기")
+    }else if(type="불고기"){
+      console.log("불고기넣기")
+    }
+
+    console.log("햄");
+    console.log("시금치");
+    console.log("단무지");
+    console.log("당근");
+
+    console.log(type+"김밥"+size+"사이즈"+num+"줄 준비완료!"); /* 매개변수 연습 */
+
+    //어떤값을 반환하는것 (함수가 끝난 후에 어떤 결과값이 필요할때)
+    return "완료되었습니다.";   /* 리턴 연습  -요렇게만 쓰면 리턴되지만 눈엔안보임 리턴된걸 어케하라는 명령이 없으니까 리턴값의 자리를 만들어줘야함 - > B로 이동*/
+  }
+
+
+
+  makeFood("불고기","L",3);
+
+  //B
+  let bobo=makeFood("우엉","M",5);   /* 리턴값을 bobo자리에 받아줘서 로그로 출력한것 */
+  console.log("김밥 만들기가",bobo);
+
+
+
+
+
+
+
+
+
+  //사각형의 가로크기와 세로크기를 받아서 사각형의 넓이를 구하자!
+  // (일반함수)
+  function rectW1(){
+    
+    let width= 10;
+    let height=20;
+    let value=width*height;
+
+    console.log(value);
+  }
+
+  rectW1();
+
+
+//(매개변수가 있는 함수)
+  function rectW2(width,height){
+  
+    let value=width*height;
+
+    console.log(value);
+  }
+
+  rectW2(10,30);
+
+
+
+// (리턴값이 있는 함수)
+  function rectW3(width,height){
+  
+  let value=width*height;
+
+  console.log(value);
+  return "완료!";
+};
+
+let coco= rectW3(4,8);     //리턴을 받을 변수가 필요함★
+console.log("사각형의 넓이 구하기 "+coco);
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>

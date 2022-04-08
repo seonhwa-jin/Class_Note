@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js12-while,for반복문</title>
+</head>
+<body>
+
+  <script>
+    //반복문은 2개로 나뉨- while, for
+    //for문은 정확히 몇번 화전해야 하는지 범위를 알때 사용하고, while은 주로 정확한 범위가 아닌 상태에 따른 반복일때 사용한다.
+
+
+    /* 
+    -----------while문 (비중작음 거의 for문 씀)------------
+
+    let 변수=초기값 ;
+
+    while(조건식){
+      실행문;
+      증감식;
+    }
+    */
+
+    let i=1;
+    while(i<=10){
+      console.log("안녕하세요"+i);
+      i++;  //i=i+1;과 동일
+    }
+
+
+
+
+
+
+
+
+
+     /* 
+    -------------for문 (비중큼)----------------
+
+    for(초기값;조건식;증감식){
+      실행문;
+    }
+    */
+
+
+    for(j=1;j<10;j++){   //let j=1이렇게 해버리면 지역변수라고해서 for문 속안에서만 사용가능. 
+                         //j=1 이렇게 해버리면 전역변수가 돼서 for문 바깥에서도 j를 사용가능.
+     console.log("j= "+j);
+    }
+    console.log("종료j= "+j);
+
+
+
+
+
+
+    /* 예제
+    :변수 h가 100이 될때까지 반복 실행 해보기 +js 문서컨트롤*/
+
+    for(let h=1;h<=100;h++){
+
+      if(h%5==0 && h%7!=0 ){ /* 5의배수이고 7의 배수가 아닌경우 */
+        document.write("<h3 style='color:red;'>",h,"</h3>");  //쉼표도 가능한~
+      }else if(h%7==0 && h%5!=0){ /* 7의 배수이고 5의 배수가 아닌 경우 */
+        document.write("<h3 style='color:green;'>"+h+"</h3>");
+      }else if(h%5==0 && h%7==0 ){/* 7의배수이고 5의 배수인 경우 */
+        document.write("<h3 style='color:aqua;'>"+h+"</h3>");
+      }
+    }
+
+
+    /* 배열과 같이 사용하는 for문 */
+    let fruit=["banana","apple","grape","mango"]
+
+    for(let f=0;f<fruit.length;f++){
+      console.log(fruit[f]);
+    }
+
+
+
+    let d=[100,"홍길동",true];
+    console.log(d[0]);
+    console.log(d[1]);
+    console.log(d[2]);
+    // d를 for문으로
+    for(let t=0; t<d.length; t++){
+      console.log(d[t]);
+    }
+
+
+
+  </script>
+
+</body>
+</html>

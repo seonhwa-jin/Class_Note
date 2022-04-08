@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js11-switch선택문</title>
+</head>
+<body>
+
+  <script>
+    /* 
+    switch문이란?
+    if문과 용도는 비슷하나 if문은 만족하는 데이터가 여러개일 경우 주로 사용하고, switch문은 여러 경우의 값 중 일치하는 데이터를 찾아 그에 해당하는 실행문을 실행시킬 때 사용한다. 
+    if문은 조건에 맞지 않을때(else일때) 뭐이런식으로도 걸수 있는데
+    스위치는 0을클릭할떄, 1일대 등등등 조건으로 다 나눠놓음
+    그리고 스위치는 변수가 들어감
+    
+    
+    let 변수=초기값;
+    switch(변수){
+      case 값1:실행문1;
+      break;
+      case 값2:실행문2;
+      break;
+      case 값3:실행문3;
+      break;
+      case 값4:실행문4;
+      break;
+
+      default:실행문5; ->일치하는 값이 없는 경우
+    }
+    
+    */
+    
+    
+    let site=prompt("네이버,다음,네이트,구글 중 즐겨쓰는 사이트는?"); /* prompt는 숫자를입력해도 string으로 출력함 */
+    let url; /* 위에서 사이트고르면 연결해주려고 그 사이트 주소를 저장할 변수 */
+
+    switch(site){
+      case "네이버":url="www.naver.com";
+      break;
+      case "다음":url="www.daum.net";
+      break;
+      case "네이트":url="www.nate.com";
+      break;
+      case "구글":url="www.google.com";
+      break;
+
+      //일치하는값이 없을 경우
+      default:alert("보기 중에서 입력해주세요.")
+    }
+
+    
+    if(url){/* url만 적으면 이건 무조건 true상태여서 무조건실행되는것 */
+      location.href= "http://"+url;   /* url을 연결해주는 js의 객체 */
+    }
+
+
+  </script>
+
+</body>
+</html>

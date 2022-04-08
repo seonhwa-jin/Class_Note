@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js15-함수문제</title>
+</head>
+<body>
+
+  <script>  
+  /* 문제1_ 안녕 내 이름은 제시카야 하는 문장을 프린트하는 함수만들기 */
+
+  function greet (){
+    console.log("안녕 내 이름은 제시카야");
+  }
+
+  greet();
+
+
+
+
+
+  /* 문제2_ 이름을 매개 변수로 전달받아 다양한 이름을 프린트 할 수 있게 힘수 수정*/
+
+  function greet (name){
+    console.log("안녕 내 이름은 "+name+"야");
+  }
+
+  greet("에밀리");
+  greet("할리");
+
+
+  
+
+
+/* 문제3:위의 문장에서 마지막에 하하하값을 반환해서 출력하세요 */
+
+
+function greet2 (name2){
+    console.log("안녕 내 이름은 "+name2+"야");
+    return "하하하";
+  }
+
+
+
+
+  let gogo= greet2("제임스");
+  console.log(gogo);
+
+  
+
+  //문제4_ 1부터 50까지 369결과 (3,6,9는 짝을 출력) 39는 짝짝이다.
+
+  for(let i=1;i<=50;i++){
+    
+    let stringValue =i.toString();  //숫->문
+    let result = "";   //결과출력
+
+    for(let j=0;j<stringValue.length;j++){ //j는 인덱스로 첫번쨰값을 가져와서 그게 3,6,9중에 하나랑 일치하면
+      if(stringValue[j]==="3" || stringValue[j]==="6" || stringValue[j]==="9"){
+        result+="짝"; //result=result+짝
+        //짝이 항상 한개가 아니므로 두번째 턴에 짝이 기존의 짝에 추가로 이어서 짝짝
+      }else{
+
+      }
+    }
+
+    console.log(result.length>0? result: i); //result에 글자가 하나 이상 들어가있으면 짝이 나오고 글자가 아무것도 없으면 숫자인 i를 출력하게하는 삼항조건연산자
+
+  }
+
+
+
+
+
+
+
+
+
+
+  </script>
+
+</body>
+</html>
