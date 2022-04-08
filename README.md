@@ -196,3 +196,26 @@ flex10- order
 js1- 변수
 
 js2- 자료형과 연산자
+
+***  
+
+ 22.04.07 thu
+
+  
+js3- 형태변환
+
+js4- 배열
+
+js5- 객체
+
+js6- if문
+
+js7- if,else문
+ 
+js8- else,if문
+
+js9- 중첩if문
+
+js10- if문제1
+
+js10 -if문제2
