@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js7-if,else</title>
+</head>
+<body>
+
+  <script>
+    let num = prompt("당신이 좋아하는 숫자는?","0");  /* prompt에서는 숫자값을 받아도 문자로 저장이됨. A */
+
+    // 짝수 ,홀수 구분하기
+    if(num%2==0){ /* 암시적 형변환으로 수직에 의해 A가 다시 숫자로 바뀌어서 이렇게 연산을 사용할 수 있는것. */
+      console.log("당신이 좋아하는 숫자는 짝수");
+    }else{
+      console.log("당신이 좋아하는 숫자는 홀수");
+    }
+  </script>
+
+</body>
+</html>

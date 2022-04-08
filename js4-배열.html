@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js4-배열</title>
+</head>
+<body>
+
+
+  <script>
+    let bar="-----------구분선------------";
+    
+
+
+
+
+
+
+
+    /* 배열을 생성하는 방법
+    (1) let arr = new Array();   뉴어레이라는 명령어사용방법
+    (2) let arr = [ ];      배열 리터럴 (주로 이걸 사용) */
+
+
+    /* 
+    let fruit1="banana";
+    let fruit2="mango";
+    let fruit3="cherry";
+    let fruit4="apple";
+    */
+
+    //배열은 관련있는 데이터들을 하나로 묶어서 하나의 변수에 저장하는것
+    let fruit=["banana","mango","cherry","apple"]
+    console.log(fruit);
+    console.log(fruit[0]);
+
+    fruit[0]="lime"; //배열의 내용을 변경
+    console.log(fruit);
+    fruit[2]="tomato"; //배열의 내용을 변경
+    console.log(fruit);
+
+
+    //pop(): 마지막에 있는 아이템을 뺌
+    fruit.pop();
+    console.log(fruit);
+
+    //push(): 마지막에 아이템을 추가
+    fruit.push("orange");
+    console.log(fruit);
+    
+    //includes(): 아이템이 있는지 없는지 확인(T/F)
+    console.log(fruit.includes("banana"));
+
+    //배열을 잘라내고 싶을때
+    let colors = ["red","orange","yellow","green","blue","navy","purple"]
+    console.log(colors.slice(2));  /* 0,1,2 -> 2 전까지 잘라내고 2부터 나옴. 즉 2는 포함이 안되고 다음조각이 되는것 */
+    
+    //slice: 배열 아이템을 잘라내는 역할(시작점,개수)
+    console.log(colors.slice(1,3));  /* 1부터 3까지 잘라냄.즉, 3은 포함 안된다. (시작점,갯수)라고 생각 */
+
+    //splice: 배열 아이템을 잘라내는 역할(시작점,개수)
+    console.log(colors.splice(1,3));   //1부터 3까지 잘라냄.즉, 3은 포함 안된다. (시작점,갯수)라고 생각
+
+    //★slice,splice차이 내가 직접 확인해보기
+
+
+  
+    
+  </script>
+
+</body>
+</html>

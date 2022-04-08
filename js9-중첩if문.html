@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js9-중첩if문</title>
+</head>
+<body>
+
+  <script>
+    /* 중첩 if문 : 바깥쪽에 있는 조건문을 만족해야 안쪽의 조건문의 조건식을 검사한다.
+    만약 안쪽 if문의 조건식을 만족하지 않는다면 바깥쪽 조건문만 실행하고 종료한다.
+
+    if(조건식1){
+      if(조건식2){실행문2}
+    }
+
+    */
+
+    let id="web1004"; //아이디
+    let pw="112233";  //비밀번호
+    
+    let user_id=prompt("아이디는?","");
+    let user_pw=prompt("비밀번호는?","");
+
+    if(id==user_id){ /* 아이디가 일치하는경우 */
+      if(pw==user_pw){ /* 비번 일치 */ 
+        console.log(`${user_id}님 반갑습니다!`); 
+      }else{  /* 비번 불일치 */
+        alert("비밀번호가 일치하지 않습니다.");
+      }
+
+    }else{  /* 아이디가 일치하지 않을 경우 */
+      alert("아이디가 일치하지 않습니다");
+
+    }
+
+ 
+  </script>
+
+</body>
+</html>

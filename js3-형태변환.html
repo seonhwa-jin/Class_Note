@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js3-형태변환</title>
+</head>
+<body>
+<!-- 형변환: 문자->숫자 이렇게 형태를 변환하는것 -->
+
+
+
+
+  <script>
+    let bar="-----------구분선------------";
+    /* 
+    암시적 형변환: 자바스크립트에 의해 자동으로 형변환
+    명시적 형변환: 개발자가 직접 스크립트를 이용해서 명시해 형변환 
+    */
+
+
+   //--------숫자 - > 문자  
+      //(1)암시적 형변환을 이용 -> 문자를 더해서 숫자로 자동 변환
+
+        let test1=100;
+        let result1= test1+""; 
+        console.log(result1);   /* 보이는건 100이어도 문자임 */
+        console.log(typeof(test1));
+        console.log(typeof(result1));
+        
+      
+
+      //(2)String()을 이용한 방법
+        let test2=100;
+        let result2=String(test2);
+        console.log(result2);
+        console.log(typeof(result2));
+
+
+      //(3)toString()을 이용한 방법
+        let test3=100;
+        let result3=test3.toString();
+        console.log(result3);
+        console.log(typeof(result3));
+
+      
+       
+        console.log(bar);
+
+
+
+
+
+    //--------문자 - > 숫자   
+        //(1)parseFloat()- 실수형 / parseInt()- 정수형
+        let test4="100.50";
+        let result4=parseFloat(test4) +150 + parseInt("20.25");
+        console.log(result4);  
+        console.log(typeof(test4));
+        console.log(typeof(result4));
+
+
+        //(2)Number()- 정수형,실수형 모두
+        let test5="100.50";
+        let result5=parseFloat(test5) +150 + parseInt("20.25");
+        console.log(result5);  
+        console.log(typeof(test5));
+        console.log(typeof(result5));
+    
+    
+  
+    
+  </script>
+
+</body>
+</html>

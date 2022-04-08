@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>js6-if</title>
+</head>
+<body>
+
+  <script>
+   
+  //  if조건을 만족할떄만 ㅅ실행문 실행
+
+  /* if (조건식){
+    실행문;
+  }
+  ->다음값이 조건싣에 입력되면 false로 반환하지만, 그 밖에 모든 값은 true로 인식된다.
+  0, null,""(빈문자),undefined  - > false */
+
+  // let min=prompt("당신의 통화량은 몇분인가요?","0");\
+  // if(min>60){
+  //   console.log("많이 사용하는 편이네요");
+  // }
+
+
+
+  let userName = prompt("방문자의 이름은?","")
+
+  if(userName){ /* 위에 0,null등이 아니라 무조건 true가 되는것 */
+    // console.log(userName + "님 반갑습니다! 방문을 환영합니다");
+    console.log(`${userName}님 반갑습니다! 방문을 환영합니~~`);
+  }
+  </script>
+
+</body>
+</html>
