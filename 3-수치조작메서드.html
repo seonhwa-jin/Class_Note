@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>3-수치조작메서드</title>
+<style>
+  #box1{
+    width:200px;
+    height:100px;
+    padding:5px;
+    border:10px solid red;
+    margin: 10px;
+  }
+
+  body{height:4000px;}
+
+
+
+  
+</style>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 여기 순서 중요! 제일먼저 읽어져야한다. -->
+<script> 
+	$(document).ready(function(){
+
+    /*
+
+    *안쪽여백과 선을 제외한 높이값을 반환하거나 변환
+    width()
+    height()
+
+    *안쪽여백을 포함한 높이값을 반환하거나 변환
+    innerWidth()
+    innerHeight()
+
+    *선과 안쪽여백을 포함한 너비값을 반환하거나 변환
+    outerwidth()
+    outerHeight()
+    
+    */
+
+
+
+
+      //------------예시1
+      //id="box1"인 요소에 순수 width속성값(여백과 선 제외)을 가져와 변수 w1에 할당
+        let w1=$("#box1").width();
+
+      //변수 w1에 저장된 너비값을 id="t1"인 요소에 텍스트를 출력
+        $("#t1").text("너비 : "+w1);
+
+
+
+
+      //------------예시2
+      //id="box1"인 요소에 padding값을 포함한 너비값을 가져와 가져와 변수 w2에 할당
+        let w2=$("#box1").innerWidth();
+
+      //변수 w2에 저장된 너비값을 id="t2"인 요소에 텍스트를 출력
+        $("#t2").text("너비 : "+w2);
+
+
+      //--------------예시3
+      //id="box1"인 요소에 padding과 border값을 포함한 너비값을 가져와 가져와 변수 w3에 할당
+       let w3=$("#box1").outerWidth();
+
+      //변수 w3에 저장된 너비값을 id="t3"인 요소에 텍스트를 출력
+        $("#t3").text("너비 : "+w3);
+              
+
+        
+      //--------------예시4
+      //id="box2"인 요소의 너비를 200px, 높이를 50px로 변경하고 3px의 파랑색 실선을 생성
+      $("#box2").width("200px").height("50px").css("border","3px solid blue");
+
+      //--------------------------------------------------------------------------------------------------
+
+
+
+
+      /* 
+      스크롤관련 메소드 
+      scrollLeft() : 브라우저의 수평 스크롤 이동 너비값을 반환
+      scrollTop(): 브라우저의 수직 스크롤 이동 높이값을 반환(중요!)  
+      */ 
+     //스크롤은 window객체로 정해져 있다.
+
+
+
+      //스크롤바를 px만큼 이동한다.
+        $(window).scrollTop(2000);
+      //스크롤바의 현재위치값을 경고창으로 출력한다.
+      $(window).scrollTop(2000);
+        alert($(window).scrollTop());
+        
+
+	});
+
+		
+		
+
+</script>
+</head>
+
+
+
+
+<body>
+  <p id="box1">박스1</p>
+  <p id="t1"></p>
+  <p id="t2"></p>
+  <p id="t3"></p>
+  <p id="box2">박스2</p>
+
+  <h1>scroll</h1>
+</body>
+</html>
+

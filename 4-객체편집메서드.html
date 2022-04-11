@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>4-객체편집메서드</title>
+<style>
+
+
+  
+</style>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 여기 순서 중요! 제일먼저 읽어져야한다. -->
+<script> 
+	$(document).ready(function(){
+
+    /* 
+
+
+
+
+
+
+
+
+    *선택한 요소의 마지막위치에 새 요소를 추가한다. To붙인거도 동작은 같음 요소의 순서차이일뿐!
+    append()
+    $("요소선택").append("새요소");
+
+    appentTo()
+    $("새요소").apendTo("요소선택")
+
+
+
+
+    *선택한 요소의 맨앞위치에 새요소를 추가한다.
+    prepend()
+    $("요소선택").prepend("새요소");
+
+    prependTo()
+    $("새요소").prepend("요소선택");
+
+
+      */
+
+
+
+    //id="myList"인 요소의 이전위치에 새 요소를 생성
+      $("#myList").before("<li>새 내용 추가1</li>");
+    //id="myList"인 요소의 다음위치에 새 요소를 생성
+      $("#myList").after("<li>새 내용 추가2</li>");
+
+
+
+    //id="listZone"인 요소내의 마지막위치에 새요소를 추가
+       $("#listZone").append("<li>새 내용 추가3</li>");   
+       $("<li>새 내용 추가33</li>").appendTo("#listZone");       //앞,뒤 자리만 바뀐거
+
+    //id="listZone"인 요소내의 가장 앞위치에 새요소를 추가 
+       $("#listZone").prepend("<li>새 내용 추가4</li>");
+       $("<li>새 내용 추가44</li>").prependTo("#listZone");        //
+
+
+
+
+
+
+
+ 
+    //<h2>태그를 새요소로 바꾼다  (이거랑 밑엔 사용빈도는떨어지고. 앞뒤바꾼느낌이랑 또 비슷함)
+      $("h2").replaceWith("<h3>replace method</h3>");
+
+
+    //<p>태그를 새요소로 바꾼디.
+      $("<h4>내용3</h4>").replaceAll("p");
+
+
+
+
+  
+
+	});
+
+		
+		
+
+</script>
+</head>
+
+
+
+
+<body>
+  <ul>
+    <li id="myList">내용</li>
+  </ul>
+
+  <ul id="listZone">
+    <li>내용</li>
+    <li>내용</li>
+    <li>내용</li>
+  </ul>
+
+  <h2>교체 메서드</h2>
+  <p>내용1</p>
+  <p>내용2</p>
+ 
+</body>
+</html>
+

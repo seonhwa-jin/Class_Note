@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>2-속성조작메서드</title>
+<style>
+  .aqua{background-color: aqua;}
+  .red{background-color: red;}
+  .green{background-color: green;}
+  .yellow{background-color: yellow;}
+</style>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 여기 순서 중요! 제일먼저 읽어져야한다. -->
+<script> 
+	$(document).ready(function(){
+
+    /* html()메서드: (1)선택한 요소에 포함되어 있는 하위요소를 불러오거나 (2)새 요소로 바꿀때 사용함.ㅡ태그조작ㅡ
+    
+    (1)  $("요소선택").html();
+    (2)  $("요소선택").html("새요소");
+    */
+
+        //예시
+        //<h2>태그에 모든 하위요소를 문자열로 가져와서 메세지창으로 띄움
+        // alert($("h2").html());  공부해야해서 alert귀찮으니까 잠깐 주석걸어놓음
+    
+        //<h3>태그에 모든 하위요소를 제거하고 새요소를 생성
+        $("h3").html("<a href='#'>HTML 메서드</a>");
+
+
+
+
+
+
+    /* text()메서드: 선택한 요소내에 (1)텍스트를 불러오거나 (2)텍스트를 바꿀때 사용함.ㅡ글자조작ㅡ
+    
+    (1)  $("요소선택").text();
+    (2)  $("요소선택").text("새텍스트");
+    */      
+
+        //예시
+        //<h4>태그의 텍스트를 가져와서 메세지창 띄움
+        //alert($("h4").text()); 공부해야해서 alert귀찮으니까 잠깐 주석걸어놓음
+
+        //<h6>태그의 텍스트를 가져와서 메세지창 띄움
+        $("h6").text("텍스트 메서드");
+ 
+        //<h6>태그의 스타일에 "color" 속성값을 불러와서 <p>태그에 텍스트로 표시함. 
+        $(".color").text($("h6").css("color"));
+
+
+
+
+
+
+
+    /* attr()메서드: 선택한 요소에 속성값을 반환 또는 변환한다.
+    
+    (1)  $("요소선택").attr("href");
+    (2)  $("요소선택").attr("href","main.html");  //앞을 뒤로 바꾸겠다는뜻
+
+     removeAttr()메서드: 선택한 요소의 지정한 속성을 삭제한다.
+     $("요소선택").removeAttr("title");
+    */      
+
+        //예시
+        //id="wrap"인 요소의 하위<img>태그에 "src"속성값을 불러와 id="txt"요소에 텍스트로 출력 (반환)
+        $("#txt").text($("#wrap img").attr("src"));
+
+        //id="wrap"인 요소의 하위 <img>태그에 "width"속성값을 200으로 적용 (변환)
+        $("#wrap img").attr("width","200px");
+
+        //id="box"인 요소의 하위 <img>태그에 "border"속성을 제거
+        $("#box img").removeAttr("border");
+
+
+
+
+
+
+    /* addClass("클래스값"): 선택한 요소에 지정한 클래스를 생성 또는 추가한다. 점 없이 클래스 이름만 넣는것!
+    
+       removeClass("클래스값"): 선택한 요소에 지정한 클래스를 삭제한다.
+
+       toggleClass("클래스값"): 선택한 요소에 지정한 클래스를 생성,삭제를 반복한다.
+    */      
+        //예시
+        // p1 에게 aqua를 넣는다.
+        $("#p1").addClass("aqua");
+
+        //red 인 p2에게 red뺀다.
+        $("#p2").removeClass("red");
+
+        //toggle차이
+        $("#p3").toggleClass("green");
+        $("#p4").toggleClass("green");
+
+
+	});
+
+		
+		
+
+</script>
+</head>
+
+
+
+
+<body>
+  <h1>html() 메서드</h1>
+  <h2><strong>객체 조작 및 생성</strong></h2>
+  <h3><em>html()</em></h3>
+  <hr>
+
+
+  <h1>text() 메서드</h1>
+  <h4>여기에요!</h4>
+  <h5>text()</h5>
+  <h6 style="color:blue">test</h6>
+  <p class="color"></p>
+  <hr>
+
+
+
+
+
+
+
+  <h1>attr() 메서드</h1>
+  <p id="wrap">
+    <img src="image/math_img_1.jpg" alt="가위" width="100px">
+  </p>
+  <p id="txt"></p>
+  <p id="box">
+    <img src="image/math_img_3.jpg" alt="보" width="100px" border="2px"> <!-- 실제론 css를 이렇게 넣지않기! -->
+  </p>
+  <hr>
+
+
+
+  <h1>class() 메서드</h1>
+  <p id="p1">내용1</p>
+  <p id="p2" class="red">내용2</p>
+  <p id="p3" class="green">내용3</p>
+  <p id="p4">내용4</p>
+  <p id="p5" class="yellow">내용5</p>
+
+</body>
+</html>
+

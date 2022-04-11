@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>1-직접선택자</title>
+<script src="js/jquery-3.6.0.min.js"></script> <!-- 여기 순서 중요! 제일먼저 읽어져야한다. -->
+<script> 
+	$(document).ready(function(){
+
+
+		//직접선택자
+		/* $("h1").css("background","orange").css("border","solid green 5px"); */
+		$("h1").css({"background":"orange","border":"solid green 5px"});
+		$("h2").css("background","yellow");
+		$(".selector1 li").css({"background":"pink","border":"2px solid red"});
+		$(".selector2 #first").css({"background":"yellow","border":"2px solid purple","color":"blue"});
+		$(".third, .foruth").css("color","yellowgreen");
+		$(".selector3 li *").css("color","orange");  //*은 li태그 안에 포함되어 있는 모든 태그(자식들말하는거)
+
+
+
+
+		//인접관계선택자
+		//class가 "s1"인 요소의 부모요소에 적용
+
+		$(".s1").parent().css("border","3px dotted red");
+
+		
+		//class가 "selector4"인 요소의 [하위요소]에 적용
+
+		$(".selector4 li").css("background","skyblue"); //보류
+		
+
+		//class가 "selector4"인 요소의 [자식요소]에 적용
+
+		$(".selector4>li").css("background","pink"); //보류
+
+
+		//class가 "selector5"의 모든 자식요소에 적용
+
+		$(".selector5").children().css("background","#ccc");
+		
+
+		//class가 "s2"인 요소의 이전요소에 적용
+
+		$(".s2").prev().css({"color":"tomato","font-weight":"bold"});
+
+		//class가 "s2"인 요소의 다음요소에 적용
+
+		$(".s2").next().css({"color":"aqua","font-weight":"bold"});
+
+
+
+
+
+
+
+
+		//위치탐색선택자
+		//#menu1 <li> 요소중 첫번째
+			$("#menu1 li:first").css("background","beige");
+		
+		//#menu1 <li> 요소중 마지막
+			$("#menu1 li:last").css("background","coral");
+		
+		//#menu2 <li> 요소중 홀수
+			$("#menu2 li:even").css("background","crimson");
+			
+		//#menu2 <li> 요소중 짝수 //0부터 시작해서 odd가 반대로임
+			$("#menu2 li:odd").css("background","gray");
+
+
+		//#menu2 <li> 요소중 짝수
+			$("#menu2 li:first-of-type").css("background","chocolate");
+			
+		//#menu2 <li> 요소중 짝수
+			$("#menu3 li:last-of-type").css("background","burlywood");
+
+
+
+		//#menu3 <li> 요소의 무리중 첫번째 요소만 선택
+			$("#menu3 li:first-of-type").css("background","chocolate");
+			
+		//#menu3 <li> 요소의 무리중 첫번째 요소만 선택
+			$("#menu3 li:last-of-type").css("background","burlywood");
+
+
+
+		//#menu4 <li> 요소의 무리중 첫번째 요소만 선택
+			$("#menu4 li:nth-child(3n)").css("background","darkgreen");
+			
+		//#menu4 <li> 요소의 무리중 첫번째 요소만 선택
+			$("#menu4 li:nth-child(2)").css("background","darkkhaki");
+
+		//부모요소에 하나만 있는 <li>태그에 적용
+			$("li:only-child").css("background","aqua");
+			
+		//선택된 <li>태그중 인덱스가 2이상인 요소에 적용 (0,1,2 ->3번째임) 슬라이스라는메서드사용
+			$("#first_list li").slice(2).css("background","darkorange");
+
+
+		//인덱스가 3인 <li>태그에 적용
+			$("#menu5 li:eq(3)").css("background","chocolate");
+		//인덱스가 3보다 작은 <li>태그에 적용
+			$("#menu5 li:lt(3)").css("background","darkgray");
+		//인덱스가 3보다 큰 <li>태그에 적용
+			$("#menu5 li:gt(3)").css("background","blueviolet");
+
+
+
+
+
+
+	});
+
+		
+		
+
+</script>
+</head>
+
+<body>
+<h1>jQuery</h1>
+<h2>직접선택자</h2>
+
+<ul class="selector1">
+	<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+</ul>
+
+<ul class="selector2">
+	<li id="first"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li id="second"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li class="third"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+	<li class="fourth"> 텍스트 텍스트 텍스트 텍스트 텍스트 </li>
+</ul>
+
+<ul class="selector3">
+	<li><strong> 텍스트 </strong> 텍스트 텍스트 텍스트 텍스트 </li>
+	<li><em> 텍스트 </em> 텍스트 텍스트 텍스트 텍스트 </li>
+	<li><span> 텍스트 </span> 텍스트 텍스트 텍스트 텍스트 </li>
+	<li> 텍스트텍스트텍스트텍스트 </li>
+</ul>
+
+<h2>인접관계선택자</h2>
+<ul class="selector4">
+	<li>내용1
+		<ul class="selector5">
+			<li>내용1-1</li>
+			<li class="s1">내용1-2</li>
+		</ul>
+	</li>
+	<li>내용2</li>
+	<li class="s2">내용3</li>
+	<li>내용4</li>
+</ul>
+
+<h2>위치탐색 선택자</h2>
+<ul id="menu1">
+	<li>내용11</li>
+	<li>내용12</li>
+	<li>내용13</li>
+</ul>
+<ul id="menu2">
+	<li>내용21</li>
+	<li>내용22</li>
+	<li>내용23</li>
+	<li>내용24</li>
+</ul>
+<ul id="menu3">
+	<li>내용31</li>
+	<li>내용32</li>
+	<li>내용33</li>
+</ul>
+
+<ul id="menu4">
+	<li>내용41</li>
+	<li>내용42</li>
+	<li>내용43</li>
+</ul>
+
+<ul id="menu4">
+	<li>내용44</li>
+	<li>내용45</li>
+	<li>내용46</li>
+</ul>
+
+<ul id="first_list">
+	<li>first1</li>
+	<li>first2</li>
+	<li>first3</li>
+	<li>first4</li>
+</ul>
+
+<ul>
+   <li>내용내용내용</li>
+</ul>
+
+<ul id="menu5">
+	<li>내용51</li>
+	<li>내용52</li>
+	<li>내용53</li>
+	<li>내용54</li>
+	<li>내용55</li>
+	<li>내용56</li>
+</ul>
+
+
+</body>
+</html>
+
+<!--
+*css({"color":"#ee1a28"}) : 명령어의 복수사용이 가능함.
+
+예)css({"color":"#ee1a28","font-weight":"bold"});
+
+*css("color","#ee1a28") : 명령어의 복수사용이 불가능함.
+
+예)css("color","#ee1a28","font-weight","bold"); -> 사용불가!!
+
+-->
