@@ -1,0 +1,406 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>5-마우스이벤트</title>
+<style>
+	.event5 #wrap{background:#ccc;padding:10px;}
+
+	.event5 { 
+	width:100px; 
+	height:100px; 
+	background:#0cf;
+	}
+  body{
+    height:3000px;
+  }
+
+  #txt2{position:fixed;top:10px;right:10px;}
+
+	.wrap {
+    display:inline-block;
+    width: 300px;
+    padding: 10px;
+    margin: 10px;
+    font-size: 30px;
+    text-align: center;
+    background: #ccc;
+}
+</style>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
+
+
+
+  /* 
+  [이벤트 사용시 제이쿼리 형식]
+  
+  $(셀렉터).이벤트(function(){
+    $(셀렉터).명령
+  })
+
+  *hover시 공식 (mouseenter+mouseleave)  <====이거 두개 합친게 hover라는 동작이라고 할 수 있음
+  $("선택자").hover(function(){
+    마우스를 올렸을 때의 명령문;
+  },function(){
+    마우스를 뗐을때의 명령문;
+  });
+
+
+  */
+
+
+    //썸네일 클릭시 갤러리 바뀌기
+    $(".event1 ul li a").click(function(){
+
+      $(".event1 img").attr("src",$(this).attr("href")); 
+      return false;
+    });
+
+
+    //각 버튼 클릭시 배경색
+
+    $(".event11 #btn1").click(function(){
+      $(".event11 p").css("background","gray");
+      return false;
+    });
+
+    $(".event11 #btn2").click(function(){
+      $(".event11 p").css("background","crimson");
+      return false;
+    });
+
+    $(".event11 #btn3").click(function(){
+      $(".event11 p").css("background","tomato");
+      /* return false;  <---a기능 차단을 넣지 않아서 사이트로 이동함*/
+    });
+
+
+
+    //클릭,더블클릭시 ... 
+    $(".event2 #btn1").click(function(){
+      $(".event2 p").css("background","gold");
+      return false;
+    })
+    $(".event2 #btn2").dblclick(function(){
+      $(".event2 p").css("background","darkgreen");
+      return false;
+    })
+
+
+
+
+
+
+
+
+    //마우스를 올렸을때와 내렸을때..
+    //오버아웃과 엔터리브의 동작은 똑같으나 부모자식관계의 차이가있다.
+
+
+
+    $(".event3 #btn1").mouseover(function(){
+      $(".event3 p").css("background","gold");
+    });
+    
+    $(".event3 #btn1").mouseout(function(){
+      $(".event3 p").css("background","blueviolet");
+    });
+
+
+
+
+    $(".event3 #btn2").mouseenter(function(){
+      $(".event3 p").css("background","gold");
+    });
+
+    $(".event3 #btn2").mouseleave(function(){
+      $(".event3 p").css("background","blueviolet");
+    });
+
+
+
+
+    //호버
+    $(".event4 img").hover(function(){
+      $(this).attr("src","image/sea.jpg");
+    },function(){
+      $(this).attr("src","image/flower.jpg");
+    });
+
+
+
+    $(".event5").mouseenter(function(){
+      $(this).css({"border-radius":"30px","transition":"0.5s"}); /* css형식으로 적은거~ 이게 여태 사용한거*/
+    })
+
+    $(".event5").mouseleave(function(){
+      $(this).css({borderRadius:0});    /* <-- 위와 형식은 동일한데 이건 제이쿼리전용 형식으로 적은것 둘다 사용할줄 알아야함~ 
+       a.대쉬 빼기, b.낙타대문자 c.따옴표 빼기*/
+    })
+    
+
+
+    /*
+    
+    [마우스오버-아웃와 마우스엔터-리브의 차이]
+
+    자식 요소들까지 영향을 주느냐 안주느냐의 차이이다.
+    마우스가 올라가지는 영역이 지정된 요소 혹은 자신에게만 한정되게 할 것인지, 아니면 자식요소들까지 영역을 확장할 것인지에 대한 차이라고 보면 된다.
+
+    *마우스오버-아웃
+    지정된태그요소(혹은 자신)는 물론이며, 자식요소가 있다면 해당 자식요소의 영역까지 포함
+
+    *마우스엔터-리브
+    지정된태그요소(혹은 자신)의 영역에만 해당되며, 자식요소가 있다면 자식요소의 영역은 제외
+
+    */
+
+    $("#wrap1").mouseover(function(){
+      $("#wrap1 p").css("background","#a1ffa4");
+    });
+    
+    $("#wrap1").mouseout(function(){
+      $("#wrap1 p").css("border","3px solid red");
+    });
+
+
+    $("#wrap2").mouseenter(function(){
+      $("#wrap2 p").css("background","#a1ffa4");
+    });
+    
+    $("#wrap2").mouseleave(function(){
+      $("#wrap2 p").css("border","3px solid red");
+    });
+
+
+
+
+
+
+    //포커스(커서)이벤트...
+    $("#user_name").focus(); //focus를 강제발생
+
+    $("#user_id").focus(function(){ //커서창을 클릭했을때 (value없어지게 하고싶음, val이라는 메소드사용)
+      $(this).val("");   //val을 공백으로바꿈, 특성상 input태그에 많이 사용
+    });
+
+    $("#user_id").blur(function(){ //focus가 사라졌을때
+      $(this).val("아이디 입력");
+    });
+
+
+
+    //키보드 이벤트
+    $("#user_text").keypress(function(e){ //키보드 자판을 눌렀을 때
+      $(this).css("background","pink");
+    });
+
+    $("#user_text").keydown(function(){ //키보드 자판을 눌렀을 때 (위와 동일)
+      $("#txt1").text("글자 나온다");
+    });
+
+    $("#user_text").keyup(function(){ //키보드 눌렀다가 띄었을 때
+      $(this).css("background","transparent");
+    });
+
+
+
+    //선택한 요소에 입력요소의 값이 변경되었을때(사이트선택할때) 이벤트가 발생(아래에 주소뜨게하고싶음)
+
+    $("#rel_site").change(function(){
+      $("#txt3").text($(this).val());     //val 내부 비어있으면 불러온다는뜻
+
+    });
+
+
+
+    //스크롤바가 이동될 때마다 스크롤 탑위치값 나타내기
+    //스크롤에 앞으로 지정주고 할때 위치값을 지정해야하는데 가이드선 역할같은거(자주씀)
+
+    $(window).scroll(function(){
+      $("#txt2").text($(this).scrollTop());
+    })
+
+
+    //그룹이벤트 - 버튼1에 마우스를 올리거나 또는 포커스가 생성되었을 때
+    $("#btn5").on("mouseover focus",function(){
+      alert("hello!");
+    });
+
+
+
+    $("h1 a").on({
+      "mouseenter focus":function(){
+        $(this).css("color","red");
+      },
+      "mouseleave blur":function(){
+        $(this).css("color","yellow");
+      }
+    });
+
+
+    $("h2 a").bind({
+      "mouseenter focus":function(){
+        $(this).css("color","red");
+      },
+      "mouseleave blur":function(){
+        $(this).css("color","yellow");
+      }
+    });
+
+
+    //버튼클릭시 1씩 증가시키기     
+    //.one은 이벤트를 한번만 실행시키겠다는것
+    //.on을 하면 계속 실행되는것   on과 one을 바꿔가면서 복습해보기
+   
+    let num=0;    //num에 초깃값 0지정
+
+    $("button").on("click",function(){   //[증가 버튼]을 클릭했을때.
+      num++;      //num 데이터를 1만큼 증가
+      $(".count").text(num);    //num의 데이터를 <p>에 텍스트로 출력함.
+    });
+
+
+
+
+
+    //index와 this   ★★중요★★
+    $("#menu li").mouseenter(function(){
+
+      $("#menu li").css("background","none");  //얘는 this라고 안한 이유가 처리 시점을 구분하기 위해서다.현재가 아니고 기존으로 옐로배경이 있는다음에 처리되는것이기 때문에 this사용안함 (고급테크닉)
+      $(this).css("background","yellow");  //얘는 this한 이유가 지금 현재 hover를 한 시점을 얘기한거라 사용가능 
+      
+      let number= $(this).index();    // index()->순서를 매겨주는 기능 (0,1,2...)
+      $(".txt4").text(number);
+
+
+    });
+
+
+
+
+
+
+    //예제
+    //테두리2,실선,red  글자 mouseOver와  글자mouseOut으로 바뀌게 
+    $("#btnov").mouseenter(function(){
+      $(this).css("border","2px solid red").text("mouseOver");
+
+    });
+
+    $("#btnov").mouseleave(function(){
+      $(this).css("border","2px solid blue").text("mouseOut");
+
+    });
+
+
+
+
+
+
+
+  
+});
+</script>
+</head>
+<body>
+  <h1>마우스 이벤트</h1>
+
+  <h2>click()이벤트</h2>
+  <div class="event1">
+    <ul>  <!--썸네일부분-->
+      <li><a href="image/flower.jpg" alt="꽃">꽃</a></li>
+      <li><a href="image/sea.jpg" alt="바다">바다</a></li>
+      <li><a href="image/fish.jpg" alt="해파리">해파리</a></li>
+      <li><a href="image/building.jpg" alt="건물">건물</a></li>
+    </ul>
+    <br>
+    <img src="image/flower.jpg" alt="꽃" > <!--위에서 썸네일 클릭시 큰이미지가 바뀌는 부분-->
+  </div>
+
+  <div class="event11">
+    <a href="http://w3.org/" id="btn1">클릭1</a><br><br>
+    <a href="http://w3.org/" id="btn2">클릭2</a><br><br>
+    <a href="http://w3.org/" id="btn3">클릭3</a><br><br>
+    <p>내용</p>
+  </div>
+
+	<h2>click(),dblclick() 이벤트</h2>
+  <div class="event2">
+    <button id="btn1">click</button> 
+    <button id="btn2">dblclick</button>
+    <p>내용</p> 
+  </div>
+
+  <h2>마우스 오버와 아웃시 이벤트</h2>
+  <div class="event3">
+    <button id="btn1">mouseover/out</button>
+    <button id="btn2">mouseenter/mouseleave</button>
+    <p>내용</p> 
+  </div>
+
+	<h2>hover()이벤트(mouseenter+mouseleave)</h2>
+  <div class="event4">
+    <img src="image/flower.jpg" alt="꽃">
+  </div>
+
+	<br><br>
+  <div class="event5"></div>
+
+	<h2>mousevoer 와 mouseenter 의 차이</h2>
+	<div id="wrap1" class="wrap">1
+		<p>MouseOver / MouseOut</p>
+	</div>
+	<div id="wrap2" class="wrap">2
+		<p>MouseEnter / MouseLeave</p>
+	</div>
+  <hr>
+
+  <h1>포커스 이벤트</h1>
+  <p><input type="text" name="user_name" id="user_name"></p>
+  <p><input type="text" name="user_id" id="user_id" value="아이디 입력"></p>
+  <hr>
+
+  <h1>키보드 이벤트</h1>
+  <p><input type="text" name="user_text" id="user_text"></p>
+  <p id="txt1"></p>
+  <hr>
+
+  <h1>기타 이벤트</h1>
+  <p id="txt2">0</p>
+  <select id="rel_site">
+      <option value="">사이트 선택</option>
+      <option value="www.naver.com">네이버</option>
+      <option value="www.nate.com">네이트</option>
+      <option value="www.daum.net">다음</option>
+  </select>
+  <p id="txt3"></p>
+  <hr>
+
+  <h1>그룹 이벤트</h1>
+  <p><a href="#" id="btn5">버튼1</a></p>
+  <h1><a href="#">버튼2</a></h1>
+  <h2><a href="#">버튼3</a></h2>
+
+  <button>증가 버튼</button>
+  <p class="count">0</p>
+  <hr>
+
+  <h1>index와 this</h1>
+  <ul id="menu">
+    <li><a href="#">내용1</a></li>
+    <li><a href="#">내용2</a></li>
+    <li><a href="#">내용3</a></li>
+    <li><a href="#">내용4</a></li>
+  </ul>
+  <p class="txt4"></p>
+
+  <br><br><br>
+  <button id="btnov">마우스 오버</button>
+
+</body>
+</html>

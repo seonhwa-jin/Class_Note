@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<title>7-animate</title>
+<style>
+div.ani{ /*오른쪽 배경이미지*/
+	width:1000px;
+	height:230px;
+	background:url(image/topimg.png) no-repeat right top;
+	display:none;
+	margin-bottom:100px;
+}
+.ani img{ /*왼쪽 텍스트이미지*/
+	position:absolute;
+	top:0;
+	left:0;
+	width:400px;
+	height:200px;
+	margin-top:70px;
+	margin-left:20px;
+	text-align:center;
+}
+
+
+.box{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	width:800px;
+	height:400px;
+	background:pink;
+}
+/* .center{
+	display:table-cell;
+	text-align:center;
+	vertical-align:middle;	
+} */
+
+h6{border:1px solid #bcbcbc;}
+
+.block{
+	position:absolute;
+	background:#abc;
+	left:50px;
+	width:90px;
+	height:90px;
+	margin:10px;
+}
+
+
+</style>
+<script src="js/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function(){
+
+
+	//부드럽게 변환할때 css는 트랜지션 쓰는데 제이쿼리에서는 animate쓴다고 생각하면 됨.
+
+
+
+
+
+	
+	//ani->배경과 텍스트 서서히 등장시키기 .A...
+	$(".ani").fadeIn(2000,function(){  //배경이미지부터 페이드인..
+		$(".ani img").animate({left:"10%"},1000);    //그 다음엔 메인텍스트 animate
+	});
+
+
+
+	//이미지가 작아졌다가 원래크기로 (A이미지크기 400*267)
+	$("#aa").click(function(){
+		$("#kk").animate({
+			width:"100px",
+			height:"80px"
+		},7000,function(){
+			$("#kk").animate({
+				width:"400px",
+				height:"267px"      /* <--이건 css방식이 아니라 제이쿼리 방식이다. 큰따옴표 안했음!! */
+			})
+		})
+	})
+
+	
+	//버튼 클릭시 글자크기 크게, 테두리 두껍게.....
+
+	$(".bt").click(function(){
+		$("h6").animate({
+			fontSize:"50px",
+			borderWidth:"10px"
+		},400);                                         
+	});
+
+
+
+	//버튼클릭시 좌우 50px씩 이동하기
+	$("#right").click(function(){
+		$(".block").animate({left:"+=50px"});  //left=left+50
+	});
+
+	$("#left").click(function(){
+		$(".block").animate({left:"-=50px"});   //left=left-50
+	});
+
+
+});	
+
+
+
+
+
+
+
+
+
+
+ 
+
+</script>	
+</head>
+<body>
+
+<div class="ani">
+	<img src="image/toptext.png" alt="서브탑텍스트">
+</div>
+
+<p>
+<input type="button" id="aa" value="애니메이션시작"><br>	
+<div class="box">
+		<img src="image/building.jpg" id="kk" alt="빌딩">
+</div>
+
+<button class="bt">Click</button>
+<h6>Lorem Ipsum Dolor</h6>
+
+<button id="left">&laquo;</button> <button id="right">&raquo;</button>
+<div class="block"></div>
+
+</body>
+</html>
+
+<!-- 
+*animate : 거의 모든 css스타일을 사용할수 있으나 색상 애니메이션은 포함되어 있지않음
+->색상 애니메이션을 사용하려면 관련 파일을 연결해야 함
+
+$("선택자").animate({"속성":"값","속성":"값"............} );
+
+->animate 의 명령어에 "" 부호를 붙이지않음.
+css명령어 단어 사이,; "-"를 빼고 2번째 단어의 첫글자는 대문자로 표시함.
+
+margin
+marginLeft
+marginRight
+marginTop
+marginBottom
+borderWidth
+
+borderRadius    <--이건 상,우,하,좌 이렇게 축약해버리면 제이쿼리에선 오류가 날수도있음 밑에처럼 풀어쓰기
+borderTopLeftRadius
+borderTopRightRadius
+borderBottomLeftRadius
+borderBottomRightRadius
+
+-->
