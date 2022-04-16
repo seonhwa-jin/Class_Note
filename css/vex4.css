@@ -1,0 +1,59 @@
+@import url(common.css);
+
+
+#slideShow{  /* 바깥테두리 */
+  position: relative;
+  width:320px;
+  height:120px;
+  margin: 50px auto;
+  background: #fff;
+  box-shadow: 0px 0px 5px #ccc;
+
+
+}
+
+#slideShow .slide{ /* 슬라이드 영역 */
+  position: relative;
+  top:10px;
+  overflow: hidden;
+  width:300px;
+  height:100px;
+  margin: 0 auto;
+  
+}
+
+
+
+#slideShow .slide ul{ /* 이게 슬라이드는 반드시 들어가야함 */
+  position: absolute;
+  width:1200px; /* 전체이미지폭 300*4 */
+}
+#slideShow .slide ul li{float: left;}
+
+
+
+
+/* 하단버튼 */
+#slideShow .slide_btn{
+  position:absolute;
+  top:15px;
+  right: 15px;
+}
+
+#slideShow .slide_btn ul li{
+  float: left;
+  background: #e0e0e0;
+  color:#000;
+  width:15px;
+  height:15px;
+  margin: 0 3px;
+  text-align: center;
+  cursor: pointer;
+
+
+}
+
+#slideShow .slide_btn ul li.active{
+  background-color: #0088cc;
+  color:#fff;
+}

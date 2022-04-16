@@ -1,0 +1,119 @@
+@import url(common.css);
+
+/*TOP*/
+
+.top{
+    position:fixed;
+	width:100%;
+    height:60px;
+	background:rgba(255,255,255,0.7);
+    z-index:1000;
+}
+.top h1{margin:10px 0 0 90px;} /*logo*/
+.top img{width:170px;}
+
+
+/*///// 비주얼 이미지(FullScreen) /////*/
+
+.mainvisual{
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+.mainvisual .visual li{   /*시작위치의 이미지->크기가 120%*/
+    opacity:0;
+    position:absolute;
+    top:0;
+    left:0;
+    /* z-index:999;  */ /*겹쳐서 글자가 선택이 안되는것을 해결하기 위해 ~~~*/
+    width:100%;
+    height:100%;
+    background:no-repeat fixed center center;
+    background-size:cover;
+    transform:scale(1.2);
+    transition:all 1.5s;
+}
+.mainvisual .visual li.imgVisible{   /*->jQuery 에서 불러냄*/
+    opacity:1;
+    z-index:1000; 
+    transform:scale(1);
+}
+
+/* 비주얼이미지배경 */
+.mainvisual .visual li.main0{background-image:url(../image/mvisual_01.jpg);}
+.mainvisual .visual li.main1{background-image:url(../image/mvisual_02.jpg);}
+.mainvisual .visual li.main2{background-image:url(../image/mvisual_03.jpg);}
+.mainvisual .visual li.main3{background-image:url(../image/mvisual_04.jpg);}
+
+
+/*버튼*/
+
+.mainvisual .btn{
+    position:absolute;
+    top:130px;
+    left:100px;
+    z-index:2000;
+}
+.mainvisual .btn>span{
+    display:inline-block;
+    width:11px;
+    height:11px;
+    margin-right:3px;
+    background:#d5d5d6;
+    cursor:pointer;
+}
+.mainvisual .btn>span.active{
+    display:inline-block;
+    width:45px;
+    height:11px;
+    background:#ffff00;
+}
+
+
+/*////// 비주얼 텍스트 공통 /////*/
+
+.mainvisual .Vtext{ /*시작위치의 텍스트->Y축으로 20% 지점*/
+    opacity:0;
+    position:absolute;
+    top:30%;
+    width:100%;
+    color:#fff;
+    text-align:center;
+    transform:translateY(20%);
+    transition:all 1s;
+}
+.mainvisual .Vtext .black1{color:#575757;}
+.mainvisual .Vtext .black2{color:#000;text-shadow:none;}
+
+.mainvisual .Vtext.textVisible{ /*->jQuery 에서 불러냄*/
+    opacity:1;
+    transform:translateY(0);
+}
+.mainvisual .Vtext h3{
+    margin-bottom:30px;
+    font-family:'Nanum Myeongjo', serif;
+    font-weight:700;
+    font-size:60px;
+    letter-spacing:20px;
+}
+
+.mainvisual .Vtext p{
+    font-weight:100;
+    font-size:16px;
+    line-height:30px;
+    text-shadow:0 0 10px #000;
+} 
+.mainvisual .Vtext .more{
+    width:100px;
+    height:30px;
+    border:1px solid #fff;
+    color:#fff;
+    font-size:13px;
+    margin:20px auto 0;
+    transition:all 2s;
+}
+.mainvisual .Vtext .more:hover{background:rgba(0,0,0,0.7);}
+.mainvisual .Vtext .more a{display:block;}
