@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>스크롤을내리면바뀌는2개의탑메뉴</title>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+<link rel="stylesheet" href="css/menu16.css">
+</head>
+<body>
+
+<div id="header">
+	<div class="top">
+		<div class="top_in clear">
+			<div class="search">
+				<form>
+					<input type="text" name="sk" class="text" title="검색단어입력" placeholder="Search">
+					<i class="material-icons">search</i>
+				</form>
+			</div>
+			<div class="logo">
+				<h1><a href="#"><img src="image/white_logo1.png" alt="로고"></a></h1>	
+			</div>
+			<div class="util">
+				<ul class="util_menu">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">LOGIN</a></li>
+					<li><a href="#">SITEMAP</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<nav>
+
+		<div class="gnb">
+			<ul class="gnbMenu">	
+				<li class="menu1"><a href="#">COMPANY<span></span></a>
+					<ul class="smenu">
+						<li><a href="#">Company1</a></li>
+						<li><a href="#">Company2</a></li>
+						<li><a href="#">Company3</a></li>
+						<li><a href="#">Company4</a></li>
+					</ul>
+				</li>	
+				<li class="menu2"><a href="#">PRODUCT<span></span></a>
+					<ul class="smenu">
+						<li><a href="#">Product1</a></li>
+						<li><a href="#">Product2</a></li>
+						<li><a href="#">Product3</a></li>
+						<li><a href="#">Product4</a></li>
+						<li><a href="#">Product5</a></li>
+					</ul>
+				</li>
+				<li class="menu3"><a href="#">BUSINESS<span></span></a>
+					<ul class="smenu">
+						<li><a href="#">Business1</a></li>
+						<li><a href="#">Business2</a></li>
+						<li><a href="#">Business3</a></li>
+					</ul>
+				</li>
+				<li class="menu4"><a href="#">BOARD<span></span></a>
+					<ul class="smenu">
+						<li><a href="#">Board1</a></li>
+						<li><a href="#">Board2</a></li>
+						<li><a href="#">Board3</a></li>
+					</ul>
+				</li>
+				<li class="menu5"><a href="#">CONTACT<span></span></a>
+					<ul class="smenu last">
+						<li><a href="#">Contact1</a></li>
+						<li><a href="#">Contact1</a></li>
+					</ul>
+				</li>	
+			</ul>
+			<div class="bg_box"></div> 
+			<!--서브배경박스(메뉴안에는 포함되어 있지않고 헤더안에는 포함되어 있는 위치에 삽입-->
+		</div>
+
+		<!--스크롤바 내릴때 내려오는 고정탑메뉴-->
+		<div class="gnb_fix">
+			<div class="logo_fix">
+				<h1><a href="#"><img src="image/white_logo1.png" alt="로고"></a></h1>	
+			</div>
+			<ul class="gnbMenu_fix">	
+				<li class="menu1"><a href="#">COMPANY<span></span></a>
+					<ul class="smenu_fix">
+						<li><a href="#">Company1</a></li>
+						<li><a href="#">Company2</a></li>
+						<li><a href="#">Company3</a></li>
+						<li><a href="#">Company4</a></li>
+					</ul>
+				</li>	
+				<li class="menu2"><a href="#">PRODUCT<span></span></a>
+					<ul class="smenu_fix">
+						<li><a href="#">Product1</a></li>
+						<li><a href="#">Product2</a></li>
+						<li><a href="#">Product3</a></li>
+						<li><a href="#">Product4</a></li>
+						<li><a href="#">Product5</a></li>
+					</ul>
+				</li>
+				<li class="menu3"><a href="#">BUSINESS<span></span></a>
+					<ul class="smenu_fix">
+						<li><a href="#">Business1</a></li>
+						<li><a href="#">Business2</a></li>
+						<li><a href="#">Business3</a></li>
+					</ul>
+				</li>
+				<li class="menu4"><a href="#">BOARD<span></span></a>
+					<ul class="smenu_fix">
+						<li><a href="#">Board1</a></li>
+						<li><a href="#">Board2</a></li>
+						<li><a href="#">Board3</a></li>
+					</ul>
+				</li>
+				<li class="menu5"><a href="#">CONTACT<span></span></a>
+					<ul class="smenu_fix last">
+						<li><a href="#">Contact1</a></li>
+						<li><a href="#">Contact1</a></li>
+					</ul>
+				</li>	
+			</ul>
+			<div class="bg_box_fix"></div> 
+			<!--서브배경박스(메뉴안에는 포함되어 있지않고 헤더안에는 포함되어 있는 위치에 삽입-->
+		</div>
+
+	</nav>		
+
+</div>
+
+<div id="contents"></div>
+<div id="footer"></div>
+
+<!-- Script Source -->
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/jquery-ui-1.10.4.custom.min.js"></script>  
+<!--탄력함수를 사용하려면 반드시 연결해야 함.-->
+<script src="js/menu16.js"></script>
+</body>
+</html>
