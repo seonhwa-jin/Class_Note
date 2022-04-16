@@ -1,0 +1,80 @@
+@import url(common.css);
+
+.fadeShow{
+	position:relative;  /*부모기준설정: 버튼위치설정을 위해*/
+	width:1000px;
+	height:388px;
+	margin:0 auto;
+}
+
+/*이미지 모두 동일한 위치,안보이게 함*/ 
+.changeimg ul li{ 
+	display:none;  
+	position:absolute;
+	top:0;
+	left:0;
+}
+.changeimg ul li:first-child{display:block;}  /*첫번째 이미지만 보임 */
+
+/* ////////이미지를 배경으로 설정하는 경우....*/
+
+/* .changeimg ul li{ 
+	display:none;  
+	position:absolute;
+	top:0;
+	left:0;
+	width:1000px;
+	height:388px;	
+}  
+
+.changeimg ul .m1{display:block;}
+.changeimg ul .m1{background:url(../image/img1.jpg) no-repeat;}
+.changeimg ul .m2{background:url(../image/img2.jpg) no-repeat;}
+.changeimg ul .m3{background:url(../image/img3.jpg) no-repeat;}
+.changeimg ul .m4{background:url(../image/img4.jpg) no-repeat;}
+.changeimg ul .m5{background:url(../image/img5.jpg) no-repeat;} 
+
+*/
+
+
+/*하단버튼*/
+.fadeShow .btn{  /*버튼의 위치*/
+	position:absolute;
+	top:325px; 
+	left:450px; 
+}
+
+.fadeShow .btn ul li{  /*버튼모양*/
+	float:left;
+	width:8px; 
+	height:8px; 
+	border-radius:50%; 
+	background:#000;
+	margin:0 5px;
+	cursor:pointer;
+}
+.fadeShow .btn ul li.active{background:#ff6600;}  /*현재위치 활성화*/
+
+
+/*좌우버튼*/
+.fadeShow .lbtn{  /* 이전버튼 */
+	position:absolute;
+	top:150px;
+	left:30px;
+	width:65px;
+	height:65px;
+	background:url(../image/lbtn_off.png) no-repeat;
+}
+.fadeShow .lbtn:hover{background:url(../image/lbtn_on.png) no-repeat;}
+
+
+.fadeShow .rbtn{  /* 다음버튼 */
+	position:absolute;
+	top:150px;
+	right:30px;
+	width:65px;
+	height:65px;
+	background:url(../image/rbtn_off.png) no-repeat;
+}
+.fadeShow .rbtn:hover{background:url(../image/rbtn_on.png) no-repeat;}
+/* 아이콘폰트 호버는 안예뻐서 위처럼 이미지로 작업 많이함 */

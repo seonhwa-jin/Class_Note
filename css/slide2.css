@@ -1,0 +1,112 @@
+@import url(common.css);
+
+body {
+	background: #979797;
+}
+
+
+#slideShowUp {
+	position: relative;
+	/*부모기준설정*/
+	overflow: hidden;
+	/*넘치는 자식 보이지않게*/
+	width: 940px;
+	height: 430px;
+	margin: 0 auto;
+}
+
+#slideShowUp .slideUp ul {
+	position: absolute;
+}
+
+/*세로방향일때는 총 가로폭이 필요없음*/
+
+
+/* 이미지를 배경으로 설정하는 경우....
+
+#slideShowUp .slideUp ul li{ 
+	width:940px;
+	height:430px;	
+}  
+
+#slideShowUp .slideUp ul .m1{background:url(../image/slide-1.jpg) no-repeat;}
+#slideShowUp .slideUp ul .m2{background:url(../image/slide-2.jpg) no-repeat;}
+#slideShowUp .slideUp ul .m3{background:url(../image/slide-3.jpg) no-repeat;}
+#slideShowUp .slideUp ul .m4{background:url(../image/slide-4.jpg) no-repeat;}
+*/
+
+
+
+/*하단버튼*/
+
+#slideShowUp .slideUp_btn {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+#slideShowUp .slideUp_btn ul li {
+	background: #000;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 7px 0;
+	cursor: pointer;
+}
+
+#slideShowUp .slideUp_btn ul li.activeup {
+	background: #ff6600;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+
+/*상하버튼*/
+#slideShowUp .sideUp_btn .preup {
+	position: absolute;
+	top: 10px;
+	left: 50%;
+	width: 65px;
+	height: 65px;
+	background: url(../image/tbtn_off.png) no-repeat;
+}
+
+#slideShowUp .sideUp_btn .preup:hover {
+	background: url(../image/tbtn_on.png) no-repeat;
+	cursor: pointer;
+}
+
+#slideShowUp .sideUp_btn .nexup {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	width: 65px;
+	height: 65px;
+	background: url(../image/bbtn_off.png) no-repeat;
+}
+
+#slideShowUp .sideUp_btn .nexup:hover {
+	background: url(../image/bbtn_on.png) no-repeat;
+	cursor: pointer;
+}
+
+
+/*Play,Stop 버튼*/
+#slideShowUp .playstopUp .stopup {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_pause.png) no-repeat;
+}
+
+#slideShowUp .playstopUp .playup {
+	position: absolute;
+	bottom: 10px;
+	right: 20px;
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_play.png) no-repeat;
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ko">
+
+<head>
+	<meta charset="utf-8">
+	<title>슬라이드+하단버튼+좌우버튼+playstop버튼+자동이어짐</title>
+	<link rel="stylesheet" href="css/slide3.css">
+</head>
+
+<body>
+
+	<div id="slideShowon">
+		<!-- 메인슬라이드이미지 -->
+		<div class="slideon">
+			<ul>
+				<li class="i1"><img src="image/slide-1.jpg" alt="image1"></li>
+				<li class="i2"><img src="image/slide-2.jpg" alt="image2"></li>
+				<li class="i3"><img src="image/slide-3.jpg" alt="image3"></li>
+				<li class="i4"><img src="image/slide-4.jpg" alt="image4"></li>
+				<!-- <li class="i5"><img src="image/slide-5.jpg" alt="image5"></li>  -->
+			</ul>
+		</div>
+
+		<div class="slideon_btn">
+			<ul>
+				<li class="indent activeon">m1</li>
+				<li class="indent">m2</li>
+				<li class="indent">m3</li>
+				<li class="indent">m4</li>
+				<!-- <li class="indent">m5</li> -->
+			</ul>
+		</div>
+
+		<div class="sideon_btn">
+			<div class="preon indent"> prev </div>
+			<div class="nexon indent"> next </div>
+		</div>
+
+		<!--play/stop버튼-->
+		<div class="playstopon">
+			<a href="#" class="stopon indent">stop</a>
+			<a href="#" class="playon indent">play</a>
+		</div>
+
+	</div>
+
+	<!-- Script Source -->
+	<script src="js/jquery-3.6.0.min.js"></script>
+	<script src="js/jquery-ui-1.10.4.custom.min.js"></script>
+	<script src="js/slide3.js"></script>
+</body>
+
+</html>
