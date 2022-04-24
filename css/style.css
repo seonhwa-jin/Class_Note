@@ -1,0 +1,1022 @@
+@import url(common.css);
+
+/* font-family: 'IBM Plex Sans KR', sans-serif;
+font-family: 'Racing Sans One', cursive; */
+
+
+
+
+/* 헤더 + 비쥬얼까지 1300최소  나머지 배경색은 #101010 */
+
+
+body{
+  background-color: #101010;
+  font-family: 'IBM Plex Sans KR', sans-serif;
+  font-weight: 300;
+  color:whitesmoke;
+}
+
+
+
+/* ----------------------header---------------------------- */
+
+header{
+  width:100%;
+}
+
+#header_in{
+  width:1200px;
+  height: 1200px;
+  margin: 0 auto;
+  background:url(../image/headerBg.png) no-repeat center center;
+}
+
+#mainLogo{
+  width:150px;
+  height:100px;
+  background:url(../image/mainLogo.png) no-repeat center center;
+  padding:50px;
+  transition: all 0.1s;
+}
+
+#mainLogo:hover{
+  background:url(../image/mainLogo_hover.png) no-repeat center center;
+}
+
+
+.mainMenu{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.mainSubMenu{display: inline-block;padding: 40px 0 0 35px;}
+.mainSubMenu>li{
+  float: left;
+  position: relative;
+  padding:0 20px;
+  transition: all 0.2s;
+  text-shadow:1px 1px 5px rgba(255, 255, 255, 0.552);
+
+  
+}
+ .mainSubMenu li:hover{
+  text-shadow:1px 1px 20px #fff;
+} 
+
+ /* .mainSubMenu>li span{ 삼각형
+  width: 0;
+  height: 0;
+  border-top: 2px solid transparent;
+  border-left: 3px solid red;
+  border-bottom: 2px solid transparent;
+} */
+
+
+/* 주메뉴-호버시 서브메뉴 */
+
+
+.mainSubMenu>li ul{
+  display: none;
+  position: absolute;
+}
+
+.mainSubMenu>li ul li{
+  float: left;
+  margin-top: 10px;
+  text-shadow:none;
+}
+
+.mainSubMenu>li ul li:hover{
+  text-shadow:none;
+  width: fit-content;
+}
+
+
+.mainSubMenu>li ul li a{
+  font-size: 15px; 
+  color:rgb(171, 171, 171);
+  margin: 50px 30px 0 0;
+  transition: all 0.2s;
+  font-weight: bold;
+}
+
+.mainSubMenu>li ul li:hover a{
+  color:#F5D042;
+  padding-bottom: 5px;
+  border-bottom:2px solid #0A174E;
+  background-color: rgba(255, 255, 255,0.1);
+}
+
+
+.mainSubMenu>li ul.sub1{width:700px;}
+.mainSubMenu>li ul.sub2{width:700px;}
+.mainSubMenu>li ul.sub3{width:700px; }
+.mainSubMenu>li ul.sub4{width:700px; }
+
+
+
+
+/* Home의 오른쪽메뉴 */
+
+.subMenu{
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 160px 0 0 35px;
+  height:80px;
+}
+
+.subMenu ul{
+  float: right;
+  display: block;
+  
+}
+
+.subMenu ul li{
+  float: left;
+  padding:0 30px;
+  transition: all 0.1s;
+}
+.subMenu ul li:hover{
+  color:rgb(218, 189, 255);
+  text-shadow:0px 0px 4px #fff;
+}
+
+
+
+
+/* 비쥬얼 */
+
+
+#slideShow {
+	position: relative;
+	/*부모기준설정*/
+	overflow: hidden;
+	/*넘치는 자식 보이지않게*/
+	width: 1100px;
+	height: 518px;
+	margin: 0 auto;
+}
+
+#slideShow .slide ul {
+	position: absolute;
+	width: 4400px;
+	/*슬라이드가 가로방향일때만->이미지의 총가로길이(940*4)*/
+}
+
+#slideShow .slide ul li {
+	float: left;
+}
+
+
+
+
+
+/*좌우버튼*/
+#slideShow .side_btn .pre {
+	position: absolute;
+	top: 220px;
+	left: 10px;
+	width: 65px;
+	height: 65px;
+	background: url(../image/pre1.png) no-repeat;
+  background-size:cover ;
+  transition: all 0.2s;
+}
+
+#slideShow .side_btn .pre:hover {
+	background: url(../image/pre2.png) no-repeat;
+	cursor: pointer;
+  background-size:cover
+}
+
+#slideShow .side_btn .nex {
+	position: absolute;
+	top: 220px;
+	right: 10px;
+	width: 65px;
+	height: 65px;
+	background: url(../image/nex1.png) no-repeat;
+  background-size:cover ;
+  transition: all 0.2s;
+}
+
+#slideShow .side_btn .nex:hover {
+	background: url(../image/nex2.png) no-repeat;
+	cursor: pointer;
+  background-size:cover
+}
+
+
+
+/*하단버튼*/
+
+#slideControl{
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+#slideControl .slide_btn {
+	/* position: absolute;
+	bottom: 20px;
+	left: 500px; */
+  padding-right: 7px;
+}
+
+#slideControl .slide_btn ul li {
+	float: left;
+	background: #8a8a8a;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	margin: 0 7px;
+	cursor: pointer;
+}
+
+#slideControl .slide_btn ul li.active {
+	background: #ffee00;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+}
+
+/*Play,Stop 버튼*/
+#slideControl .playstop .stop {
+	/* position: absolute;
+	bottom: 20px;
+	left: 600px; */
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_pause.png) no-repeat;
+}
+
+#slideControl .playstop .play {
+	/* position: absolute;
+	bottom: 20px;
+	left: 600px; */
+	width: 8px;
+	height: 11px;
+	background: url(../image/btn_play.png) no-repeat;
+}
+
+
+
+
+
+
+
+/* ------------------------section------------- */
+
+
+/* 공통부분 */
+
+
+
+h2{
+  font-family: 'Kirang Haerang', cursive;
+  font-size: 50px;
+  letter-spacing: 3px;
+}
+
+
+
+
+
+
+
+/* what is taco?  */
+
+
+#whatIsTaco{
+  width: 1200px;
+  height:610px;
+  margin: 0 auto;
+}
+
+/* .whatIsTacoBox{
+  
+} */
+
+.circleTaco{
+  width:510px;
+  height:610px;
+  float:left;
+  background:url(../image/circleTaco.png) no-repeat center center;
+}
+
+
+
+
+
+
+
+.textTaco{
+  width:400px;
+  float:left;
+  padding: 60px 0 0 15px;
+  box-sizing: border-box;
+}
+
+.textTaco p{
+  font-size: 15px;
+  padding-top: 20px;
+  line-height:25px;
+}
+
+.textTaco .highlight{
+  background-color: transparent;
+  padding: 0 2px;
+  color:whitesmoke;
+  transition: all 0.6s;
+}
+
+.textTaco:hover .highlight{
+  color: gold;
+  /* font-weight: bold; */
+}
+
+.textTaco .coloring{
+  transition: all 0.6s;
+}
+
+
+.textTaco:hover .coloring{
+  color:gold;
+  /* font-weight: bold; */
+  transition-delay: 1.2s;
+}
+
+
+
+/* 유튜브 */
+
+.ytb{
+  width:100%;
+  height: 40px;
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.textTaco .ytbBtn{
+  width: 45px;
+  height: 45px;
+  background:url(../image/youtube.png) no-repeat center center;
+  background-size: cover;
+  transition: all 0.2s;
+}
+.ytb .ytbText{transition: all 0.2s; opacity: 0;}
+.ytb:hover .ytbText{opacity: 1;cursor: pointer;}
+.ytb:hover .ytbBtn{
+  background:url(../image/youtube2.png) no-repeat center center;
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+
+
+.lettuceTaco{
+  width:290px;
+  height: 610px;
+  float:left;
+  background:url(../image/lettuceTaco.png) no-repeat center center;
+}
+
+
+
+
+
+
+
+
+
+
+/* Live Mas!  */
+
+#liveMasFullBg{
+  width: 100%;
+  height: 835px;
+  background:url(../image/quoteBg.png) no-repeat center center;
+}
+
+
+#liveMas{
+  width: 1200px;
+  margin: 180px auto;
+  font-size: 15px;
+}
+
+#liveMas h2{
+  padding-left: 80px;
+}
+
+
+.singleLine{
+  text-align: center;
+  
+  margin: 50px auto;
+}
+
+
+
+
+
+.foldTaco{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+}
+
+.foldTacoImg{
+  width: 590px;
+  height:250px;
+  background:url(../image/foldTaco.png) no-repeat center center;
+  animation:hang 2s infinite alternate; 
+}
+
+@keyframes hang{
+  0%{transform: rotate(3deg);}
+  50%{transform: rotate(0deg);}
+  100%{transform: rotate(-3deg);}
+}
+
+
+
+.quote{
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 0;
+  font-size: 18px;
+  
+  color:yellow;
+}
+
+.liveMasText{
+  width: 1200px;
+  text-align: center;
+  padding: 50px 0;
+}
+
+
+
+
+
+
+
+/* Tacobell Menu  */
+
+.tacobellMenuHead {width:1200px;margin: 100px auto 0;}
+.tacobellMenuHead h2,.menuAdd{text-align: right;}
+
+
+
+/* 롤링 */
+.rollingPopup{
+  width:1200px;
+  height:400px;
+  /* background-color: #abc; */
+  margin: 0 auto;
+  display: flex;
+}
+
+
+/* 4버튼 전체*/
+.btn4{ 
+  width:320px;
+  height: 320px;
+  /* background:url(../image/logo2.png) no-repeat 0 0;
+  background-size: cover; */
+  background:transparent;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 35px;
+  justify-content: center;
+}
+.candy1, .candy2, .candy3, .candy4{
+	width:100px;
+	height:100px;
+	overflow:hidden;
+  margin: 0px 15px;
+  
+}
+
+.candy0{
+  width: 100%;
+  height: 30px;
+  /* background-color: rgb(184, 51, 51); */
+  background-color: #FF5DA2;
+  text-align: center;
+  line-height: 30px;
+}
+
+
+/* 캔디1 */
+
+.candy1 ul{width:200px;}   /*200 짜리 두개(총가로폭)*/
+.candy1 ul li{float:left;}
+.candy1 ul li:first-child{margin-left:-100px;}
+
+
+
+
+/* 캔디2 */
+
+.candy2 ul{width:400px;}   /*200 짜리 두개(총가로폭)*/
+.candy2 ul li{float:left;}
+.candy2 ul li:first-child{margin-left:-100px;}
+
+
+/* 캔디3 */
+
+.candy3 ul{width:400px;}   /*200 짜리 두개(총가로폭)*/
+.candy3 ul li{float:left;}
+.candy3 ul li:first-child{margin-left:-100px;}
+
+/* 캔디4 */
+
+.candy4 ul{width:400px;}   /*200 짜리 두개(총가로폭)*/
+.candy4 ul li{float:left;}
+.candy4 ul li:first-child{margin-left:-100px;}
+
+
+
+
+/* 말풍선광고판 */
+#tabmenu{
+  width:800px;
+  height:400px;
+  /* background:#f3f6f7; */
+  position:relative; 
+}
+
+.tab-header{
+  width:100px;
+  float:left;
+  position:relative;
+}
+.tab-content{
+  width:540px;
+  float:left;
+  margin-top:30px;
+  margin-left:160px;
+}
+.tab_box{
+  width:160px;
+  height:240px;
+  position:relative;
+  top:50px;
+  left:30px;
+}
+.tab li{
+  width:200px;
+  height:60px;
+  box-sizing:border-box;
+  border-bottom:1px solid rgb(117, 117, 117);
+  position:relative;
+  /*background:pink;*/
+}
+.tab li a{
+  display:block;
+  color:#d6d6d6;
+  font-size:14px;
+  line-height:60px;
+  text-align:center;
+  letter-spacing:1px; 
+  position:relative;
+  z-index:100;  
+}
+
+.tab li a.active{color:#fff;}  /*1번째 선택된 글자색 */
+
+.tab-highlight{  /*현재 선택된 탭메뉴*/
+  background:rgb(100, 34, 132);
+  position:absolute;
+  left:0px;
+  top:0px;
+  width: 200px;
+  height:60px; 
+}
+
+.tab-highlight:after{  /*박스아래 삼각형모양*/
+  background:url(../image/arrow2.png) no-repeat 0 0;
+  content:"";
+  position:absolute;
+  right:-12px;
+  top:35%;
+  z-index:10;
+  width: 0;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-left: 12px solid rgb(100, 34, 132);
+  border-bottom:10px solid transparent;
+}
+
+.panel li{
+  width:541px;
+  height:341px;
+  position:relative;
+  top:0;
+  left:0;
+  display:none;   
+}
+.panel li:first-child{display:block;}
+
+.panel #tab1{background:url(../image/popup5.png) no-repeat 0 0;}
+.panel #tab2{background:url(../image/popup4.png) no-repeat 0 0;}
+.panel #tab3{background:url(../image/popup6.png) no-repeat 0 0;}
+.panel #tab4{background:url(../image/popup3.png) no-repeat 0 0;}
+.panel #tab5{background:url(../image/popup1.png) no-repeat 0 0;}
+#tab1,#tab2,#tab3,#tab4,#tab5{background-size: cover;
+border:1px solid rgb(79, 79, 79);box-sizing:border-box; cursor: pointer;}
+
+/* 광고 호버시 효과 */
+.read-more{opacity: 0;transition: all 0.4s;}
+.panel:hover .read-more{opacity: 1;}
+
+
+.tab-content .content {
+  color:#d6d6d6;
+  text-shadow:0 0 2px rgba(0, 0, 0, 0.9);
+  width:350px;
+  margin:auto;  
+  position:absolute;
+}
+
+
+.content .title {
+  font-size:50px;
+  font-weight:normal;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+.content .description {
+  font-size:12px;
+  line-height:22px;
+}
+.content .read-more{
+  font-size:14px;
+  text-transform:uppercase;
+  display:inline-block;
+  padding:3px 16px;
+  margin-top:24px;
+  border:2px solid #fff;
+}
+ .read-more a{color:#fff;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 메뉴일러스트의 헤드메뉴 */
+
+.bgHead{
+  width:100%;
+  height: 109px;
+  margin-top: 50px;
+  background:url(../image/bgHead3.png) repeat-x center center;
+}
+
+.bgHead .menuHead{
+  text-align: center;
+  font-family: 'Black Han Sans', sans-serif;
+  font-size: 31px;
+  padding-top: 20px;
+
+
+}
+.bgHead .miniHead{
+  text-align: center;
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 17px;
+
+}
+
+.menuHead .additional{
+  font-size: 20px;
+}
+
+
+/* 메뉴일러스트-1줄 싱글타코 */
+.singleTacoList{width:1200px;margin:0 auto ;}
+ .singleTacoList ul{
+  width:950px;
+  margin: 40px auto;
+  
+} 
+.singleTacoList ul li{
+  float: left;
+  text-align: center;
+  width:170px;
+  margin: 0 10px;
+  
+  
+}
+
+
+.menuImg1,.menuImg2,.menuImg3,.menuImg4,.menuImg5{
+  width: 170px;height: 180px;transition: all 0.2s;}
+.singleTacoList .menuImg1{
+  background:url(../image/classic.png) no-repeat center center;}
+.singleTacoList .menuImg2{
+  background:url(../image/supreme.png) no-repeat center center;}
+.singleTacoList .menuImg3{
+  background:url(../image/doublecheese.png) no-repeat center center;}
+.singleTacoList .menuImg4{
+  background:url(../image/shrimp.png) no-repeat center center;}
+.singleTacoList .menuImg5{
+  background:url(../image/tacochicken.png) no-repeat center center;}
+
+.singleTacoList ul li a div:first-child:hover{transform: scale(1.2);}
+
+
+
+  /* 메뉴일러스트-2줄 싱글타코set */
+.TacoSetList{width:1200px;margin: 0 auto 150px;}
+ .TacoSetList ul{
+  width:1120px;
+  margin: 40px auto;
+  
+} 
+.TacoSetList ul li{
+  float: left;
+  text-align: center;
+  width:260px;
+  margin: 0 10px;
+  
+  
+}
+
+
+.menuImg6,.menuImg7,.menuImg8,.menuImg9{
+  width: 260px;height: 185px;transition: all 0.2s;}
+.TacoSetList .menuImg6{
+  background:url(../image/supremeSet.png) no-repeat center center;}
+.TacoSetList .menuImg7{
+  background:url(../image/doublecheeseSet.png) no-repeat center center;}
+.TacoSetList .menuImg8{
+  background:url(../image/shrimpSet.png) no-repeat center center;}
+.TacoSetList .menuImg9{
+  background:url(../image/tacochickenSet.png) no-repeat center center;}
+
+.TacoSetList ul li a div:first-child:hover{transform: scale(1.2);}
+
+
+
+    /* 메뉴일러스트-3줄 퀘사디아,브리또 */
+.singleQuesaList{width:1200px;margin: 0 auto 50px;}
+.singleQuesaList ul{
+ width:880px;
+ margin: 40px auto 10px;
+ 
+} 
+.singleQuesaList ul li{
+ float: left;
+ text-align: center;
+ width:200px;
+ margin: 0 10px;
+ 
+ 
+}
+
+
+.menuImg10,.menuImg11,.menuImg12,.menuImg13{
+ width: 200px;height: 130px;transition: all 0.2s; padding-bottom: 20px;}
+.singleQuesaList .menuImg10{
+ background:url(../image/tricheeseque.png) no-repeat center center;}
+.singleQuesaList .menuImg11{
+ background:url(../image/que.png) no-repeat center center;}
+.singleQuesaList .menuImg12{
+ background:url(../image/shrimpburi.png) no-repeat center center;}
+.singleQuesaList .menuImg13{
+ background:url(../image/crunchlap.png) no-repeat center center;}
+
+.singleQuesaList ul li a div:first-child:hover{transform: scale(1.2);}
+
+
+   /* 메뉴일러스트-4줄 퀘사디아,브리또Set */
+.QuesaSetList{width:1200px;margin: 0 auto 150px;}
+.QuesaSetList ul{
+ width:1040px;
+ margin: 0 auto;
+ 
+} 
+.QuesaSetList ul li{
+ float: left;
+ text-align: center;
+ width:240px;
+ margin: 0 10px;
+ 
+ 
+}
+
+
+.menuImg14,.menuImg15,.menuImg16,.menuImg17{
+ width: 240px;height: 140px;transition: all 0.2s; padding-bottom: 50px;}
+.QuesaSetList .menuImg14{
+ background:url(../image/tricheesequeSet.png) no-repeat center center;}
+.QuesaSetList .menuImg15{
+ background:url(../image/queSet.png) no-repeat center center;}
+.QuesaSetList .menuImg16{
+ background:url(../image/shrimpBuriSet.png) no-repeat center center;}
+.QuesaSetList .menuImg17{
+ background:url(../image/crunchlapSet.png) no-repeat center center;}
+
+ .QuesaSetList ul li a div:first-child:hover{transform: scale(1.1);}
+
+
+
+
+
+
+ /* 소스 */
+
+ .saucesArrow{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 40px;
+   font-size: 18px;
+   height: 20px;
+   
+ }
+ .saucesArrow .saucesArrowImg{
+   width:524px;
+   height: 15px;
+   padding:0 20px;
+   background:url(../image/arrow.png) no-repeat center center;}
+
+
+   .saText{
+     text-align: center;
+    padding-top: 20px;
+    color:#F9D142;
+    font-size: 17px;
+    }
+
+    .sauceT{
+      font-size: 18px;
+      color:#F9D142;
+      font-weight: bold;
+    }
+
+
+
+/* 소스js */
+#tabmenuSauce{
+	width:700px;
+	margin:10px auto;
+}
+.tabSauce li{
+	width:80px;
+	height:85px;
+	float:left;
+	background:#fff;
+	color:#333;
+	font-size: 17px;
+	line-height:50px;
+	text-align:center;
+	font-weight:bold;
+  padding: 0px 10px 30px;
+  transition: all 0.3s;
+  pointer:cursor;
+}
+.tabSauce li:nth-child(1){background:url(../image/sauce1.png) no-repeat center center;}
+.tabSauce li:nth-child(1):hover{background:url(../image/saucee1.png) no-repeat center center;}
+.tabSauce li:nth-child(2){background:url(../image/sauce2.png) no-repeat center center;}
+.tabSauce li:nth-child(2):hover{background:url(../image/saucee2.png) no-repeat center center;}
+.tabSauce li:nth-child(3){background:url(../image/sauce3.png) no-repeat center center;}
+.tabSauce li:nth-child(3):hover{background:url(../image/saucee3.png) no-repeat center center;}
+.tabSauce li:nth-child(4){background:url(../image/sauce4.png) no-repeat center center;}
+.tabSauce li:nth-child(4):hover{background:url(../image/saucee4.png) no-repeat center center;}
+.tabSauce li:nth-child(5){background:url(../image/sauce5.png) no-repeat center center;}
+.tabSauce li:nth-child(5):hover{background:url(../image/saucee5.png) no-repeat center center;}
+.tabSauce li:nth-child(6){background:url(../image/sauce6.png) no-repeat center center;}
+.tabSauce li:nth-child(6):hover{background:url(../image/saucee6.png) no-repeat center center;}
+.tabSauce li:nth-child(7){background:url(../image/sauce7.png) no-repeat center center;}
+.tabSauce li:nth-child(7):hover{background:url(../image/saucee7.png) no-repeat center center;}
+
+.tabSauce li.selected2{ 
+	/* background:rgb(0, 154, 200,0.2); */
+	color:#fff;
+	font-weight:bold;
+}
+
+.panelSauce{
+	clear:both; 
+	background:#642284;
+  border-radius: 10px;
+	padding:20px;
+	color:#fff;
+	font-size:14px;
+	line-height:25px;
+
+  height: 100px; /* 높이고정함 */
+}
+
+
+
+
+
+
+
+
+
+
+
+ /* 푸터 */
+
+ footer{
+   width:1200px;
+   margin: 100px auto;
+   display: flex;
+   color:rgb(106, 106, 106);
+   padding-bottom: 40px;
+   font-size: 13px;
+ }
+
+ .leftspace{width:175px;}
+ .leftFooter{
+   width:400px;
+ }
+
+
+
+
+
+
+ .centerFooter{
+    width: 420px;
+ }
+
+ .footerList ul {
+  
+}
+
+.footerList ul li{
+   float: left;
+   color:rgb(171, 171, 171);
+  margin-top: 20px;
+
+   margin-right: 20px;
+   border-right: 2px solid rgb(81, 81, 81);
+   padding-right: 10px;
+ }
+
+
+
+
+
+ .rightFooter{
+   width: 70px;
+   height: 70px;
+   background:url(../image/jinlogo.png) no-repeat center center;
+   background-size:cover;
+   transition: all 0.3s;
+  }
+
+  .rightFooter:hover{
+    background:url(../image/jinlogo2.png) no-repeat center center; 
+    background-size:cover;
+   }
+ 
+  .rightspace{width:155px;}
+
+
+
+
+
+ 
