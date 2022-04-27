@@ -1,0 +1,953 @@
+@import url(common.css);
+body{background-color: #EEEEEE;}
+
+
+
+/* ---------top버튼---------------- */
+
+#toTop{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(33, 33, 33);
+  color:#fff;
+  font-weight: 700;
+  font-size: 18px;
+  font-family: 'Hahmlet', serif;
+  text-align: center;
+  line-height: 50px;
+  position: fixed;
+  right: 10px;
+  bottom:10px;
+}
+
+#toTop:hover{
+  background-color: #3282B8;
+}
+
+
+/* ---------header---------------- */
+
+header{
+  width:100%;
+  height: 650px;
+  background: #222529;
+}
+
+/* 메인비쥬얼 */
+#header_in{
+  width:1200px;
+  height: 650px;
+  margin:0 auto;
+  background: url(../image/visual_1.png) no-repeat center center;
+  transition: all 0.8s linear;
+}
+#header_in:hover{
+  background: url(../image/visual_3.png) no-repeat center center;
+}
+
+
+/* 로고 +메인메뉴 */
+#header_in .logo{
+  float:left;
+  width:150px;
+  height:50px;
+  background:url(../image/logo_black_wh.png) no-repeat center center;
+  background-size:contain ;
+  margin: 5px 15px;
+  transition: all 0.5s;
+}
+#header_in .logo:hover{
+  background:url(../image/logo_blue_wh.png) no-repeat center center;
+  background-size:contain ;
+  margin: 5px 15px;
+}
+
+#header_in .mainMenu{
+  float:right;
+}
+
+.mainMenu ul{display: inline-block;}
+.mainMenu ul li{
+  float:left;
+  margin: 20px 15px;
+}
+.mainMenu ul li a{
+  color:whitesmoke;
+  font-size: 15px;
+  transition:all 0.5s;
+}
+.mainMenu ul li:hover a{
+  color:#4dabea;
+}
+
+
+/* ---------------section---------- */
+
+
+
+#section_in1,#section_in2{
+  width:1200px;
+  margin: 0 auto;
+}
+
+/* 타이틀, 서브타이틀 */
+.title{
+  text-align: center;
+  font-family: 'Hahmlet', serif;
+  font-size: 25px;
+  font-weight: 600;
+  padding-top: 50px;
+}
+
+.subTitle{
+  text-align: center;
+  font-family: 'Hahmlet', serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 5px 0 0 40px;
+}
+
+
+
+/* 오늘의공연/전시 */
+
+.content1{
+  width: 1200px;
+  /* background: gold; */
+}
+
+.content1 ul{
+  width: 1000px;
+  margin:20px auto;
+  height:800px;
+ 
+  /* background-color: pink; */
+}
+.content1 ul li{
+  float:left;
+  padding:20px;
+  
+}
+.content1 ul li img{
+  width: 290px;
+  height: 360px;
+  transform: scale(1);
+  transition: all 0.5s;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.content1 ul li img:hover{
+  transform: scale(1.07);
+  border-radius: 0 50px 0 50px; 
+  box-shadow: rgba(50, 50, 93, 0.5) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+
+
+
+
+/* 더보기 버튼 */
+.content1 .btn{
+  width: 120px;
+  height: 30px;
+  margin: 40px auto;
+  background: #dbdbdb;
+  font-weight: 400;
+  font-size: 15px;
+  text-align: center;
+  font-family: 'Hahmlet', serif;
+  line-height: 30px;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.content1 .btn:hover{
+  background: #64b2e6;
+  color:white;
+}
+
+
+
+
+
+
+/* -----------전체일정 ----------*/
+
+#schedule{
+  width:100%;
+  height: 900px;
+  background: linear-gradient(to bottom, #EEEEEE, #d7f0fc 50%);
+  /* background:url(../image/bg2_01.png) no-repeat center center; */
+  margin-top: 100px;
+
+}
+
+.content2{ /* 달력 흰 배경 */
+  width: 900px;
+  height: 700px;
+  background: rgb(242, 242, 242);
+  border-radius: 30px;
+  margin: 10px auto;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.content2 h4{ /* April */
+  font-size: 30px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: right;
+  padding:30px 40px;
+}
+
+.arrow{font-size:20px;}
+.arrow:hover{font-weight: bold;color:#3286be}
+
+/* 요일 */
+.content2 .week{
+  background-color: rgb(233,233,233);
+  width: 840px;
+  height: 40px;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+.content2 .week ul{display: inline-block;}
+.content2 .week ul li{
+  float:left;
+  width: 120px;
+  text-align: center;
+  line-height: 40px;
+  font-weight: bold;
+}
+
+/* 날짜 */
+.content2 .scheduleTable{
+  width:840px;
+  height: 500px;
+  margin: 0 auto;
+  /* background-color:cadetblue; */
+}
+
+.scheduleTable td{ /* 날짜칸 각각 */
+  width: 120px;
+  height: 100px;
+  /* background: rgba(0,0,0,0.3); */
+  vertical-align: top;
+  border: 1px solid rgb(226, 226, 226);
+  box-sizing: border-box;
+  color:#666;
+  transition: all 0.3s;
+}
+.scheduleTable td:hover{
+  background-color: #BBE1FA;
+  border-radius: 10px;
+  box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;
+  color:rgb(0, 106, 255);
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.scheText{/* 달력 스케쥴 내부 텍스트 */
+  font-size: 8px;
+}
+
+
+
+.scheduleTable .mar{/* 지나간3월 */
+  color:rgb(192, 192, 192);
+}
+
+.scheduleTable .sunday{/* 일요일 */
+  color:rgb(254, 94, 94);
+}
+
+
+
+
+.contentLogo{ /* 달력 밑 로고 */
+  width: 150px;
+  height: 100px;
+  background: url(../image/logo_black.png) no-repeat center center;
+  background-size: contain;
+  margin: 0 auto;
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+/* ---------이벤트----------- */
+
+#sacEvent{
+  width: 100%;
+  height: 500px;
+  background-color: #d7f0fc;
+  /* background-color: #eaf8fe; */
+  /* background:url(../image/bg2_02.png) no-repeat center center; */
+}
+
+#sacEvent .title{padding-top:5px;}
+
+
+.content3 img{ /* 광고이미지 사이즈 */
+  width:280px;
+  height: 200px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+}
+
+
+.content3 ul{
+  width:1200px;
+  height: 300px;
+  margin: 0 auto;
+  z-index: 1000;
+  /* background-color: red; */
+}
+
+
+.content3 ul li{ /* 광고칸 개인 규격 */
+  width: 280px;
+  height: 200px;
+  float: left;
+  margin: 20px 10px;
+  overflow: hidden;
+  transition: all 0.5s;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+
+.content3 ul li:hover{ /* 광고칸 마우스오버 내려오는거 */
+  height: 300px;
+  background:white;
+  cursor: pointer;
+  border-radius: 0 0 10px 10px;
+}
+
+.content3 ul p{ /* 광고 텍스트 */
+ opacity: 0;
+ transition: all 0.1s; 
+}
+
+.content3 ul li:hover p{
+  opacity: 1; 
+  margin: 20px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.content3 .over_box{ /* 검정박스 */
+  width:280px;
+  height: 200px;
+  background: rgba(0,0,0,0);
+  z-index: 300;
+  position: absolute; /* <-이거하니까생김 */
+  transition: all 0.5s; 
+}
+
+.content3 li:hover .over_box{ 
+  background: rgba(0,0,0,0.8);
+  
+}
+
+
+.firstBox{ /* 마우스오버 전 보이는 화면 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content3 ul li .moreBtn{ 
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  transition: all 0.4s; 
+}
+
+.content3 ul li:hover .moreBtn{
+  opacity: 1;
+  font-size: 20px;
+  color:whitesmoke;
+  font-weight: bold;
+  z-index: 500;
+}
+
+.bardotdot{
+  text-align: center;
+  cursor: pointer;
+  font-size: 17px;
+  font-weight: bold;
+  color:#666;
+  padding-top: 40px;
+}
+
+.bardotdot #active{transition: all 0.2s;}
+
+.bardotdot #active:hover{
+  color:slateblue;
+}
+
+
+
+/* ------음악/강좌---- */
+
+#sacClass{
+  width: 100%;
+  height: 700px;
+  /* background-color: #333; */
+  background:url(../image/bg1.png) no-repeat 0px 0px;
+}
+
+#sacClass .title{color:whitesmoke;padding-top: 15px;}
+#sacClass .subTitle{color:whitesmoke;}
+
+.content4 ul{
+  width: 690px;
+  margin: 20px auto;
+  height: 400px;
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+.content4 ul li{
+  float:left;
+  width:230px;
+  height: 400px;
+  position:relative;
+  overflow: hidden;
+}
+.content4 ul li a{
+  display:block;
+  width:230px;
+	height:400px;
+  transition:all 0.5s;
+}
+.content4 ul li a.class1{background:url(../image/class1.png) no-repeat 0px 0px;}
+.content4 ul li a.class2{background:url(../image/class2.png) no-repeat 0px 0px;}
+.content4 ul li a.class3{background:url(../image/class3.png) no-repeat 0px 0px;}
+
+.content4 ul li:hover a{
+  background-position:-30px 0px;
+}
+
+
+
+
+.content4 .over_box2{ /* 검정박스 */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  transition:all 0.5s;
+}
+
+.content4 ul li:hover .over_box2{
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+.classText{ /* class설명 전체 */
+  position: absolute;
+  color:rgba(255, 255, 255, 0);
+  padding:20px;
+  transition:all 0.5s;
+}
+
+.classTextTitle{ /* class큰제목 */
+  font-size: 21px;
+  border-bottom: 1px solid transparent;
+  margin: 40px 0;
+  padding-bottom: 5px;
+  font-weight: 500;
+  font-family: 'Hahmlet', serif;
+}
+
+.classTextContent{ /* class설명 */
+  font-size: 14px;
+}
+
+.classTextBtn{/* class예매하기버튼 */
+  text-align: center;
+  display: block;
+  margin:20px auto;
+  border: 1px solid rgba(255, 255, 255, 0);
+  width: 70px;
+  padding:5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Hahmlet', serif;
+}
+
+
+.content4 ul li:hover .classText{
+  color:rgba(255, 255, 255, 1);
+  z-index: 400;
+}
+
+.content4 ul li:hover .classTextTitle{
+  border-bottom: 1px solid #fff;
+}
+
+.content4 ul li:hover .classTextBtn{
+  border: 1px solid rgba(255, 255, 255, 1);
+}
+
+
+
+
+
+/* 아카데미 수강 뱃지 */
+
+.academy{
+  width:1200px;
+  height: 150px;
+  margin: 0 auto;
+  position: relative;
+  /* background-color: gold; */
+}
+
+
+ @keyframes swing{
+  0%{bottom:0;}
+  100%{bottom:10px;}  
+}
+
+.academy .academyLogo{
+  width:140px;
+  height: 140px;
+  position: absolute;
+  bottom: 10px;
+  right: 50px;
+  background:url(../image/academy.png) no-repeat 0px 0px;
+  /* background-color: #fff; */
+  animation:swing 1s infinite alternate;
+  cursor: pointer;  
+}
+
+
+
+
+
+
+
+
+/* ------------공간안내------------ */
+
+#section_in2{
+  width:100%;
+  height: 1000px;
+  background: rgb(255, 255, 255);
+}
+
+#place{
+  width:1200px;
+  height: inherit;
+  /* background-color:rgb(233, 233, 233); */
+  margin: 0 auto;
+  position: relative;
+}
+
+#place .title{
+  padding-top: 70px;
+}
+#place .subTitle{
+  padding-bottom: 30px;
+}
+
+
+.content5 ul{
+  width:1000px;
+  margin: 0 auto;
+}
+.content5 ul li{
+  float: left;
+}
+.content5 ul li a{
+  display: block;
+  width:200px;
+  height: 89px;
+  background: gold;
+  transition: all 0.2s;
+}
+
+
+/* PLACE 아이콘 */
+.content5 a.place1{background:url(../image/place1.png) no-repeat 0px 0px;}
+.content5 a.place2{background:url(../image/place2.png) no-repeat 0px 0px;}
+.content5 a.place3{background:url(../image/place3.png) no-repeat 0px 0px;}
+.content5 a.place4{background:url(../image/place4.png) no-repeat 0px 0px;}
+.content5 a.place5{background:url(../image/place5.png) no-repeat 0px 0px;}
+
+.content5 li a.place1:hover{background:url(../image/place1h.png) no-repeat 0px 0px;}
+.content5 li a.place2:hover{background:url(../image/place2h.png) no-repeat 0px 0px;}
+.content5 li a.place3:hover{background:url(../image/place3h.png) no-repeat 0px 0px;}
+.content5 li a.place4:hover{background:url(../image/place4h.png) no-repeat 0px 0px;}
+.content5 li a.place5:hover{background:url(../image/place5h.png) no-repeat 0px 0px;}
+
+
+
+
+/* 호버 전- 메인 분수대이미지*/
+
+.placeView{
+  width:1000px;
+  height:650px;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 20px 25px -5px, rgba(0, 0, 0, 0.04) 0px 10px 10px -5px;
+}
+
+.placeView .placeA{
+  width:1000px;
+  height:450px;
+  background:url(../image/placemain_01.png) no-repeat 0px 0px;
+  border-radius: 10px 10px 0 0 ;
+  /* background-color: skyblue; */
+}
+
+.placeView .placeB{
+  width:300px;
+  height: 200px;
+  background:url(../image/placemain_03.png) no-repeat 0px 0px;
+  border-radius: 0 0 0 10px ;
+  /* background-color: green; */
+}
+
+.placeView .placeC{
+  width:700px;
+  height: 200px;
+  background:url(../image/placemain_04.png) no-repeat 0px 0px;
+  border-radius: 0 0 10px 0;
+  /* background-color: pink; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1호버-사진 :none 상태 */
+
+
+.placeView1 .placeA{ /* 제일큰사진-none상태 */
+  width:1000px;
+  height: 450px;
+  background:url(../image/place1a.png) no-repeat 0px 0px;
+  border-radius: 10px 10px 0 0;
+  /* background-color: rgba(159, 160, 95, 0.424); */
+  position: absolute;
+}
+
+.placeView1 .placeB{ /* 2번째사진-none상태 */
+  width:300px;
+  height: 200px;
+  /* background:url(../image/place1b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
+  position: absolute;
+  top:701px;
+}
+
+.placeView1 .placeC{ /* 3번째사진-none상태 */
+  width:700px;
+  height: 200px;
+  /*background:url(../image/place1c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  top:701px;
+  left:400px;
+}
+
+
+
+
+
+
+
+
+
+/* 2호버-사진 :none 상태 */
+
+
+.placeView2 .placeA{
+  width:1000px;
+  height:450px;
+  background:url(../image/place2a.png) no-repeat 0px 0px;
+  /* background-color: gold; */
+  border-radius: 10px 10px 0 0 ;
+  position: absolute;
+  left:100px;
+}
+
+.placeView2 .placeB{
+  width:300px;
+  height: 200px;
+  /* background:url(../image/place2b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
+  position: absolute;
+  top:701px;
+  left: 100px;
+}
+
+.placeView2 .placeC{
+  width:700px;
+  height: 200px;
+  /* background:url(../image/place2c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  top:701px;
+  left:400px;
+}
+
+
+
+
+
+/* 3호버-사진 :none 상태 */
+
+.placeView3 .placeA{
+  width:1000px;
+  height:450px;
+  background:url(../image/place3a.png) no-repeat 0px 0px;
+  background-color: purple;
+  border-radius: 10px 10px 0 0 ;
+  position: absolute;
+  left:100px;
+}
+
+.placeView3 .placeB{
+  width:300px;
+  height: 200px;
+  /* background:url(../image/place3b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
+  position: absolute;
+  top:701px;
+  left:100px;
+}
+
+.placeView3 .placeC{
+  width:700px;
+  height: 200px;
+  /* background:url(../image/place3c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  top:701px;
+  left:400px;
+}
+
+
+
+/* 4호버-사진 :none 상태 */
+
+.placeView4 .placeA{
+  width:1000px;
+  height:450px;
+  background:url(../image/place4a.png) no-repeat 0px 0px;
+  /* background-color: navy; */
+  border-radius: 10px 10px 0 0 ;
+  position: absolute;
+  left:100px;
+}
+
+.placeView4 .placeB{
+  width:300px;
+  height: 200px;
+  /* background:url(../image/place4b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
+  position: absolute;
+  top:701px;
+  left:100px;
+}
+
+.placeView4 .placeC{
+  width:700px;
+  height: 200px;
+  /* background:url(../image/place4c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  top:701px;
+  left:400px;
+}
+
+
+
+/* 5호버-사진 :none 상태 */
+
+.placeView5 .placeA{
+  width:1000px;
+  height:450px;
+  background:url(../image/place5a.png) no-repeat 0px 0px;
+  /* background-color: brown; */
+  border-radius: 10px 10px 0 0 ;
+  position: absolute;
+  left:100px;
+}
+.placeView5 .placeB{
+  width:300px;
+  height: 200px;
+  /* background:url(../image/place5b.png) no-repeat 0px 0px; */
+  background-color: rgb(240, 240, 240);
+  border-radius: 0 0 0 10px ;
+  position: absolute;
+  top:701px;
+  left: 100px;
+}
+
+.placeView5 .placeC{
+  width:700px;
+  height: 200px;
+  /* background:url(../image/place5c.png) no-repeat 0px 0px; */
+  background-color: rgb(228, 228, 228);
+  border-radius: 0 0 10px 0;
+  position: absolute;
+  top:701px;
+  left:400px;
+}
+
+
+
+
+
+
+
+/* 1,2,3,4,5 호버 후  */
+
+.placeView1,.placeView2,.placeView3,.placeView4,.placeView5{
+  opacity:0;
+  transition: all 0.5s;
+}
+
+
+
+
+
+.content5 li:hover .placeView1{
+  opacity: 1;
+}
+
+.content5 li:hover .placeView2{
+  opacity: 1;
+}
+
+
+.content5 li:hover .placeView3{
+  opacity: 1;
+}
+
+
+.content5 li:hover .placeView4{
+  opacity: 1;
+}
+
+
+.content5 li:hover .placeView5{
+  opacity: 1;
+}
+
+
+
+/* 호버 후: place Name + text */
+.placeName{
+  display: block;
+  font-family: 'Hahmlet', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color:#333;
+  padding: 40px 0 5px;
+  margin-left: 20px;
+  width: fit-content;
+  border-bottom: 3px solid #3282B8;
+}
+
+
+.placeNameSub{
+  display: block;
+  font-family: 'Hahmlet', serif;
+  font-size: 14px;
+  font-weight:400;
+  color:#333;
+  margin-left: 10px;
+  padding: 20px 10px;
+}
+
+.placeC .p1{
+  padding:20px;
+}
+
+.placeC .p2{
+  padding:10px 20px;
+}
+
+
+/* ----------------footer----------- */
+
+footer{
+  width: 100%;
+  height: 150px;
+  background-color: #1B262C;
+}
+
+#footer{
+  width: 1200px;
+  margin: 0 auto;
+  background-color: #1B262C;
+} 
+
+.utilMenu{}
+.utilMenu ul{display: inline-block;}
+.utilMenu ul li{
+  float: right;
+  color:rgb(156, 156, 156);
+  margin:10px 8px 10px 0;
+  background: rgba(255,255,255,0.1);
+}
+
+
+.miniLogo{
+  width:100px;
+  height: 60px;
+  background:url(../image/logo_black_wh.png) no-repeat center center;
+  background-size:contain;
+  padding-top: 0;
+}
+
+
+.footerFloat{
+  color:rgb(156, 156, 156);
+  display: flex;
+  justify-content: space-between;
+  padding:20px 0;
+}
+
+/* .miniLogo{float:left;}
+.footerText1{float:left;}
+.footerText2{float:left;} */
+
+
+ .front{
+  font-weight: bold;
+  color:rgb(209, 209, 209);
+}
